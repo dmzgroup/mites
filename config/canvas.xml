@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dmz>
+<plugins>
+   <plugin name="dmzQtModuleMainWindowBasic"/>
+   <plugin name="dmzQtModuleCanvasBasic" delete="false"/>
+   <plugin name="dmzQtPluginCanvasObject"/>
+   <plugin name="dmzQtPluginCanvasZoomPan"/>
+</plugins>
+<dmzQtModuleCanvasBasic>
+   <canvas opengl="false" antialiasing="true" textantialiasing="false">
+      <zoom min="0.1" max="2.5"/>
+   </canvas>
+</dmzQtModuleCanvasBasic>
+<dmzQtPluginCanvasObject>
+   <plugins>
+      <plugin name="dmzQtPluginCanvasObjectBasic"/>
+   </plugins>
+   <dmzQtPluginCanvasObjectBasic>
+      <defaults zValue="1" itemIgnoresTransformations="false"/>
+      <!-- <preload type="map_layer"/> -->
+   </dmzQtPluginCanvasObjectBasic>
+</dmzQtPluginCanvasObject>
+<dmzQtPluginCanvasLayer>
+   <dockWidget title="Networks"/>
+</dmzQtPluginCanvasLayer>
+<archive>
+   <object name="root_layer" type="root_layer">
+      <attributes name="Layer_Order">
+         <links>
+            <object name="map_layer"/>
+         </links>
+   </attributes>
+   </object>
+      <object name="layer_1" type="layer">
+      <attributes name="Layer_Name">
+         <text value="Entities"/>
+      </attributes>
+      <attributes name="Layer_Visible">
+         <flag value="true"/>
+      </attributes>
+      <attributes name="Layer_Active">
+         <flag value="true"/>
+      </attributes>
+   </object>
+</archive>
+</dmz>
+

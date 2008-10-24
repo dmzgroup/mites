@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmz>
+<plugins>
+   <plugin name="dmzLuaModuleBasic"/>
+</plugins>
+<dmzLuaPluginTimedReset>
+   <time value="0.5"/>
+</dmzLuaPluginTimedReset>
+<dmzLuaModuleBasic>
+   <instance name="mites"/>
+   <extensions>
+      <plugin name="dmzLuaExtObject"/>
+      <plugin name="dmzQtExtLuaConsole"/>
+   </extensions>
+</dmzLuaModuleBasic>
+</dmz>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmz>
+<runtime>
+   <time>
+      <frequency value="60.0"/>
+   </time>
+   <object-type name="canvas_layer"/>
+   <object-type name="layer" parent="canvas_layer">
+      <dmzQtPluginCanvasLayer/>
+   </object-type>
+   <object-type name="root_layer" parent="layer">
+      <dmzQtPluginCanvasLayer/>
+   </object-type>
+   <object-type name="topRender">
+      <dmzQtPluginCanvasObject/>
+      <dmzQtPluginCanvasObjectBasic>
+         <items>
+            <image name="topRender1" file="topRender.png">
+               <offset x="-1075.436035" y="-1079.055542"/>
+               <scale x="1.05023046875" y="1.0501756691"/>
+            </image>
+         </items>
+         <switch>
+            <state>
+               <item name="topRender1"/>
+            </state>
+         </switch>
+      </dmzQtPluginCanvasObjectBasic>
+   </object-type>
+   <object-type name="mite">
+      <dmzQtPluginCanvasObject/>
+      <dmzQtPluginCanvasObjectBasic>
+         <items>
+            <image name="mite" file="./assets/mite.png">
+<!--
+               <offset x="-32" y="0"/>
+               <scale x="0.5" y="0.5"/>
+-->
+            </image>
+         </items>
+         <switch>
+            <state>
+               <item name="mite"/>
+            </state>
+         </switch>
+      </dmzQtPluginCanvasObjectBasic>
+   </object-type>
+   <object-type name="chip">
+      <dmzQtPluginCanvasObject/>
+      <dmzQtPluginCanvasObjectBasic>
+         <items>
+            <image name="chip" file="./assets/chip.png">
+<!--
+               <offset x="-32" y="0"/>
+               <scale x="0.5" y="0.5"/>
+-->
+            </image>
+         </items>
+         <switch>
+            <state>
+               <item name="chip"/>
+            </state>
+         </switch>
+      </dmzQtPluginCanvasObjectBasic>
+   </object-type>
+</runtime>
+</dmz>
