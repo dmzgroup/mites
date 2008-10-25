@@ -16,4 +16,20 @@
       <attribute name="Last_Network_Value" contains="True"/>
    </archive>
 </dmzArchivePluginObject>
+<archive>
+   <object type="mite_arena">
+      <attributes name="Minimum_Area">
+         <position x="-3500" y="0" z="-2500"/>
+      </attributes>
+      <attributes name="Maximum_Area">
+         <position x="3500" y="0" z="2500"/>
+      </attributes>
+      <attributes name="Mites">
+         <counter value="200"/>
+      </attributes>
+      <attributes name="Chips">
+         <counter value="100"/>
+      </attributes>
+   </object>
+</archive>
 </dmz>
