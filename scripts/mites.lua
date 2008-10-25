@@ -61,14 +61,14 @@ local function update_area_maximum (self, object, handle, max)
 end
 
 local function start (self)
-   local callbacks = { update_object_counter = update_mite_count, }
-   self.objObs:register ("Mites", callbacks, self)
-   callbacks = { update_object_counter = update_chip_count, }
-   self.objObs:register ("Chips", callbacks, self)
-   callbacks = { update_object_position = update_area_minimum, }
+   local callbacks = { update_object_position = update_area_minimum, }
    self.objObs:register ("Minimum_Area", callbacks, self)
    callbacks = { update_object_position = update_area_maximum, }
    self.objObs:register ("Maximum_Area", callbacks, self)
+   callbacks = { update_object_counter = update_mite_count, }
+   self.objObs:register ("Mites", callbacks, self)
+   callbacks = { update_object_counter = update_chip_count, }
+   self.objObs:register ("Chips", callbacks, self)
    self.tsHandle = self.timeSlice:create (update_mites, self, self.name)
 end
 

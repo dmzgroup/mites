@@ -13,7 +13,7 @@
    <window title="DMZ: Mites"/>
 </dmzQtModuleMainWindowBasic>
 <dmzQtModuleCanvasBasic>
-   <canvas opengl="false" antialiasing="true" textantialiasing="false"/>
+   <canvas opengl="true" antialiasing="true" textantialiasing="true"/>
 </dmzQtModuleCanvasBasic>
 <dmzQtPluginCanvasObject>
    <plugins>
