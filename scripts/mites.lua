@@ -1,6 +1,10 @@
 local Forward = dmz.math.forward ()
 local Up = dmz.math.up ()
 
+local function calc_next_turn_time ()
+   return (math.random () * 2.5) + 0.5
+end
+
 local function validate_position (self, pos)
    if pos:get_x () > self.arena.max:get_x () then
       pos:set_x (self.arena.min:get_x () + (self.arena.max:get_x () - pos:get_x ()))
@@ -18,13 +22,18 @@ local function update_mites (self, time)
    for i, m in ipairs (self.mites) do
       local pos = dmz.object.position (m.object)
       local ori = dmz.object.orientation (m.object)
+      m.nextTurn = m.nextTurn - time
+      if m.nextTurn <= 0 then
+         ori = ori * dmz.matrix.new (Up, (math.random () - 0.5) * dmz.math.HalfPi)
+         m.nextTurn = calc_next_turn_time ()
+      end
       pos = pos + (ori:transform (Forward) * time * 1000)
       validate_position (self, pos)
       dmz.object.position (m.object, nil, pos)
    end
 end
 
-local function update_mite_count (self, object, handle, count, oldCount)
+local function update_mite_count (self, object, handle, count)
    self.log:error ("Mites:", count)
    self.arena.min = dmz.object.position (object, "Minimum_Area")
    self.arena.max = dmz.object.position (object, "Maximum_Area")
@@ -41,10 +50,14 @@ local function update_mite_count (self, object, handle, count, oldCount)
          0,
          (MaxZ * math.random ()) + MinZ,
       })
-      dmz.object.orientation (m.object, nil, dmz.matrix.new (Up, math.random () * dmz.math.TwoPi))
+      dmz.object.orientation (
+         m.object,
+         nil,
+         dmz.matrix.new (Up, math.random () * dmz.math.TwoPi))
       dmz.object.activate (m.object)
       dmz.object.set_temporary (m.object)
       mites[#mites + 1] = m
+      m.nextTurn = calc_next_turn_time ()
    end
    while #mites > count do
       mites[#mites] = nil
