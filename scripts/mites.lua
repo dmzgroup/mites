@@ -24,12 +24,13 @@ local function update_mites (self, time)
       local ori = dmz.object.orientation (m.object)
       m.nextTurn = m.nextTurn - time
       if m.nextTurn <= 0 then
-         ori = ori * dmz.matrix.new (Up, (math.random () - 0.5) * dmz.math.HalfPi)
+         ori = dmz.matrix.new (Up, (math.random () - 0.5) * dmz.math.HalfPi) * ori
          m.nextTurn = calc_next_turn_time ()
       end
       pos = pos + (ori:transform (Forward) * time * 1000)
       validate_position (self, pos)
       dmz.object.position (m.object, nil, pos)
+      dmz.object.orientation (m.object, nil, ori)
    end
 end
 
