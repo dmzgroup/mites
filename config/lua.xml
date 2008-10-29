@@ -8,6 +8,7 @@
 </dmzLuaPluginTimedReset>
 <dmzLuaModuleBasic>
    <instance name="mites"/>
+   <instance name="chips"/>
    <extensions>
       <plugin name="dmzLuaExtObject"/>
       <plugin name="dmzQtExtLuaConsole"/>

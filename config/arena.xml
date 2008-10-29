@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmz>
+<archive>
+   <object type="mite_arena">
+      <attributes name="Minimum_Area">
+         <position x="-3500" y="0" z="-2500"/>
+      </attributes>
+      <attributes name="Maximum_Area">
+         <position x="3500" y="0" z="2500"/>
+      </attributes>
+      <attributes name="Mites">
+         <counter value="200"/>
+      </attributes>
+      <attributes name="Chips">
+         <counter value="100"/>
+      </attributes>
+   </object>
+</archive>
+</dmz>

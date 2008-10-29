@@ -65,33 +65,6 @@ local function update_mite_count (self, object, handle, count)
    end
 end
 
-local function update_chip_count (self, object, handle, count, oldCount)
-   self.log:error ("Chips:", count)
-   self.arena.min = dmz.object.position (object, "Minimum_Area")
-   self.arena.max = dmz.object.position (object, "Maximum_Area")
-   local chips = self.chips
-   local MinX = self.arena.min:get_x ()
-   local MaxX = self.arena.max:get_x () - MinX
-   local MinZ = self.arena.min:get_z ()
-   local MaxZ = self.arena.max:get_z () - MinZ
-   while #chips < count do
-      local m = {}
-      m.object = dmz.object.create ("chip")
-      dmz.object.position (m.object, nil, {
-         (MaxX * math.random ()) + MinX,
-         0,
-         (MaxZ * math.random ()) + MinZ,
-      })
-      dmz.object.activate (m.object)
-      dmz.object.set_temporary (m.object)
-      chips[#chips + 1] = m
-      m.nextTurn = calc_next_turn_time ()
-   end
-   while #chips > count do
-      chips[#chips] = nil
-   end
-end
-
 local function update_area_minimum (self, object, handle, min)
    self.log:error ("Setting arena min:", min)
    self.arena.min = min
@@ -109,8 +82,6 @@ local function start (self)
    self.objObs:register ("Maximum_Area", callbacks, self)
    callbacks = { update_object_counter = update_mite_count, }
    self.objObs:register ("Mites", callbacks, self)
-   callbacks = { update_object_counter = update_chip_count, }
-   self.objObs:register ("Chips", callbacks, self)
    self.tsHandle = self.timeSlice:create (update_mites, self, self.name)
 end
 
@@ -130,7 +101,6 @@ function new (config, name)
          max = dmz.vector.new (3000, 0, 2000),
       },
       mites = {},
-      chips = {},
    }
 
    self.log:info ("Creating plugin: " .. name)
