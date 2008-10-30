@@ -1,4 +1,5 @@
 require "const"
+
 local Forward = dmz.math.forward ()
 local Up = dmz.math.up ()
 
@@ -8,12 +9,12 @@ end
 
 local function validate_position (self, pos)
    if pos:get_x () > self.arena.max:get_x () then
-      pos:set_x (self.arena.min:get_x () + (self.arena.max:get_x () - pos:get_x ()))
+      pos:set_x (self.arena.min:get_x () - (self.arena.max:get_x () - pos:get_x ()))
    elseif pos:get_x () < self.arena.min:get_x () then
       pos:set_x (self.arena.max:get_x () - (self.arena.min:get_x () - pos:get_x ()))
    end
    if pos:get_z () > self.arena.max:get_z () then
-      pos:set_z (self.arena.min:get_z () + (self.arena.max:get_z () - pos:get_z ()))
+      pos:set_z (self.arena.min:get_z () - (self.arena.max:get_z () - pos:get_z ()))
    elseif pos:get_z () < self.arena.min:get_z () then
       pos:set_z (self.arena.max:get_z () - (self.arena.min:get_z () - pos:get_z ()))
    end
