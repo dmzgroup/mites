@@ -1,14 +1,27 @@
-local function update_chips (self, time)
---[[
-   for i, chip in ipairs (self.chips) do
-      local pos = dmz.object.position (chip.object)
-      dmz.object.position (chip.object, nil, pos)
-   end
---]]
+require "const"
+local Offset = dmz.vector.new (0, 0, -96)
+local UnitMatrix = dmz.matrix.new ()
+
+local function get_mite (object)
+   local result = nil
+   local links = dmz.object.super_links (object, const.LinkHandle)
+   if links then result = links[1] end
+   return result
 end
 
-local function update_chip_count (self, object, handle, count, oldCount)
-   self.log:error ("Chips:", count)
+local function update_chips (self, time)
+   for i, chip in ipairs (self.chips) do
+      local mite = get_mite (chip.object)
+      if mite then
+         local pos = dmz.object.position (mite)
+         local ori = dmz.object.orientation (mite)
+         dmz.object.position (chip.object, nil, pos + ori:transform (Offset))
+      end
+   end
+end
+
+local function update_chip_count (self, object, handle, count)
+   --self.log:error ("Chips:", count)
    local min = dmz.object.position (object, "Minimum_Area")
    local max = dmz.object.position (object, "Maximum_Area")
    local chips = self.chips
@@ -18,17 +31,19 @@ local function update_chip_count (self, object, handle, count, oldCount)
    local MaxZ = max:get_z () - MinZ
    while #chips < count do
       local chip = {}
-      chip.object = dmz.object.create ("chip")
+      chip.object = dmz.object.create (const.ChipType)
       dmz.object.position (chip.object, nil, {
          (MaxX * math.random ()) + MinX,
          0,
          (MaxZ * math.random ()) + MinZ,
       })
+      dmz.object.orientation (chip.object, nil, UnitMatrix)
       dmz.object.activate (chip.object)
       dmz.object.set_temporary (chip.object)
       chips[#chips + 1] = chip
    end
    while #chips > count do
+      dmz.object.destroy (chips[#chips].object)
       chips[#chips] = nil
    end
 end

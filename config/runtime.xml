@@ -10,8 +10,8 @@
       <dmzQtPluginCanvasObjectBasic>
          <items>
             <image name="mite" file="./assets/mite.png">
+               <offset x="-64" y="-64"/>
 <!--
-               <offset x="-32" y="0"/>
                <scale x="0.5" y="0.5"/>
 -->
             </image>
@@ -28,8 +28,8 @@
       <dmzQtPluginCanvasObjectBasic>
          <items>
             <image name="chip" file="./assets/chip.png">
+               <offset x="-32" y="-32"/>
 <!--
-               <offset x="-32" y="0"/>
                <scale x="0.5" y="0.5"/>
 -->
             </image>

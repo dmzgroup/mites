@@ -12,6 +12,13 @@
    <!-- <plugin name="dmzObjectPluginDump"/> -->
    <!-- <plugin name="dmzPluginTermExit"/> -->
 </plugins>
+<dmzObjectModuleGridBase>
+   <grid>
+      <cell x="100" y="100"/>
+      <min x="-3500" y="0" z="-2500"/>
+      <max x="3500" y="0" z="2500"/>
+   </grid>
+</dmzObjectModuleGridBase>
 <dmzArchivePluginObject>
    <archive>
       <attribute name="Last_Network_Value" contains="True"/>

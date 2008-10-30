@@ -1,0 +1,13 @@
+require "lmkQt"
+lmkQt.set_name "dmzMitesPluginControls"
+lmk.set_type "plugin"
+lmk.add_files {"dmzMitesControls.ui",}
+lmk.add_files ({"dmzMitesPluginControls.h",},{src="moc"})
+lmk.add_files {"dmzMitesPluginControls.cpp",}
+lmk.add_libs {
+   "dmzQtUtil",
+   "dmzObjectUtil",
+   "dmzKernel",
+}
+lmk.add_preqs { "dmzInputFramework", "dmzObjectFramework", "dmzQtFramework",}
+lmkQt.add_libs {"QtCore","QtGui",}
