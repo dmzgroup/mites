@@ -132,7 +132,7 @@
      <item>
       <widget class="QSpinBox" name="SpeedSpinBox" >
        <property name="maximum" >
-        <number>10000</number>
+        <number>100</number>
        </property>
       </widget>
      </item>
@@ -154,7 +154,7 @@
    <item>
     <widget class="QSlider" name="SpeedSlider" >
      <property name="maximum" >
-      <number>10000</number>
+      <number>100</number>
      </property>
      <property name="orientation" >
       <enum>Qt::Horizontal</enum>
@@ -172,9 +172,9 @@
      </item>
      <item>
       <widget class="QSpinBox" name="WaitSpinBox" >
-     <property name="minimum" >
-      <number>1</number>
-     </property>
+       <property name="minimum" >
+        <number>1</number>
+       </property>
        <property name="maximum" >
         <number>10</number>
        </property>
@@ -224,13 +224,6 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_5" >
      <item>
-      <widget class="QPushButton" name="ResetButton" >
-       <property name="text" >
-        <string>Reset</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <spacer name="horizontalSpacer_5" >
        <property name="orientation" >
         <enum>Qt::Horizontal</enum>
@@ -242,6 +235,13 @@
         </size>
        </property>
       </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="ResetButton" >
+       <property name="text" >
+        <string>Reset</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>

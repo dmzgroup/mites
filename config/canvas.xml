@@ -15,6 +15,11 @@
 </dmzQtModuleMainWindowBasic>
 <dmzQtModuleCanvasBasic>
    <canvas opengl="true" antialiasing="true" textantialiasing="true"/>
+   <scene>
+      <min x="-3500" y="-2500"/>
+      <max x="3500" y="2500"/>
+   </scene>
+   <scrollbars value="true"/>
 </dmzQtModuleCanvasBasic>
 <dmzQtPluginCanvasObject>
    <plugins>

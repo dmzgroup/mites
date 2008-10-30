@@ -147,7 +147,7 @@ dmz::MitesPluginControls::update_object_scalar (
 
       if (AttributeHandle == _speedHandle) {
 
-         _ui.SpeedSlider->setValue ((int)Value);
+         _ui.SpeedSlider->setValue ((int)Value / 100);
       }
       else if (AttributeHandle == _waitHandle) {
 
@@ -190,7 +190,7 @@ dmz::MitesPluginControls::on_SpeedSlider_valueChanged (int value) {
 
    if (_arena && objMod) {
 
-      objMod->store_scalar (_arena, _speedHandle, Float64 (value));
+      objMod->store_scalar (_arena, _speedHandle, Float64 (value) * 100.0);
    }
 }
 
