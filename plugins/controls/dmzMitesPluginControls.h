@@ -10,6 +10,7 @@
 
 namespace dmz {
 
+   class QtModuleCanvas;
    class QtModuleMainWindow;
    class LuaModule;
 
@@ -53,7 +54,9 @@ namespace dmz {
          void on_ChipsSlider_valueChanged (int value);
          void on_SpeedSlider_valueChanged (int value);
          void on_WaitSlider_valueChanged (int value);
+         void on_ZoomSlider_valueChanged (int value);
          void on_ResetButton_clicked ();
+         void slot_scale_changed (qreal value);
 
       protected:
          void _init (Config &local);
@@ -68,6 +71,7 @@ namespace dmz {
          Handle _waitHandle;
          Ui::MitesControls _ui;
          LuaModule *_lua;
+         QtModuleCanvas *_canvas;
          QtModuleMainWindow *_window;
          QDockWidget *_dock;
 

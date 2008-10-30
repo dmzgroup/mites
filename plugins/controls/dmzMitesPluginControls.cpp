@@ -3,10 +3,13 @@
 #include "dmzMitesPluginControls.h"
 #include <dmzObjectAttributeMasks.h>
 #include <dmzObjectModule.h>
+#include <dmzQtModuleCanvas.h>
 #include <dmzQtModuleMainWindow.h>
 #include <dmzRuntimeDefinitions.h>
 #include <dmzRuntimePluginFactoryLinkSymbol.h>
 #include <dmzRuntimePluginInfo.h>
+
+#include <QtGui/QGraphicsView>
 
 
 dmz::MitesPluginControls::MitesPluginControls (const PluginInfo &Info, Config &local) :
@@ -21,6 +24,7 @@ dmz::MitesPluginControls::MitesPluginControls (const PluginInfo &Info, Config &l
       _speedHandle (0),
       _waitHandle (0),
       _lua (0),
+      _canvas (0),
       _window (0),
       _dock (0) {
 
@@ -67,6 +71,23 @@ dmz::MitesPluginControls::discover_plugin (
 
       if (!_lua) { _lua = dmz::LuaModule::cast (PluginPtr); }
 
+      if (!_canvas) {
+
+         _canvas = QtModuleCanvas::cast (PluginPtr);
+
+         if (_canvas) {
+
+            QGraphicsView *view = _canvas->get_view ();
+
+            if (view) {
+
+               connect (
+                  view, SIGNAL (scale_changed (qreal)),
+                  this, SLOT (slot_scale_changed (qreal)));
+            }
+         }
+      }
+
       if (!_window) {
 
          _window = QtModuleMainWindow::cast (PluginPtr);
@@ -78,7 +99,6 @@ dmz::MitesPluginControls::discover_plugin (
             _dock->setAllowedAreas (Qt::AllDockWidgetAreas);
 
             _dock->setFeatures (QDockWidget::NoDockWidgetFeatures);
-   //            QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
 
             _window->add_dock_widget (
                _channel,
@@ -92,6 +112,8 @@ dmz::MitesPluginControls::discover_plugin (
    else if (Mode == PluginDiscoverRemove) {
 
       if (_lua && (_lua == dmz::LuaModule::cast (PluginPtr))) { _lua = 0; }
+
+      if (_canvas && (_canvas == dmz::QtModuleCanvas::cast (PluginPtr))) { _canvas = 0; }
 
       if (_window && (_window == QtModuleMainWindow::cast (PluginPtr))) {
 
@@ -211,6 +233,46 @@ void
 dmz::MitesPluginControls::on_ResetButton_clicked () {
 
    if (_lua) { _lua->reset_lua (); }
+}
+
+
+void
+dmz::MitesPluginControls::on_ZoomSlider_valueChanged (int value) {
+
+   if (_canvas && !_inUpdate) {
+
+      _inUpdate = True;
+
+      const Float32 ZoomMin (_canvas->get_zoom_min_value ());
+      const Float32 ZoomMax (_canvas->get_zoom_max_value ());
+      const Float32 ZoomRange (ZoomMax - ZoomMin);
+      const Float32 SliderRange (_ui.ZoomSlider->maximum () - _ui.ZoomSlider->minimum ());
+      const Float32 SliderValue (value / SliderRange);
+
+      _canvas->set_zoom (ZoomMin + (ZoomRange * SliderValue));
+
+      _inUpdate = False;
+   }
+}
+
+
+void
+dmz::MitesPluginControls::slot_scale_changed (qreal value) {
+
+   if (_canvas && !_inUpdate) {
+
+      _inUpdate = True;
+
+      const Float32 ZoomMin (_canvas->get_zoom_min_value ());
+      const Float32 ZoomMax (_canvas->get_zoom_max_value ());
+      const Float32 ZoomRange (ZoomMax - ZoomMin);
+      const Float32 SliderRange (_ui.ZoomSlider->maximum () - _ui.ZoomSlider->minimum ());
+      const Float32 SliderValue ((value - ZoomMin) / ZoomRange);
+
+      _ui.ZoomSlider->setValue (SliderValue * SliderRange);
+
+      _inUpdate = False;
+   }
 }
 
 
