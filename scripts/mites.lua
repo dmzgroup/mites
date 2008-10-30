@@ -68,17 +68,17 @@ local function update_mite_count (self, object, handle, count)
 end
 
 local function update_area_minimum (self, object, handle, min)
-   self.log:error ("Setting arena min:", min)
+   --self.log:error ("Setting arena min:", min)
    self.arena.min = min
 end
 
 local function update_area_maximum (self, object, handle, max)
-   self.log:error ("Setting arena max:", max)
+   --self.log:error ("Setting arena max:", max)
    self.arena.max = max
 end
 
 local function update_mite_speed (self, object, handle, speed)
-   self.log:error ("speed:", speed)
+   --self.log:error ("speed:", speed)
    self.speed = speed
 end
 

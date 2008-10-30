@@ -48,7 +48,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="MiteSpinBox" >
+      <widget class="QSpinBox" name="MitesSpinBox" >
        <property name="maximum" >
         <number>200</number>
        </property>
@@ -70,7 +70,7 @@
     </layout>
    </item>
    <item>
-    <widget class="QSlider" name="MiteSlider" >
+    <widget class="QSlider" name="MitesSlider" >
      <property name="maximum" >
       <number>200</number>
      </property>
@@ -89,7 +89,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="ChipSpinBox" >
+      <widget class="QSpinBox" name="ChipsSpinBox" >
        <property name="maximum" >
         <number>200</number>
        </property>
@@ -111,7 +111,7 @@
     </layout>
    </item>
    <item>
-    <widget class="QSlider" name="ChipSlider" >
+    <widget class="QSlider" name="ChipsSlider" >
      <property name="maximum" >
       <number>200</number>
      </property>
@@ -172,6 +172,9 @@
      </item>
      <item>
       <widget class="QSpinBox" name="WaitSpinBox" >
+     <property name="minimum" >
+      <number>1</number>
+     </property>
        <property name="maximum" >
         <number>10</number>
        </property>
@@ -194,6 +197,9 @@
    </item>
    <item>
     <widget class="QSlider" name="WaitSlider" >
+     <property name="minimum" >
+      <number>1</number>
+     </property>
      <property name="maximum" >
       <number>10</number>
      </property>
@@ -242,10 +248,10 @@
   </layout>
  </widget>
  <tabstops>
-  <tabstop>MiteSpinBox</tabstop>
-  <tabstop>MiteSlider</tabstop>
-  <tabstop>ChipSpinBox</tabstop>
-  <tabstop>ChipSlider</tabstop>
+  <tabstop>MitesSpinBox</tabstop>
+  <tabstop>MitesSlider</tabstop>
+  <tabstop>ChipsSpinBox</tabstop>
+  <tabstop>ChipsSlider</tabstop>
   <tabstop>SpeedSpinBox</tabstop>
   <tabstop>SpeedSlider</tabstop>
   <tabstop>WaitSpinBox</tabstop>
@@ -255,9 +261,9 @@
  <resources/>
  <connections>
   <connection>
-   <sender>MiteSlider</sender>
+   <sender>MitesSlider</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>MiteSpinBox</receiver>
+   <receiver>MitesSpinBox</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel" >
@@ -271,9 +277,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>MiteSpinBox</sender>
+   <sender>MitesSpinBox</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>MiteSlider</receiver>
+   <receiver>MitesSlider</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel" >
@@ -287,9 +293,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>ChipSpinBox</sender>
+   <sender>ChipsSpinBox</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>ChipSlider</receiver>
+   <receiver>ChipsSlider</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel" >
@@ -303,9 +309,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>ChipSlider</sender>
+   <sender>ChipsSlider</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>ChipSpinBox</receiver>
+   <receiver>ChipsSpinBox</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel" >

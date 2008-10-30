@@ -57,11 +57,16 @@ local function destroy_object (self, object)
    self.mites[object] = nil
 end
 
+local function update_wait (self, object, handle, wait)
+   self.wait = wait
+end
+
 local function start (self)
    self.objObs:register (
       nil,
       { create_object = create_object, destroy_object = destroy_object, },
       self)
+   self.objObs:register ("Wait", { update_object_scalar = update_wait, }, self)
    self.tsHandle = self.timeSlice:create (update_chips, self, self.name)
 end
 

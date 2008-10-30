@@ -22,7 +22,7 @@
          <scalar value="1000"/>
       </attributes>
       <attributes name="Wait">
-         <scalar value="5"/>
+         <scalar value="1"/>
       </attributes>
       <attributes name="Chips">
          <counter value="50"/>

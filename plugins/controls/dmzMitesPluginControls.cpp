@@ -1,5 +1,8 @@
 #include <dmzInputConsts.h>
+#include <dmzLuaModule.h>
 #include "dmzMitesPluginControls.h"
+#include <dmzObjectAttributeMasks.h>
+#include <dmzObjectModule.h>
 #include <dmzQtModuleMainWindow.h>
 #include <dmzRuntimeDefinitions.h>
 #include <dmzRuntimePluginFactoryLinkSymbol.h>
@@ -10,7 +13,14 @@ dmz::MitesPluginControls::MitesPluginControls (const PluginInfo &Info, Config &l
       Plugin (Info),
       ObjectObserverUtil (Info, local),
       _log (Info),
+      _inUpdate (False),
+      _arena (0),
       _channel (0),
+      _mitesHandle (0),
+      _chipsHandle (0),
+      _speedHandle (0),
+      _waitHandle (0),
+      _lua (0),
       _window (0),
       _dock (0) {
 
@@ -55,6 +65,8 @@ dmz::MitesPluginControls::discover_plugin (
 
    if (Mode == PluginDiscoverAdd) {
 
+      if (!_lua) { _lua = dmz::LuaModule::cast (PluginPtr); }
+
       if (!_window) {
 
          _window = QtModuleMainWindow::cast (PluginPtr);
@@ -79,6 +91,8 @@ dmz::MitesPluginControls::discover_plugin (
    }
    else if (Mode == PluginDiscoverRemove) {
 
+      if (_lua && (_lua == dmz::LuaModule::cast (PluginPtr))) { _lua = 0; }
+
       if (_window && (_window == QtModuleMainWindow::cast (PluginPtr))) {
 
          _window->remove_dock_widget (_channel, _dock);
@@ -90,94 +104,6 @@ dmz::MitesPluginControls::discover_plugin (
 
 // Object Observer Interface
 void
-dmz::MitesPluginControls::create_object (
-      const UUID &Identity,
-      const Handle ObjectHandle,
-      const ObjectType &Type,
-      const ObjectLocalityEnum Locality) {
-
-}
-
-
-void
-dmz::MitesPluginControls::destroy_object (
-      const UUID &Identity,
-      const Handle ObjectHandle) {
-
-}
-
-
-void
-dmz::MitesPluginControls::update_object_uuid (
-      const Handle ObjectHandle,
-      const UUID &Identity,
-      const UUID &PrevIdentity) {
-
-}
-
-
-void
-dmz::MitesPluginControls::remove_object_attribute (
-      const UUID &Identity,
-      const Handle ObjectHandle,
-      const Handle AttributeHandle,
-      const Mask &AttrMask) {
-
-}
-
-
-void
-dmz::MitesPluginControls::update_object_locality (
-      const UUID &Identity,
-      const Handle ObjectHandle,
-      const ObjectLocalityEnum Locality,
-      const ObjectLocalityEnum PrevLocality) {
-
-}
-
-
-void
-dmz::MitesPluginControls::link_objects (
-      const Handle LinkHandle,
-      const Handle AttributeHandle,
-      const UUID &SuperIdentity,
-      const Handle SuperHandle,
-      const UUID &SubIdentity,
-      const Handle SubHandle) {
-
-}
-
-
-void
-dmz::MitesPluginControls::unlink_objects (
-      const Handle LinkHandle,
-      const Handle AttributeHandle,
-      const UUID &SuperIdentity,
-      const Handle SuperHandle,
-      const UUID &SubIdentity,
-      const Handle SubHandle) {
-
-}
-
-
-void
-dmz::MitesPluginControls::update_link_attribute_object (
-      const Handle LinkHandle,
-      const Handle AttributeHandle,
-      const UUID &SuperIdentity,
-      const Handle SuperHandle,
-      const UUID &SubIdentity,
-      const Handle SubHandle,
-      const UUID &AttributeIdentity,
-      const Handle AttributeObjectHandle,
-      const UUID &PrevAttributeIdentity,
-      const Handle PrevAttributeObjectHandle) {
-
-
-}
-
-
-void
 dmz::MitesPluginControls::update_object_counter (
       const UUID &Identity,
       const Handle ObjectHandle,
@@ -185,138 +111,23 @@ dmz::MitesPluginControls::update_object_counter (
       const Int64 Value,
       const Int64 *PreviousValue) {
 
-}
+   _arena = ObjectHandle;
 
+   if (!_inUpdate) {
 
-void
-dmz::MitesPluginControls::update_object_counter_minimum (
-      const UUID &Identity,
-      const Handle ObjectHandle,
-      const Handle AttributeHandle,
-      const Int64 Value,
-      const Int64 *PreviousValue) {
+      _inUpdate = True;
 
-}
+      if (AttributeHandle == _mitesHandle) {
 
+         _ui.MitesSlider->setValue ((int)Value);
+      }
+      else if (AttributeHandle == _chipsHandle) {
 
-void
-dmz::MitesPluginControls::update_object_counter_maximum (
-      const UUID &Identity,
-      const Handle ObjectHandle,
-      const Handle AttributeHandle,
-      const Int64 Value,
-      const Int64 *PreviousValue) {
-
-}
-
-
-void
-dmz::MitesPluginControls::update_object_alternate_type (
-      const UUID &Identity,
-      const Handle ObjectHandle,
-      const Handle AttributeHandle,
-      const ObjectType &Value,
-      const ObjectType *PreviousValue) {
-
-}
-
-
-void
-dmz::MitesPluginControls::update_object_state (
-      const UUID &Identity,
-      const Handle ObjectHandle,
-      const Handle AttributeHandle,
-      const Mask &Value,
-      const Mask *PreviousValue) {
-
-}
-
-
-void
-dmz::MitesPluginControls::update_object_flag (
-      const UUID &Identity,
-      const Handle ObjectHandle,
-      const Handle AttributeHandle,
-      const Boolean Value,
-      const Boolean *PreviousValue) {
-
-}
-
-
-void
-dmz::MitesPluginControls::update_object_time_stamp (
-      const UUID &Identity,
-      const Handle ObjectHandle,
-      const Handle AttributeHandle,
-      const Float64 &Value,
-      const Float64 *PreviousValue) {
-
-}
-
-
-void
-dmz::MitesPluginControls::update_object_position (
-      const UUID &Identity,
-      const Handle ObjectHandle,
-      const Handle AttributeHandle,
-      const Vector &Value,
-      const Vector *PreviousValue) {
-
-}
-
-
-void
-dmz::MitesPluginControls::update_object_orientation (
-      const UUID &Identity,
-      const Handle ObjectHandle,
-      const Handle AttributeHandle,
-      const Matrix &Value,
-      const Matrix *PreviousValue) {
-
-}
-
-
-void
-dmz::MitesPluginControls::update_object_velocity (
-      const UUID &Identity,
-      const Handle ObjectHandle,
-      const Handle AttributeHandle,
-      const Vector &Value,
-      const Vector *PreviousValue) {
-
-}
-
-
-void
-dmz::MitesPluginControls::update_object_acceleration (
-      const UUID &Identity,
-      const Handle ObjectHandle,
-      const Handle AttributeHandle,
-      const Vector &Value,
-      const Vector *PreviousValue) {
-
-}
-
-
-void
-dmz::MitesPluginControls::update_object_scale (
-      const UUID &Identity,
-      const Handle ObjectHandle,
-      const Handle AttributeHandle,
-      const Vector &Value,
-      const Vector *PreviousValue) {
-
-}
-
-
-void
-dmz::MitesPluginControls::update_object_vector (
-      const UUID &Identity,
-      const Handle ObjectHandle,
-      const Handle AttributeHandle,
-      const Vector &Value,
-      const Vector *PreviousValue) {
-
+         _ui.ChipsSlider->setValue ((int)Value);
+      }
+     
+      _inUpdate = False;
+   }
 }
 
 
@@ -328,40 +139,91 @@ dmz::MitesPluginControls::update_object_scalar (
       const Float64 Value,
       const Float64 *PreviousValue) {
 
+   _arena = ObjectHandle;
+
+   if (!_inUpdate) {
+
+      _inUpdate = True;
+
+      if (AttributeHandle == _speedHandle) {
+
+         _ui.SpeedSlider->setValue ((int)Value);
+      }
+      else if (AttributeHandle == _waitHandle) {
+
+         _ui.WaitSlider->setValue ((int)Value);
+      }
+
+      _inUpdate = False;
+   }
 }
 
 
 void
-dmz::MitesPluginControls::update_object_text (
-      const UUID &Identity,
-      const Handle ObjectHandle,
-      const Handle AttributeHandle,
-      const String &Value,
-      const String *PreviousValue) {
+dmz::MitesPluginControls::on_MitesSlider_valueChanged (int value) {
 
+   ObjectModule *objMod (get_object_module ());
+
+   if (_arena && objMod) {
+
+      objMod->store_counter (_arena, _mitesHandle, Int64 (value));
+   }
 }
 
 
 void
-dmz::MitesPluginControls::update_object_data (
-      const UUID &Identity,
-      const Handle ObjectHandle,
-      const Handle AttributeHandle,
-      const Data &Value,
-      const Data *PreviousValue) {
+dmz::MitesPluginControls::on_ChipsSlider_valueChanged (int value) {
 
+   ObjectModule *objMod (get_object_module ());
+
+   if (_arena && objMod) {
+
+      objMod->store_counter (_arena, _chipsHandle, Int64 (value));
+   }
 }
+
 
 void
-dmz::MitesPluginControls::on_MiteSlider_valueChanged (int value) {
+dmz::MitesPluginControls::on_SpeedSlider_valueChanged (int value) {
 
-   _log.error << "Value: " << Int32 (value) << endl;
+   ObjectModule *objMod (get_object_module ());
+
+   if (_arena && objMod) {
+
+      objMod->store_scalar (_arena, _speedHandle, Float64 (value));
+   }
 }
+
+
+void
+dmz::MitesPluginControls::on_WaitSlider_valueChanged (int value) {
+
+   ObjectModule *objMod (get_object_module ());
+
+   if (_arena && objMod) {
+
+      objMod->store_scalar (_arena, _waitHandle, Float64 (value));
+   }
+}
+
+
+void
+dmz::MitesPluginControls::on_ResetButton_clicked () {
+
+   if (_lua) { _lua->reset_lua (); }
+}
+
 
 void
 dmz::MitesPluginControls::_init (Config &local) {
 
-   _channel = Definitions (get_plugin_runtime_context ()).create_named_handle (InputChannelDefaultName);
+   _channel = Definitions (get_plugin_runtime_context ()).create_named_handle (
+      InputChannelDefaultName);
+
+   _mitesHandle = activate_object_attribute ("Mites", ObjectCounterMask);
+   _chipsHandle = activate_object_attribute ("Chips", ObjectCounterMask);
+   _speedHandle = activate_object_attribute ("Speed", ObjectScalarMask);
+   _waitHandle = activate_object_attribute ("Wait", ObjectScalarMask);
 }
 
 
