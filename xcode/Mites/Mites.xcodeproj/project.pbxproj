@@ -94,7 +94,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 7AA9C8FB0EB709F400A97E88 /* dmzObjectModuleGridBasic */;
+			remoteGlobalIDString = 7AA9C8FB0EB709F400A97E88;
 			remoteInfo = dmzObjectModuleGridBasic;
 		};
 		7A981F920EB70194004B0CAC /* PBXContainerItemProxy */ = {
