@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmz>
+<dmzArchivePluginObject>
+   <archive>
+      <attribute name="Last_Network_Value" contains="True"/>
+   </archive>
+</dmzArchivePluginObject>
+<dmzObjectModuleGridBasic>
+   <grid>
+      <cell x="100" y="100"/>
+      <min x="0" y="0" z="0"/>
+      <max x="3200" y="0" z="4600"/>
+   </grid>
+</dmzObjectModuleGridBasic>
+<archive>
+   <object type="mite_arena">
+      <attributes name="Minimum_Area">
+         <position x="0" y="0" z="0"/>
+      </attributes>
+      <attributes name="Maximum_Area">
+         <position x="3200" y="0" z="4600"/>
+      </attributes>
+      <attributes name="Mites">
+         <counter value="10"/>
+      </attributes>
+      <attributes name="Speed">
+         <scalar value="1000"/>
+      </attributes>
+      <attributes name="Wait">
+         <scalar value="1"/>
+      </attributes>
+      <attributes name="Chips">
+         <counter value="50"/>
+      </attributes>
+   </object>
+</archive>
+</dmz>

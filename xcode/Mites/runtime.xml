@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmz>
+<runtime>
+   <time>
+      <frequency value="0"/>
+   </time>
+   <object-type name="mite_arena"/>
+   <object-type name="mite">
+      <dmziPhonePluginCanvasObject>
+         <items>
+            <image name="mite" file="./assets/mite.png">
+<!--
+               <offset x="-64" y="-64"/>
+               <scale x="0.5" y="0.5"/>
+-->
+            </image>
+         </items>
+         <switch>
+            <state>
+               <item name="mite"/>
+            </state>
+         </switch>
+      </dmziPhonePluginCanvasObject>
+   </object-type>
+   <object-type name="chip">
+      <dmziPhonePluginCanvasObject>
+         <items>
+            <image name="chip" file="./assets/chip.png">
+<!--
+               <offset x="-32" y="-32"/>
+               <scale x="0.5" y="0.5"/>
+-->
+            </image>
+         </items>
+         <switch>
+            <state>
+               <item name="chip"/>
+            </state>
+         </switch>
+      </dmziPhonePluginCanvasObject>
+   </object-type>
+</runtime>
+</dmz>
