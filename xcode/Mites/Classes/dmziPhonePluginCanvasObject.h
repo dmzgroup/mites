@@ -47,6 +47,13 @@ namespace dmz {
             const Handle AttributeHandle,
             const Vector &Value,
             const Vector *PreviousValue);
+            
+         virtual void update_object_orientation (
+             const UUID &Identity,
+             const Handle ObjectHandle,
+             const Handle AttributeHandle,
+             const Matrix &Value,
+             const Matrix *PreviousValue);
 
       protected:
          Boolean _find_config_from_type (Config &local, ObjectType &objType);

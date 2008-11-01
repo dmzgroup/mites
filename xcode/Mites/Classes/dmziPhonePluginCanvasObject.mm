@@ -10,6 +10,7 @@
 #include <dmzRuntimePluginFactoryLinkSymbol.h>
 #include <dmzRuntimePluginInfo.h>
 #include <dmzTypesVector.h>
+#include <dmzTypesMath.h>
 #include <dmzTypesMatrix.h>
 #import <UIKit/UIKit.h>
 
@@ -97,9 +98,11 @@ dmz::iPhonePluginCanvasObject::create_object (
       
 //      ObjectStruct *os (new ObjectStruct (ObjectHandle));
       
-      UIImage *miteImage = [UIImage imageNamed:@"mite.png"];
+      UIImage *image = [UIImage imageNamed:@"mite.png"];
       
-      UIImageView *item = [[UIImageView alloc] initWithImage:miteImage];
+      UIImageView *item = [[UIImageView alloc] initWithImage:image];
+//      [item setTransform: CGAffineTransformMakeScale (0.1, 0.1)];
+            
       item.tag = ObjectHandle;
       
       ObjectModule *objMod (get_object_module ());
@@ -162,6 +165,26 @@ dmz::iPhonePluginCanvasObject::update_object_position (
 }
 
 
+void
+dmz::iPhonePluginCanvasObject::update_object_orientation (
+       const UUID &Identity,
+       const Handle ObjectHandle,
+       const Handle AttributeHandle,
+       const Matrix &Value,
+       const Matrix *PreviousValue) {
+
+   if (AttributeHandle == _defaultAttrHandle) {
+      
+      UIImageView *item (_objectTable.lookup (ObjectHandle));
+      
+      if (item) {
+
+         item.transform= CGAffineTransformMakeRotation (get_heading (Value));
+      }
+   }
+}
+
+
 dmz::Boolean
 dmz::iPhonePluginCanvasObject::_find_config_from_type (
       Config &local,
@@ -202,8 +225,8 @@ dmz::iPhonePluginCanvasObject::_init (Config &local) {
    _defaultAttrHandle = activate_default_object_attribute (
       ObjectCreateMask |
       ObjectDestroyMask |
-      ObjectPositionMask /* |
-      ObjectOrientationMask */);
+      ObjectPositionMask  |
+      ObjectOrientationMask);
 }
 
 

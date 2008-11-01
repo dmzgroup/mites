@@ -7,7 +7,7 @@
 </dmzArchivePluginObject>
 <dmzObjectModuleGridBasic>
    <grid>
-      <cell x="100" y="100"/>
+      <cell x="10" y="10"/>
       <min x="0" y="0" z="0"/>
       <max x="3200" y="0" z="4600"/>
    </grid>
@@ -21,13 +21,13 @@
          <position x="3200" y="0" z="4600"/>
       </attributes>
       <attributes name="Mites">
-         <counter value="10"/>
+         <counter value="25"/>
       </attributes>
       <attributes name="Speed">
-         <scalar value="1000"/>
+         <scalar value="2000"/>
       </attributes>
       <attributes name="Wait">
-         <scalar value="1"/>
+         <scalar value="0.6"/>
       </attributes>
       <attributes name="Chips">
          <counter value="50"/>

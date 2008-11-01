@@ -87,6 +87,11 @@
 		7AA9C9E60EB714FF00A97E88 /* dmzMitesModuleiPhone.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AA9C9E40EB714FF00A97E88 /* dmzMitesModuleiPhone.mm */; };
 		7AA9C9EA0EB718F500A97E88 /* RootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA9C9E90EB718F500A97E88 /* RootView.xib */; };
 		7AA9CA3B0EB725B600A97E88 /* dmziPhonePluginCanvasObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AA9CA3A0EB725B600A97E88 /* dmziPhonePluginCanvasObject.mm */; };
+		D2FEED210EBB97F800D5280D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FEED200EBB97F800D5280D /* Default.png */; };
+		D2FEEDEB0EBC200200D5280D /* Mites-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FEEDEA0EBC200200D5280D /* Mites-Default.png */; };
+		D2FEEEBE0EBC4BAB00D5280D /* ControlsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FEEEBD0EBC4BAB00D5280D /* ControlsView.xib */; };
+		D2FEEEC90EBC4BF400D5280D /* ControlsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D2FEEEC80EBC4BF400D5280D /* ControlsViewController.mm */; };
+		D2FEEECE0EBC4C2100D5280D /* ControlsView.mm in Sources */ = {isa = PBXBuildFile; fileRef = D2FEEECD0EBC4C2100D5280D /* ControlsView.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -567,6 +572,13 @@
 		7AA9CA390EB725B600A97E88 /* dmziPhonePluginCanvasObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmziPhonePluginCanvasObject.h; sourceTree = "<group>"; };
 		7AA9CA3A0EB725B600A97E88 /* dmziPhonePluginCanvasObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dmziPhonePluginCanvasObject.mm; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2FEED200EBB97F800D5280D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		D2FEEDEA0EBC200200D5280D /* Mites-Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mites-Default.png"; sourceTree = "<group>"; };
+		D2FEEEBD0EBC4BAB00D5280D /* ControlsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ControlsView.xib; sourceTree = "<group>"; };
+		D2FEEEC70EBC4BF400D5280D /* ControlsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlsViewController.h; path = Classes/ControlsViewController.h; sourceTree = "<group>"; };
+		D2FEEEC80EBC4BF400D5280D /* ControlsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ControlsViewController.mm; path = Classes/ControlsViewController.mm; sourceTree = "<group>"; };
+		D2FEEECC0EBC4C2100D5280D /* ControlsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlsView.h; sourceTree = "<group>"; };
+		D2FEEECD0EBC4C2100D5280D /* ControlsView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControlsView.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -656,6 +668,7 @@
 				7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */,
 				7A981F650EB7018B004B0CAC /* dmz.xcconfig */,
 				7AA9C9460EB70D6100A97E88 /* dmz */,
+				D2FEEECA0EBC4BFA00D5280D /* Controls View */,
 				289233A00DB2D0730083E9F9 /* Main View */,
 				281C6CD70DB2D82200F60ACC /* Flipside View */,
 				080E96DDFE201D6D7F000001 /* Application Controllers */,
@@ -683,9 +696,12 @@
 			isa = PBXGroup;
 			children = (
 				7A981F4D0EB7003B004B0CAC /* Icon.png */,
+				D2FEED200EBB97F800D5280D /* Default.png */,
+				D2FEEDEA0EBC200200D5280D /* Mites-Default.png */,
 				7AA9C9E90EB718F500A97E88 /* RootView.xib */,
 				280E754A0DD40C5E005A515E /* FlipsideView.xib */,
 				280E754B0DD40C5E005A515E /* MainView.xib */,
+				D2FEEEBD0EBC4BAB00D5280D /* ControlsView.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				7AA9C9AB0EB711A500A97E88 /* manifest.xml */,
 				7AA9C9A30EB70FAA00A97E88 /* config */,
@@ -756,7 +772,6 @@
 			children = (
 				7AA9C9490EB70D8600A97E88 /* interfaces */,
 				7AA9C94D0EB70D9600A97E88 /* modules */,
-				7AA9C9530EB70D9600A97E88 /* plugins */,
 				7AA9C9540EB70D9600A97E88 /* util */,
 			);
 			name = dmz;
@@ -792,14 +807,6 @@
 			);
 			path = canvas;
 			sourceTree = "<group>";
-		};
-		7AA9C9530EB70D9600A97E88 /* plugins */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = plugins;
-			path = ../../../dmz/frameworks/iphone/plugins;
-			sourceTree = SOURCE_ROOT;
 		};
 		7AA9C9540EB70D9600A97E88 /* util */ = {
 			isa = PBXGroup;
@@ -839,6 +846,17 @@
 				7AA9C9A60EB70FE200A97E88 /* mites.lua */,
 			);
 			name = scripts;
+			sourceTree = "<group>";
+		};
+		D2FEEECA0EBC4BFA00D5280D /* Controls View */ = {
+			isa = PBXGroup;
+			children = (
+				D2FEEECC0EBC4C2100D5280D /* ControlsView.h */,
+				D2FEEECD0EBC4C2100D5280D /* ControlsView.mm */,
+				D2FEEEC70EBC4BF400D5280D /* ControlsViewController.h */,
+				D2FEEEC80EBC4BF400D5280D /* ControlsViewController.mm */,
+			);
+			name = "Controls View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1159,6 +1177,9 @@
 				7A46858D0EBA71C00034D89B /* chips.lua in Resources */,
 				7A46858E0EBA71C00034D89B /* const.lua in Resources */,
 				7A46858F0EBA71C00034D89B /* haul.lua in Resources */,
+				D2FEED210EBB97F800D5280D /* Default.png in Resources */,
+				D2FEEDEB0EBC200200D5280D /* Mites-Default.png in Resources */,
+				D2FEEEBE0EBC4BAB00D5280D /* ControlsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1203,6 +1224,8 @@
 				7AA9CA3B0EB725B600A97E88 /* dmziPhonePluginCanvasObject.mm in Sources */,
 				7A4684BE0EBA641B0034D89B /* Canvas.mm in Sources */,
 				7A4685A80EBA78870034D89B /* dmzMitesPluginLuaSearchPath.mm in Sources */,
+				D2FEEEC90EBC4BF400D5280D /* ControlsViewController.mm in Sources */,
+				D2FEEECE0EBC4C2100D5280D /* ControlsView.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

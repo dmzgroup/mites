@@ -4,6 +4,7 @@
 @implementation MainView
 
 @synthesize canvas = _canvas;
+@synthesize controlsDelegate;
 
 
 - (void) awakeFromNib {
@@ -16,10 +17,6 @@
    self.delegate = self;
    
    [self addSubview:_canvas];
-   
-   UIImage *miteImage = [UIImage imageNamed:@"mite.png"];
-   UIImageView *item = [[UIImageView alloc] initWithImage:miteImage];
-   [_canvas addSubview:item];
 }
 
 
@@ -40,5 +37,45 @@
    
 }
 
+/*
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+   
+   //   UITouch *touch = [touches anyObject];
+   
+//   if (controlsDelegate != nil) {
+//      
+//      [controlsDelegate toggleControls:self];
+//   }
+   
+   [super touchesBegan:touches withEvent:event];
+}
+
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+   
+   [super touchesMoved:touches withEvent:event];
+}
+*/
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+
+   UITouch *touch = [touches anyObject];
+   
+   if ([touch tapCount] == 2) {
+      
+      [controlsDelegate toggleControls];
+   }
+   else {
+      
+      [super touchesEnded:touches withEvent:event];
+   }
+}
+
+/*
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+
+   [super touchesCancelled:touches withEvent:event];
+}
+*/
 
 @end

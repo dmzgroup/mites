@@ -11,5 +11,4 @@
 
 @property (nonatomic, retain) MainView *mainView;
 
-
 @end

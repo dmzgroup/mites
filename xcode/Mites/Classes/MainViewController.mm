@@ -25,13 +25,10 @@
 }
 
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view.
 - (void)viewDidLoad {
-   
+
    [super viewDidLoad];
 }
-*/
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
