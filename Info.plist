@@ -4,21 +4,6 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
-	<key>CFBundleDocumentTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeExtensions</key>
-			<array>
-				<string>mites</string>
-			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>DocIcon.icns</string>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>LSIsAppleDefaultForType</key>
-			<true/>
-		</dict>
-	</array>
    <key>CFBundleShortVersionString</key>
 	<string>$(majorVersion).$(minorVersion).$(bugVersion) $(releaseType)</string>
    <key>CFBundleVersion</key>

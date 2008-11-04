@@ -53,7 +53,7 @@ app.set_app ("dmzQtAppShell", "mites")
 
 app.set_plist ("Info.plist")
 
---app.add_icons {"AppIcon.icns", "DocIcon.icns"}
+app.add_icons {"AppIcon.icns",}
 
 app.add_config {
    "$(localTmpDir)/version.xml",
