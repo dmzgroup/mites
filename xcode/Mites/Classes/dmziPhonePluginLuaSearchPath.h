@@ -1,17 +1,17 @@
-#ifndef DMZ_MITES_PLUGIN_LUA_SEARCH_PATH_DOT_H
-#define DMZ_MITES_PLUGIN_LUA_SEARCH_PATH_DOT_H
+#ifndef DMZ_IPHONE_PLUGIN_LUA_SEARCH_PATH_DOT_H
+#define DMZ_IPHONE_PLUGIN_LUA_SEARCH_PATH_DOT_H
 
 #include <dmzRuntimeLog.h>
 #include <dmzRuntimePlugin.h>
 
 namespace dmz {
 
-   class MitesPluginLuaSearchPath :
+   class iPhonePluginLuaSearchPath :
          public Plugin {
 
       public:
-         MitesPluginLuaSearchPath (const PluginInfo &Info, Config &local);
-         ~MitesPluginLuaSearchPath ();
+         iPhonePluginLuaSearchPath (const PluginInfo &Info, Config &local);
+         ~iPhonePluginLuaSearchPath ();
 
          // Plugin Interface
          virtual void update_plugin_state (
@@ -29,11 +29,11 @@ namespace dmz {
             
 
       private:
-         MitesPluginLuaSearchPath ();
-         MitesPluginLuaSearchPath (const MitesPluginLuaSearchPath &);
-         MitesPluginLuaSearchPath &operator= (const MitesPluginLuaSearchPath &);
+         iPhonePluginLuaSearchPath ();
+         iPhonePluginLuaSearchPath (const iPhonePluginLuaSearchPath &);
+         iPhonePluginLuaSearchPath &operator= (const iPhonePluginLuaSearchPath &);
 
    };
 };
 
-#endif // DMZ_MITES_PLUGIN_LUA_SEARCH_PATH_DOT_H
+#endif // DMZ_IPHONE_PLUGIN_LUA_SEARCH_PATH_DOT_H

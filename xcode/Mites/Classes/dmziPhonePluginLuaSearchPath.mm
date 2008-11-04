@@ -1,10 +1,10 @@
 #import <dmzLuaModule.h>
-#import "dmzMitesPluginLuaSearchPath.h"
+#import "dmziPhonePluginLuaSearchPath.h"
 #import <dmzRuntimePluginFactoryLinkSymbol.h>
 #import <dmzRuntimePluginInfo.h>
 #import "dmzSystemFileMacOS.h"
 
-dmz::MitesPluginLuaSearchPath::MitesPluginLuaSearchPath (const PluginInfo &Info, Config &local) :
+dmz::iPhonePluginLuaSearchPath::iPhonePluginLuaSearchPath (const PluginInfo &Info, Config &local) :
       Plugin (Info),
       _log (Info) {
 
@@ -12,14 +12,14 @@ dmz::MitesPluginLuaSearchPath::MitesPluginLuaSearchPath (const PluginInfo &Info,
 }
 
 
-dmz::MitesPluginLuaSearchPath::~MitesPluginLuaSearchPath () {
+dmz::iPhonePluginLuaSearchPath::~iPhonePluginLuaSearchPath () {
 
 }
 
 
 // Plugin Interface
 void
-dmz::MitesPluginLuaSearchPath::update_plugin_state (
+dmz::iPhonePluginLuaSearchPath::update_plugin_state (
       const PluginStateEnum State,
       const UInt32 Level) {
 
@@ -39,7 +39,7 @@ dmz::MitesPluginLuaSearchPath::update_plugin_state (
 
 
 void
-dmz::MitesPluginLuaSearchPath::discover_plugin (
+dmz::iPhonePluginLuaSearchPath::discover_plugin (
       const PluginDiscoverEnum Mode,
       const Plugin *PluginPtr) {
 
@@ -59,7 +59,7 @@ dmz::MitesPluginLuaSearchPath::discover_plugin (
 
 
 void
-dmz::MitesPluginLuaSearchPath::_init (Config &local) {
+dmz::iPhonePluginLuaSearchPath::_init (Config &local) {
 
 }
 
@@ -67,12 +67,12 @@ dmz::MitesPluginLuaSearchPath::_init (Config &local) {
 extern "C" {
 
 DMZ_PLUGIN_FACTORY_LINK_SYMBOL dmz::Plugin *
-create_dmzMitesPluginLuaSearchPath (
+create_dmziPhonePluginLuaSearchPath (
       const dmz::PluginInfo &Info,
       dmz::Config &local,
       dmz::Config &global) {
 
-   return new dmz::MitesPluginLuaSearchPath (Info, local);
+   return new dmz::iPhonePluginLuaSearchPath (Info, local);
 }
 
 };

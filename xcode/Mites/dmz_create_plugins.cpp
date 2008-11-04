@@ -13,7 +13,7 @@ dmz::Plugin *create_dmzInputModuleBasic (const dmz::PluginInfo &Info, dmz::Confi
 dmz::Plugin *create_dmzLuaModuleBasic (const dmz::PluginInfo &Info, dmz::Config &local, dmz::Config &global);
 dmz::Plugin *create_dmzLuaExtObject (const dmz::PluginInfo &Info, dmz::Config &local, dmz::Config &global);
 dmz::Plugin *create_dmzMitesModuleiPhone (const dmz::PluginInfo &Info, dmz::Config &local, dmz::Config &global);
-dmz::Plugin *create_dmzMitesPluginLuaSearchPath (const dmz::PluginInfo &Info, dmz::Config &local, dmz::Config &global);
+dmz::Plugin *create_dmziPhonePluginLuaSearchPath (const dmz::PluginInfo &Info, dmz::Config &local, dmz::Config &global);
 dmz::Plugin *create_dmziPhonePluginCanvasObject (const dmz::PluginInfo &Info, dmz::Config &local, dmz::Config &global);
 }
 
@@ -72,10 +72,10 @@ dmz_create_plugins (
    config.lookup_all_config_merged ("dmzMitesModuleiPhone", local);
    container.add_plugin (info, create_dmzMitesModuleiPhone (*info, local, global));
 
-   info = new dmz::PluginInfo ("dmzMitesPluginLuaSearchPath", dmz::PluginDeleteModeDelete, context, 0);
+   info = new dmz::PluginInfo ("dmziPhonePluginLuaSearchPath", dmz::PluginDeleteModeDelete, context, 0);
    local.set_config_context (0);
-   config.lookup_all_config_merged ("dmzMitesPluginLuaSearchPath", local);
-   container.add_plugin (info, create_dmzMitesPluginLuaSearchPath (*info, local, global));
+   config.lookup_all_config_merged ("dmziPhonePluginLuaSearchPath", local);
+   container.add_plugin (info, create_dmziPhonePluginLuaSearchPath (*info, local, global));
 
    info = new dmz::PluginInfo ("dmziPhonePluginCanvasObject", dmz::PluginDeleteModeDelete, context, 0);
    local.set_config_context (0);

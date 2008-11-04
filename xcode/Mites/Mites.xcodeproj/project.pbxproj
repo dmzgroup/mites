@@ -47,7 +47,7 @@
 		7A46858D0EBA71C00034D89B /* chips.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7A46858A0EBA71C00034D89B /* chips.lua */; };
 		7A46858E0EBA71C00034D89B /* const.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7A46858B0EBA71C00034D89B /* const.lua */; };
 		7A46858F0EBA71C00034D89B /* haul.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7A46858C0EBA71C00034D89B /* haul.lua */; };
-		7A4685A80EBA78870034D89B /* dmzMitesPluginLuaSearchPath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A4685A70EBA78870034D89B /* dmzMitesPluginLuaSearchPath.mm */; };
+		7A4685A80EBA78870034D89B /* dmziPhonePluginLuaSearchPath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A4685A70EBA78870034D89B /* dmziPhonePluginLuaSearchPath.mm */; };
 		7A4686260EBA7F030034D89B /* libdmzObjectModuleGridBasic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA9C9040EB709F900A97E88 /* libdmzObjectModuleGridBasic.a */; };
 		7A981F4E0EB7003B004B0CAC /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A981F4D0EB7003B004B0CAC /* Icon.png */; };
 		7A981F5D0EB700CE004B0CAC /* chip.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A981F5B0EB700CE004B0CAC /* chip.png */; };
@@ -534,8 +534,8 @@
 		7A46858A0EBA71C00034D89B /* chips.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = chips.lua; path = ../../scripts/chips.lua; sourceTree = SOURCE_ROOT; };
 		7A46858B0EBA71C00034D89B /* const.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = const.lua; path = ../../scripts/const.lua; sourceTree = SOURCE_ROOT; };
 		7A46858C0EBA71C00034D89B /* haul.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = haul.lua; path = ../../scripts/haul.lua; sourceTree = SOURCE_ROOT; };
-		7A4685A60EBA78870034D89B /* dmzMitesPluginLuaSearchPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmzMitesPluginLuaSearchPath.h; sourceTree = "<group>"; };
-		7A4685A70EBA78870034D89B /* dmzMitesPluginLuaSearchPath.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dmzMitesPluginLuaSearchPath.mm; sourceTree = "<group>"; };
+		7A4685A60EBA78870034D89B /* dmziPhonePluginLuaSearchPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmziPhonePluginLuaSearchPath.h; sourceTree = "<group>"; };
+		7A4685A70EBA78870034D89B /* dmziPhonePluginLuaSearchPath.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dmziPhonePluginLuaSearchPath.mm; sourceTree = "<group>"; };
 		7A981F4D0EB7003B004B0CAC /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		7A981F5B0EB700CE004B0CAC /* chip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chip.png; path = ../../assets/chip.png; sourceTree = SOURCE_ROOT; };
 		7A981F5C0EB700CE004B0CAC /* mite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mite.png; path = ../../assets/mite.png; sourceTree = SOURCE_ROOT; };
@@ -619,8 +619,8 @@
 			children = (
 				7AA9C9E50EB714FF00A97E88 /* dmzMitesModuleiPhone.h */,
 				7AA9C9E40EB714FF00A97E88 /* dmzMitesModuleiPhone.mm */,
-				7A4685A60EBA78870034D89B /* dmzMitesPluginLuaSearchPath.h */,
-				7A4685A70EBA78870034D89B /* dmzMitesPluginLuaSearchPath.mm */,
+				7A4685A60EBA78870034D89B /* dmziPhonePluginLuaSearchPath.h */,
+				7A4685A70EBA78870034D89B /* dmziPhonePluginLuaSearchPath.mm */,
 				7AA9CA390EB725B600A97E88 /* dmziPhonePluginCanvasObject.h */,
 				7AA9CA3A0EB725B600A97E88 /* dmziPhonePluginCanvasObject.mm */,
 				289233AA0DB2D0DB0083E9F9 /* RootViewController.h */,
@@ -1223,7 +1223,7 @@
 				7AA9C9E60EB714FF00A97E88 /* dmzMitesModuleiPhone.mm in Sources */,
 				7AA9CA3B0EB725B600A97E88 /* dmziPhonePluginCanvasObject.mm in Sources */,
 				7A4684BE0EBA641B0034D89B /* Canvas.mm in Sources */,
-				7A4685A80EBA78870034D89B /* dmzMitesPluginLuaSearchPath.mm in Sources */,
+				7A4685A80EBA78870034D89B /* dmziPhonePluginLuaSearchPath.mm in Sources */,
 				D2FEEEC90EBC4BF400D5280D /* ControlsViewController.mm in Sources */,
 				D2FEEECE0EBC4C2100D5280D /* ControlsView.mm in Sources */,
 			);
@@ -1424,13 +1424,14 @@
 			baseConfigurationReference = 7A981F650EB7018B004B0CAC /* dmz.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Scott Shillcock";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.1;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0FD29D85-41CA-4484-A165-DE7FE4B945F1";
+				SDKROOT = iphoneos2.2;
 			};
 			name = debug;
 		};
@@ -1443,7 +1444,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.1;
+				SDKROOT = iphoneos2.2;
 			};
 			name = opt;
 		};

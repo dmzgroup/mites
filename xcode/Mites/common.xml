@@ -9,7 +9,7 @@
    <grid>
       <cell x="10" y="10"/>
       <min x="0" y="0" z="0"/>
-      <max x="3200" y="0" z="4600"/>
+      <max x="320" y="0" z="460"/>
    </grid>
 </dmzObjectModuleGridBasic>
 <archive>
@@ -18,19 +18,19 @@
          <position x="0" y="0" z="0"/>
       </attributes>
       <attributes name="Maximum_Area">
-         <position x="3200" y="0" z="4600"/>
+         <position x="320" y="0" z="460"/>
       </attributes>
       <attributes name="Mites">
-         <counter value="25"/>
+         <counter value="2"/>
       </attributes>
       <attributes name="Speed">
-         <scalar value="2000"/>
+         <scalar value="200"/>
       </attributes>
       <attributes name="Wait">
          <scalar value="0.6"/>
       </attributes>
       <attributes name="Chips">
-         <counter value="50"/>
+         <counter value="0"/>
       </attributes>
    </object>
 </archive>

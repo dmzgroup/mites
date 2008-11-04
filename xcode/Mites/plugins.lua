@@ -8,7 +8,7 @@ return {
    { name = "dmzLuaModuleBasic" },
    { name = "dmzLuaExtObject" },   
    { name = "dmzMitesModuleiPhone" },
-   { name = "dmzMitesPluginLuaSearchPath" },
+   { name = "dmziPhonePluginLuaSearchPath" },
    { name = "dmziPhonePluginCanvasObject" },
 --[[
    { name = "dmzPluginMsgDump" },

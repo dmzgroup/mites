@@ -81,7 +81,8 @@
 - (void)viewDidLoad {
    
    [self loadMainViewController];
-   [self.view addSubview:mainViewController.view];
+   [self.view insertSubview:mainViewController.view belowSubview:infoButton];
+//   [self.view addSubview:mainViewController.view];
 
    [self.mainViewController.mainView setControlsDelegate:self];
    
@@ -106,14 +107,16 @@
 
    CGRect appFrame = [[UIScreen mainScreen] applicationFrame];
    
+   NSLog (@"toggleControl");
    if (controlsViewController == nil) {
     
       [self loadControlsViewController];
-      [self.view addSubview:controlsViewController.view];
       
       CGRect frame = controlsViewController.view.frame;
       frame = CGRectMake (frame.origin.x, appFrame.size.height, frame.size.width, frame.size.height);
-      controlsViewController.view.frame = CGRectOffset(frame, 0, appFrame.size.height);
+      controlsViewController.view.frame = CGRectMake (0, appFrame.size.height, frame.size.width, frame.size.height);
+      
+      [self.mainViewController.view addSubview:controlsViewController.view];
    }
    
    [UIView beginAnimations:nil context:NULL];

@@ -101,10 +101,11 @@ dmz::iPhonePluginCanvasObject::create_object (
       UIImage *image = [UIImage imageNamed:@"mite.png"];
       
       UIImageView *item = [[UIImageView alloc] initWithImage:image];
-//      [item setTransform: CGAffineTransformMakeScale (0.1, 0.1)];
-            
       item.tag = ObjectHandle;
       
+      CGAffineTransform transform = CGAffineTransformMakeScale (0.5, 0.01);
+		item.transform = transform;
+            
       ObjectModule *objMod (get_object_module ());
       
       if (objMod) {
