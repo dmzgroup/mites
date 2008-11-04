@@ -5,6 +5,7 @@
    <plugin name="dmzQtModuleCanvasBasic" delete="false"/>
    <plugin name="dmzQtPluginCanvasObject"/>
    <plugin name="dmzQtPluginCanvasZoomPan"/>
+   <plugin name="dmzQtPluginVersion"/>
    <plugin name="dmzMitesPluginControls" delete="false"/>
 </plugins>
 <dmzQtPluginCanvasZoomPan>

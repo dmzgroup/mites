@@ -5,8 +5,8 @@ lmk.add_vars {
    majorVersion = "1",
    minorVersion = "0",
    bugVersion = "0",
-   releaseType = "alpha 1",
-   --aboutImage = "images:IconFiles/AppIconMBRA_128x128.png",
+   releaseType = "alpha 2",
+   aboutImage = "./assets/DMZ-Icon.png",
 }
 lmk.add_files ({"version.xml",}, {src="version"})
 lmk.add_files {"mites.app"}
@@ -28,6 +28,7 @@ lmk.add_preqs {
    "dmzQtPluginCanvasObject",
    "dmzQtPluginCanvasObjectBasic",
    "dmzQtPluginCanvasZoomPan",
+   "dmzQtPluginVersion",
    "dmzQtUtil",
    "dmzApplication",
    "dmzArchiveUtil",
@@ -67,6 +68,7 @@ app.add_config {
 }
 
 app.add_data {
+   "assets/DMZ-Icon.png",
    "assets/mite.png",
    "assets/chip.png",
 }
