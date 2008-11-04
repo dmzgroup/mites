@@ -1,0 +1,84 @@
+require "app"
+lmk.set_name ("mitesapp")
+lmk.add_vars {
+   appName = "mites",
+   majorVersion = "1",
+   minorVersion = "0",
+   bugVersion = "0",
+   releaseType = "alpha 1",
+   --aboutImage = "images:IconFiles/AppIconMBRA_128x128.png",
+}
+lmk.add_files ({"version.xml",}, {src="version"})
+lmk.add_files {"mites.app"}
+lmk.add_preqs {
+   "scripts",
+   "dmzQtAppShell",
+   "dmzArchiveModuleBasic",
+   "dmzArchivePluginAutoLoad",
+   "dmzArchivePluginObject",
+   "dmzInputModuleBasic",
+   "dmzInputPluginMouseEventToMessage",
+   "dmzLuaExtObject",
+   "dmzLuaModuleBasic",
+   "dmzObjectModuleBasic",
+   "dmzObjectModuleGridBasic",
+   "dmzQtModuleCanvasBasic",
+   "dmzQtModuleMainWindowBasic",
+   "dmzQtPluginCanvasObject",
+   "dmzQtPluginCanvasObjectBasic",
+   "dmzQtPluginCanvasZoomPan",
+   "dmzQtUtil",
+   "dmzApplication",
+   "dmzArchiveUtil",
+   "dmzFileCacheLocal",
+   "dmzInputEvents",
+   "dmzInputUtil",
+   "dmzKernel",
+   "dmzLuaKernel",
+   "dmzObjectUtil",
+   "dmzQtCanvasView",
+   "dmzQtLogObserver",
+   "dmzXML",
+   "expat",
+   "lua",
+-- dev plugins
+   "dmzQtExtLuaConsole",
+   "dmzQtPluginLuaProfiler",
+}
+
+app.set_app ("dmzQtAppShell", "mites")
+
+app.set_plist ("Info.plist")
+
+--app.add_icons {"AppIcon.icns", "DocIcon.icns"}
+
+app.add_config {
+   "$(localTmpDir)/version.xml",
+   "config/manifest.xml",
+   "config/arena.xml",
+   "config/canvas.xml",
+   "config/common.xml",
+   "config/input.xml",
+   "config/lua.xml",
+   "config/runtime.xml",
+}
+
+app.add_data {
+   "assets/mite.png",
+   "assets/chip.png",
+}
+
+app.add_scripts {
+   "scripts/chips.lua",
+   "scripts/const.lua",
+   "scripts/haul.lua",
+   "scripts/mites.lua",
+}
+
+lmk.add_vars ({
+   installPaths = {
+      {"QtCore.framework/Versions/4/QtCore", "@executable_path/../Frameworks/Qt/QtCore"},
+      {"QtGui.framework/Versions/4/QtGui", "@executable_path/../Frameworks/Qt/QtGui"},
+   },
+}
+,{opt = true})
