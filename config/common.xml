@@ -2,6 +2,7 @@
 <dmz>
 <dmzFileCacheLocal>
    <path value="./scripts"/>
+   <path value="./data"/>
 </dmzFileCacheLocal>
 <plugins>
    <plugin name="dmzArchiveModuleBasic"/>

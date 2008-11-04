@@ -20,6 +20,7 @@ lmk.add_preqs {
    "dmzInputPluginMouseEventToMessage",
    "dmzLuaExtObject",
    "dmzLuaModuleBasic",
+   "dmzMitesPluginControls",
    "dmzObjectModuleBasic",
    "dmzObjectModuleGridBasic",
    "dmzQtModuleCanvasBasic",
@@ -32,6 +33,8 @@ lmk.add_preqs {
    "dmzArchiveUtil",
    "dmzFileCacheLocal",
    "dmzInputEvents",
+   "dmzInputPluginKeyEventToMessage",
+   "dmzInputPluginExit",
    "dmzInputUtil",
    "dmzKernel",
    "dmzLuaKernel",
@@ -79,6 +82,9 @@ lmk.add_vars ({
    installPaths = {
       {"QtCore.framework/Versions/4/QtCore", "@executable_path/../Frameworks/Qt/QtCore"},
       {"QtGui.framework/Versions/4/QtGui", "@executable_path/../Frameworks/Qt/QtGui"},
+      {"QtXml.framework/Versions/4/QtXml", "@executable_path/../Frameworks/Qt/QtXml"},
+      {"QtSvg.framework/Versions/4/QtSvg", "@executable_path/../Frameworks/Qt/QtSvg"},
+      {"QtOpenGL.framework/Versions/4/QtOpenGL", "@executable_path/../Frameworks/Qt/QtOpenGL"},
    },
 }
 ,{opt = true})
