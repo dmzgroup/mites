@@ -23,6 +23,8 @@ dmz::MitesPluginControls::MitesPluginControls (const PluginInfo &Info, Config &l
       _chipsHandle (0),
       _speedHandle (0),
       _waitHandle (0),
+      _turnHandle (0),
+      _turnDelayHandle (0),
       _lua (0),
       _canvas (0),
       _window (0),
@@ -173,7 +175,15 @@ dmz::MitesPluginControls::update_object_scalar (
       }
       else if (AttributeHandle == _waitHandle) {
 
-         _ui.WaitSlider->setValue ((int)Value);
+         _ui.WaitSlider->setValue ((int)(Value * 10.0));
+      }
+      else if (AttributeHandle == _turnHandle) {
+
+         _ui.TurnSlider->setValue ((int)to_degrees (Value));
+      }
+      else if (AttributeHandle == _turnDelayHandle) {
+
+         _ui.TurnDelaySlider->setValue ((int)(Value * 10.0));
       }
 
       _inUpdate = False;
@@ -224,7 +234,31 @@ dmz::MitesPluginControls::on_WaitSlider_valueChanged (int value) {
 
    if (_arena && objMod) {
 
-      objMod->store_scalar (_arena, _waitHandle, Float64 (value));
+      objMod->store_scalar (_arena, _waitHandle, Float64 (value) * 0.1);
+   }
+}
+
+
+void
+dmz::MitesPluginControls::on_TurnSlider_valueChanged (int value) {
+
+   ObjectModule *objMod (get_object_module ());
+
+   if (_arena && objMod) {
+
+      objMod->store_scalar (_arena, _turnHandle, to_radians (Float64 (value)));
+   }
+}
+
+
+void
+dmz::MitesPluginControls::on_TurnDelaySlider_valueChanged (int value) {
+
+   ObjectModule *objMod (get_object_module ());
+
+   if (_arena && objMod) {
+
+      objMod->store_scalar (_arena, _turnDelayHandle, Float64 (value) * 0.1);
    }
 }
 
@@ -286,6 +320,8 @@ dmz::MitesPluginControls::_init (Config &local) {
    _chipsHandle = activate_object_attribute ("Chips", ObjectCounterMask);
    _speedHandle = activate_object_attribute ("Speed", ObjectScalarMask);
    _waitHandle = activate_object_attribute ("Wait", ObjectScalarMask);
+   _turnHandle = activate_object_attribute ("Turn", ObjectScalarMask);
+   _turnDelayHandle = activate_object_attribute ("TurnDelay", ObjectScalarMask);
 }
 
 

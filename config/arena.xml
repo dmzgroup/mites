@@ -27,6 +27,12 @@
       <attributes name="Chips">
          <counter value="50"/>
       </attributes>
+      <attributes name="Turn">
+         <scalar value="1.570796"/>
+      </attributes>
+      <attributes name="TurnDelay">
+         <scalar value="3"/>
+      </attributes>
    </object>
 </archive>
 </dmz>

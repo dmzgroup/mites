@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>330</width>
-    <height>535</height>
+    <width>306</width>
+    <height>576</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -162,11 +162,111 @@
     </widget>
    </item>
    <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_7" >
+     <item>
+      <widget class="QLabel" name="label_6" >
+       <property name="text" >
+        <string>Max Turn</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="TurnSpinBox" >
+       <property name="minimum" >
+        <number>1</number>
+       </property>
+       <property name="maximum" >
+        <number>360</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_7" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QSlider" name="TurnSlider" >
+     <property name="minimum" >
+      <number>1</number>
+     </property>
+     <property name="maximum" >
+      <number>360</number>
+     </property>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_8" >
+     <item>
+      <widget class="QLabel" name="label_7" >
+       <property name="text" >
+        <string>Turn Delay</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="TurnDelaySpinBox" >
+       <property name="minimum" >
+        <number>0</number>
+       </property>
+       <property name="maximum" >
+        <number>100</number>
+       </property>
+       <property name="value" >
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_8" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QSlider" name="TurnDelaySlider" >
+     <property name="minimum" >
+      <number>0</number>
+     </property>
+     <property name="maximum" >
+      <number>100</number>
+     </property>
+     <property name="sliderPosition" >
+      <number>0</number>
+     </property>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout_4" >
      <item>
       <widget class="QLabel" name="label_4" >
        <property name="text" >
-        <string>Wait</string>
+        <string>Hunt Delay</string>
        </property>
       </widget>
      </item>
@@ -176,7 +276,7 @@
         <number>1</number>
        </property>
        <property name="maximum" >
-        <number>10</number>
+        <number>100</number>
        </property>
       </widget>
      </item>
@@ -201,7 +301,7 @@
       <number>1</number>
      </property>
      <property name="maximum" >
-      <number>10</number>
+      <number>100</number>
      </property>
      <property name="orientation" >
       <enum>Qt::Horizontal</enum>
@@ -243,22 +343,19 @@
        </property>
       </widget>
      </item>
-     <item>
-      <spacer name="horizontalSpacer_6" >
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
     </layout>
    </item>
   </layout>
+  <zorder>line</zorder>
+  <zorder>MitesSlider</zorder>
+  <zorder>ChipsSlider</zorder>
+  <zorder>SpeedSlider</zorder>
+  <zorder>WaitSlider</zorder>
+  <zorder>TurnSlider</zorder>
+  <zorder>TurnDelaySlider</zorder>
+  <zorder>label_4</zorder>
+  <zorder>horizontalSpacer_5</zorder>
+  <zorder>ResetButton</zorder>
  </widget>
  <tabstops>
   <tabstop>MitesSpinBox</tabstop>
@@ -269,7 +366,6 @@
   <tabstop>SpeedSlider</tabstop>
   <tabstop>WaitSpinBox</tabstop>
   <tabstop>WaitSlider</tabstop>
-  <tabstop>ResetButton</tabstop>
  </tabstops>
  <resources/>
  <connections>
@@ -280,12 +376,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>87</x>
-     <y>65</y>
+     <x>96</x>
+     <y>123</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>86</x>
-     <y>34</y>
+     <x>116</x>
+     <y>88</y>
     </hint>
    </hints>
   </connection>
@@ -296,12 +392,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>70</x>
-     <y>28</y>
+     <x>116</x>
+     <y>88</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>63</x>
-     <y>70</y>
+     <x>72</x>
+     <y>123</y>
     </hint>
    </hints>
   </connection>
@@ -312,12 +408,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>114</x>
-     <y>106</y>
+     <x>118</x>
+     <y>163</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>75</x>
-     <y>135</y>
+     <x>84</x>
+     <y>198</y>
     </hint>
    </hints>
   </connection>
@@ -328,12 +424,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>108</x>
-     <y>131</y>
+     <x>117</x>
+     <y>198</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>110</x>
-     <y>110</y>
+     <x>118</x>
+     <y>163</y>
     </hint>
    </hints>
   </connection>
@@ -344,12 +440,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>94</x>
-     <y>185</y>
+     <x>119</x>
+     <y>238</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>64</x>
-     <y>208</y>
+     <x>73</x>
+     <y>273</y>
     </hint>
    </hints>
   </connection>
@@ -360,12 +456,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>134</x>
-     <y>205</y>
+     <x>143</x>
+     <y>273</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>75</x>
-     <y>172</y>
+     <x>119</x>
+     <y>238</y>
     </hint>
    </hints>
   </connection>
@@ -376,12 +472,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>84</x>
-     <y>259</y>
+     <x>117</x>
+     <y>313</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>99</x>
-     <y>283</y>
+     <x>108</x>
+     <y>348</y>
     </hint>
    </hints>
   </connection>
@@ -392,12 +488,76 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>160</x>
-     <y>281</y>
+     <x>169</x>
+     <y>348</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>98</x>
-     <y>257</y>
+     <x>117</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TurnSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>TurnSpinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>75</x>
+     <y>408</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>90</x>
+     <y>372</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TurnDelaySlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>TurnDelaySpinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>64</x>
+     <y>483</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>119</x>
+     <y>461</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TurnDelaySpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>TurnDelaySlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>140</x>
+     <y>440</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>241</x>
+     <y>481</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TurnSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>TurnSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>139</x>
+     <y>386</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>240</x>
+     <y>404</y>
     </hint>
    </hints>
   </connection>
