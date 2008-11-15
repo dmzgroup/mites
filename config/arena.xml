@@ -28,7 +28,7 @@
          <counter value="50"/>
       </attributes>
       <attributes name="Turn">
-         <scalar value="1.570796"/>
+         <scalar value="1.570796326794897"/>
       </attributes>
       <attributes name="TurnDelay">
          <scalar value="3"/>
