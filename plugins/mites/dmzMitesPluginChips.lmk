@@ -1,0 +1,8 @@
+lmk.set_name "dmzMitesPluginChips"
+lmk.set_type "plugin"
+lmk.add_files {"dmzMitesPluginChips.cpp",}
+lmk.add_libs {
+   "dmzObjectUtil",
+   "dmzKernel",
+}
+lmk.add_preqs {"dmzObjectFramework",}
