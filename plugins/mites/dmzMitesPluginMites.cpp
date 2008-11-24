@@ -8,11 +8,16 @@
 #include <dmzTypesConsts.h>
 #include <dmzTypesMatrix.h>
 #include <stdlib.h>
+#include <time.h>
 
 static const dmz::Vector ForwardVec (0.0, 0.0, -1.0);
 static const dmz::Vector UpVec (0.0, 1.0, 0.0);
 
-dmz::Float64 local_random () { return ((rand () % RAND_MAX) / RAND_MAX); }
+dmz::Float64 local_random () { 
+   
+   dmz::Float64 result = rand () % RAND_MAX;
+   return (result / RAND_MAX);
+}
 
 dmz::Float64 calc_next_turn_time (const dmz::Float64 Delay) {
 
@@ -41,7 +46,7 @@ dmz::MitesPluginMites::MitesPluginMites (const PluginInfo &Info, Config &local) 
       _turnDelay (3.0),
       _miteType (),
       _miteTable () {
-
+   
    _init (local);
 }
 
@@ -107,6 +112,8 @@ dmz::MitesPluginMites::update_time_slice (const Float64 TimeDelta) {
          objMod->lookup_position (mite->Object, _defaultAttrHandle, pos);
          objMod->lookup_orientation (mite->Object, _defaultAttrHandle, ori);
          
+         mite->nextTurn -= TimeDelta;
+         
          if (mite->nextTurn <= 0.0) {
             
             Float64 angle = (local_random () - 0.5) * _maxTurn;
@@ -150,28 +157,42 @@ dmz::MitesPluginMites::update_object_counter (
          objMod->lookup_position (ObjectHandle, _maxAreaAttrHandle, _arenaMax);
          
          const Float64 MinX (_arenaMin.get_x ());
-         const Float64 MaxX (_arenaMax.get_x ());
+         const Float64 MaxX (_arenaMax.get_x () - MinX);
          const Float64 MinZ (_arenaMin.get_z ());
-         const Float64 MaxZ (_arenaMax.get_z ());
+         const Float64 MaxZ (_arenaMax.get_z () - MinZ);
          
          while (_miteTable.get_count () < Value) {
-
+            
             const Handle TheObject (objMod->create_object (_miteType, ObjectLocal));
             
             MiteStruct *mite = new MiteStruct (TheObject);
             mite->nextTurn = calc_next_turn_time (_turnDelay);
+
+            const Float64 StartX ((MaxX * local_random ()) + MinX);
+            const Float64 StartZ ((MaxZ * local_random ()) + MinZ);
             
-            Vector pos (
-               (MaxX * local_random ()) + MinX,
-               0.0,
-               (MaxZ * local_random ()) + MinZ);
-            
-            Matrix ori (UpVec, local_random () * TwoPi);
+            Vector pos (StartX, 0.0, StartZ);
+
+            Matrix ori (UpVec, local_random () * TwoPi64);
             
             objMod->store_position (mite->Object, _defaultAttrHandle, pos);
             objMod->store_orientation (mite->Object, _defaultAttrHandle, ori);
             
-            objMod->active_object (mite->Object);
+            objMod->activate_object (mite->Object);
+            
+            _miteTable.store (mite->Object, mite);
+         }
+         
+         while (_miteTable.get_count () > Value) {
+         
+            HashTableHandleIterator it;
+            MiteStruct *mite = _miteTable.get_first (it);
+            if (mite) {
+               
+               objMod->destroy_object (mite->Object);
+               _miteTable.remove (mite->Object);
+               delete mite; mite = 0;
+            }
          }
       }
    }

@@ -2,13 +2,16 @@
 <dmz>
 <plugins>
    <plugin name="dmzLuaModuleBasic"/>
+
+   <plugin name="dmzMitesPluginMites"/>
+   
 </plugins>
 <dmzLuaPluginTimedReset>
    <time value="0.5"/>
 </dmzLuaPluginTimedReset>
 <dmzLuaModuleBasic>
    <path value="./scripts/?.lua"/>
-   <instance name="mites"/>
+   <!-- <instance name="mites"/> -->
    <instance name="chips"/>
    <instance name="haul"/>
    <extensions>
