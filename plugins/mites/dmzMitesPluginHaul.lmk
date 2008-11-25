@@ -1,8 +1,0 @@
-lmk.set_name "dmzMitesPluginHaul"
-lmk.set_type "plugin"
-lmk.add_files {"dmzMitesPluginHaul.cpp",}
-lmk.add_libs {
-   "dmzObjectUtil",
-   "dmzKernel",
-}
-lmk.add_preqs {"dmzObjectFramework",}

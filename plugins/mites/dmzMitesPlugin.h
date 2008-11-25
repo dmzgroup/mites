@@ -6,20 +6,24 @@
 #include <dmzRuntimeObjectType.h>
 #include <dmzRuntimePlugin.h>
 #include <dmzRuntimeTimeSlice.h>
+#include <dmzRuntimeTime.h>
+#include <dmzTypesSphere.h>
 #include <dmzTypesVector.h>
 #include <dmzTypesHashTableHandleTemplate.h>
 
 
 namespace dmz {
 
-   class MitesPluginMites :
+   class ObjectModuleGrid;
+   
+   class MitesPlugin :
          public Plugin,
          public TimeSlice,
          public ObjectObserverUtil {
 
       public:
-         MitesPluginMites (const PluginInfo &Info, Config &local);
-         ~MitesPluginMites ();
+         MitesPlugin (const PluginInfo &Info, Config &local);
+         ~MitesPlugin ();
 
          // Plugin Interface
          virtual void update_plugin_state (
@@ -34,7 +38,6 @@ namespace dmz {
          virtual void update_time_slice (const Float64 TimeDelta);
 
          // Object Observer Interface
-
          virtual void update_object_counter (
             const UUID &Identity,
             const Handle ObjectHandle,
@@ -61,36 +64,57 @@ namespace dmz {
             
             const Handle Object;
             Float64 nextTurn;
+            Handle link;
             
             MiteStruct (const Handle TheObject) :
                Object (TheObject),
-               nextTurn (0.0) {;}
+               nextTurn (0.0),
+               link (0) {;}
          };
          
+         struct ChipStruct {
+         
+            const Handle Object;
+            
+            ChipStruct (const Handle TheObject) :
+               Object (TheObject) {;}
+         };
+         
+         Handle _find_nearest_chip (const Vector &Pos);
+         Handle _get_mite (const Handle Object);
          void _validate_position (Vector &pos);
          void _init (Config &local);
 
          Log _log;
+         ObjectModuleGrid *_gridMod;
          Handle _defaultAttrHandle;
          Handle _minAreaAttrHandle;
          Handle _maxAreaAttrHandle;
          Handle _mitesAttrHandle;
+         Handle _chipsAttrHandle;
          Handle _speedAttrHandle;
          Handle _turnAttrHandle;
          Handle _turnDelayAttrHandle;
+         Handle _linkAttrHandle;
+         Handle _timerAttrHandle;
+         Handle _waitAttrHandle;
          Vector _arenaMin;
          Vector _arenaMax;
          Float64 _speed;
          Float64 _maxTurn;
          Float64 _turnDelay;
+         Float64 _wait;
          ObjectType _miteType;
+         ObjectType _chipType;
          HashTableHandleTemplate<MiteStruct> _miteTable;
-
+         HashTableHandleTemplate<ChipStruct> _chipTable;
+         Sphere _volume;
+         Time _time;
+         
       private:
-         MitesPluginMites ();
-         MitesPluginMites (const MitesPluginMites &);
-         MitesPluginMites &operator= (const MitesPluginMites &);
-
+         MitesPlugin ();
+         MitesPlugin (const MitesPlugin &);
+         MitesPlugin &operator= (const MitesPlugin &);
    };
 };
 
