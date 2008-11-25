@@ -9,7 +9,7 @@
    <grid>
       <cell x="10" y="10"/>
       <min x="0" y="0" z="0"/>
-      <max x="320" y="0" z="460"/>
+      <max x="3200" y="0" z="4600"/>
    </grid>
 </dmzObjectModuleGridBasic>
 <archive>
@@ -18,7 +18,7 @@
          <position x="0" y="0" z="0"/>
       </attributes>
       <attributes name="Maximum_Area">
-         <position x="320" y="0" z="460"/>
+         <position x="3200" y="0" z="4600"/>
       </attributes>
       <attributes name="Mites">
          <counter value="2"/>

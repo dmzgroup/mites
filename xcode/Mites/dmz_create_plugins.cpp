@@ -10,11 +10,10 @@ dmz::Plugin *create_dmzArchivePluginObject (const dmz::PluginInfo &Info, dmz::Co
 dmz::Plugin *create_dmzObjectModuleBasic (const dmz::PluginInfo &Info, dmz::Config &local, dmz::Config &global);
 dmz::Plugin *create_dmzObjectModuleGridBasic (const dmz::PluginInfo &Info, dmz::Config &local, dmz::Config &global);
 dmz::Plugin *create_dmzInputModuleBasic (const dmz::PluginInfo &Info, dmz::Config &local, dmz::Config &global);
-dmz::Plugin *create_dmzLuaModuleBasic (const dmz::PluginInfo &Info, dmz::Config &local, dmz::Config &global);
-dmz::Plugin *create_dmzLuaExtObject (const dmz::PluginInfo &Info, dmz::Config &local, dmz::Config &global);
 dmz::Plugin *create_dmzMitesModuleiPhone (const dmz::PluginInfo &Info, dmz::Config &local, dmz::Config &global);
 dmz::Plugin *create_dmziPhonePluginLuaSearchPath (const dmz::PluginInfo &Info, dmz::Config &local, dmz::Config &global);
 dmz::Plugin *create_dmziPhonePluginCanvasObject (const dmz::PluginInfo &Info, dmz::Config &local, dmz::Config &global);
+dmz::Plugin *create_dmzMitesPlugin (const dmz::PluginInfo &Info, dmz::Config &local, dmz::Config &global);
 }
 
 void
@@ -57,16 +56,6 @@ dmz_create_plugins (
    config.lookup_all_config_merged ("dmzInputModuleBasic", local);
    container.add_plugin (info, create_dmzInputModuleBasic (*info, local, global));
 
-   info = new dmz::PluginInfo ("dmzLuaModuleBasic", dmz::PluginDeleteModeDelete, context, 0);
-   local.set_config_context (0);
-   config.lookup_all_config_merged ("dmzLuaModuleBasic", local);
-   container.add_plugin (info, create_dmzLuaModuleBasic (*info, local, global));
-
-   info = new dmz::PluginInfo ("dmzLuaExtObject", dmz::PluginDeleteModeDelete, context, 0);
-   local.set_config_context (0);
-   config.lookup_all_config_merged ("dmzLuaExtObject", local);
-   container.add_plugin (info, create_dmzLuaExtObject (*info, local, global));
-
    info = new dmz::PluginInfo ("dmzMitesModuleiPhone", dmz::PluginDeleteModeDelete, context, 0);
    local.set_config_context (0);
    config.lookup_all_config_merged ("dmzMitesModuleiPhone", local);
@@ -81,4 +70,9 @@ dmz_create_plugins (
    local.set_config_context (0);
    config.lookup_all_config_merged ("dmziPhonePluginCanvasObject", local);
    container.add_plugin (info, create_dmziPhonePluginCanvasObject (*info, local, global));
+
+   info = new dmz::PluginInfo ("dmzMitesPlugin", dmz::PluginDeleteModeDelete, context, 0);
+   local.set_config_context (0);
+   config.lookup_all_config_merged ("dmzMitesPlugin", local);
+   container.add_plugin (info, create_dmzMitesPlugin (*info, local, global));
 }

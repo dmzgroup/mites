@@ -3,5 +3,5 @@
    <frequency value="30.0"/>
    <config file="runtime.xml"/>
    <config file="common.xml"/>
-   <config file="lua.xml"/>
+<!--   <config file="lua.xml"/> -->
 </manifest>
