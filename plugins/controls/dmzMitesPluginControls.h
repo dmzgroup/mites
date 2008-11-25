@@ -54,6 +54,8 @@ namespace dmz {
          void on_ChipsSlider_valueChanged (int value);
          void on_SpeedSlider_valueChanged (int value);
          void on_WaitSlider_valueChanged (int value);
+         void on_TurnSlider_valueChanged (int value);
+         void on_TurnDelaySlider_valueChanged (int value);
          void on_ZoomSlider_valueChanged (int value);
          void on_ResetButton_clicked ();
          void slot_scale_changed (qreal value);
@@ -69,6 +71,8 @@ namespace dmz {
          Handle _chipsHandle;
          Handle _speedHandle;
          Handle _waitHandle;
+         Handle _turnHandle;
+         Handle _turnDelayHandle;
          Ui::MitesControls _ui;
          LuaModule *_lua;
          QtModuleCanvas *_canvas;

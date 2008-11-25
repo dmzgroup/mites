@@ -3,8 +3,10 @@ require "const"
 local Forward = dmz.math.forward ()
 local Up = dmz.math.up ()
 
-local function calc_next_turn_time ()
-   return (math.random () * 2.5) + 0.5
+local function calc_next_turn_time (Delay)
+   local result = (math.random () * Delay - 0.5) + 0.5
+   if result < 0 then result = 0 end
+   return result
 end
 
 local function validate_position (self, pos)
@@ -26,8 +28,8 @@ local function update_mites (self, time)
       local ori = dmz.object.orientation (m.object)
       m.nextTurn = m.nextTurn - time
       if m.nextTurn <= 0 then
-         ori = dmz.matrix.new (Up, (math.random () - 0.5) * dmz.math.HalfPi) * ori
-         m.nextTurn = calc_next_turn_time ()
+         ori = dmz.matrix.new (Up, (math.random () - 0.5) * self.maxTurn) * ori
+         m.nextTurn = calc_next_turn_time (self.turnDelay)
       end
       pos = pos + (ori:transform (Forward) * time * self.speed)
       validate_position (self, pos)
@@ -60,7 +62,7 @@ local function update_mite_count (self, object, handle, count)
       dmz.object.activate (m.object)
       dmz.object.set_temporary (m.object)
       mites[#mites + 1] = m
-      m.nextTurn = calc_next_turn_time ()
+      m.nextTurn = calc_next_turn_time (self.turnDelay)
    end
    while #mites > count do
       dmz.object.destroy (mites[#mites].object)
@@ -69,18 +71,23 @@ local function update_mite_count (self, object, handle, count)
 end
 
 local function update_area_minimum (self, object, handle, min)
-   --self.log:error ("Setting arena min:", min)
    self.arena.min = min
 end
 
 local function update_area_maximum (self, object, handle, max)
-   --self.log:error ("Setting arena max:", max)
    self.arena.max = max
 end
 
 local function update_mite_speed (self, object, handle, speed)
-   --self.log:error ("speed:", speed)
    self.speed = speed
+end
+
+local function update_mite_max_turn (self, object, handle, value)
+   self.maxTurn = value
+end
+
+local function update_mite_turn_delay (self, object, handle, value)
+   self.turnDelay = value
 end
 
 local function start (self)
@@ -92,6 +99,10 @@ local function start (self)
    self.objObs:register ("Mites", callbacks, self)
    callbacks = { update_object_scalar = update_mite_speed, }
    self.objObs:register ("Speed", callbacks, self)
+   callbacks = { update_object_scalar = update_mite_max_turn, }
+   self.objObs:register ("Turn", callbacks, self)
+   callbacks = { update_object_scalar = update_mite_turn_delay, }
+   self.objObs:register ("TurnDelay", callbacks, self)
    self.tsHandle = self.timeSlice:create (update_mites, self, self.name)
 end
 
@@ -111,6 +122,8 @@ function new (config, name)
          max = dmz.vector.new (3000, 0, 2000),
       },
       speed = 3000,
+      maxTurn = dmz.math.HalfPi,
+      turnDelay = 3,
       mites = {},
    }
 

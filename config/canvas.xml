@@ -5,6 +5,7 @@
    <plugin name="dmzQtModuleCanvasBasic" delete="false"/>
    <plugin name="dmzQtPluginCanvasObject"/>
    <plugin name="dmzQtPluginCanvasZoomPan"/>
+   <plugin name="dmzQtPluginVersion"/>
    <plugin name="dmzMitesPluginControls" delete="false"/>
 </plugins>
 <dmzQtPluginCanvasZoomPan>
@@ -17,8 +18,8 @@
 <dmzQtModuleCanvasBasic>
    <canvas opengl="true" antialiasing="true" textantialiasing="true"/>
    <scene>
-      <min x="-3500" y="-2500"/>
-      <max x="3500" y="2500"/>
+      <min x="-2500" y="-2500"/>
+      <max x="2500" y="2500"/>
    </scene>
    <scrollbars value="true"/>
 </dmzQtModuleCanvasBasic>
