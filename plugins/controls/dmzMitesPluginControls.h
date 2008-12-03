@@ -2,6 +2,7 @@
 #define DMZ_MITES_PLUGIN_CONTROLS_DOT_H
 
 #include <dmzObjectObserverUtil.h>
+#include <dmzQtWidget.h>
 #include <dmzRuntimeLog.h>
 #include <dmzRuntimePlugin.h>
 #include <QtGui/QWidget>
@@ -11,13 +12,13 @@
 namespace dmz {
 
    class QtModuleCanvas;
-   class QtModuleMainWindow;
    class LuaModule;
 
    class MitesPluginControls :
          public QWidget,
          public Plugin,
-         public ObjectObserverUtil {
+         public ObjectObserverUtil,
+         public QtWidget {
 
       Q_OBJECT
 
@@ -49,6 +50,9 @@ namespace dmz {
             const Float64 Value,
             const Float64 *PreviousValue);
 
+         // QtWidget Interface
+         virtual QWidget *get_qt_widget ();
+
       protected slots:
          void on_MitesSlider_valueChanged (int value);
          void on_ChipsSlider_valueChanged (int value);
@@ -66,7 +70,6 @@ namespace dmz {
          Log _log;
          Boolean _inUpdate;
          Handle _arena;
-         Handle _channel;
          Handle _mitesHandle;
          Handle _chipsHandle;
          Handle _speedHandle;
@@ -76,8 +79,6 @@ namespace dmz {
          Ui::MitesControls _ui;
          LuaModule *_lua;
          QtModuleCanvas *_canvas;
-         QtModuleMainWindow *_window;
-         QDockWidget *_dock;
 
       private:
          MitesPluginControls ();

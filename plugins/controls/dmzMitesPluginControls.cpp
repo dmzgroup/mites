@@ -4,8 +4,6 @@
 #include <dmzObjectAttributeMasks.h>
 #include <dmzObjectModule.h>
 #include <dmzQtModuleCanvas.h>
-#include <dmzQtModuleMainWindow.h>
-#include <dmzRuntimeDefinitions.h>
 #include <dmzRuntimePluginFactoryLinkSymbol.h>
 #include <dmzRuntimePluginInfo.h>
 
@@ -15,10 +13,10 @@
 dmz::MitesPluginControls::MitesPluginControls (const PluginInfo &Info, Config &local) :
       Plugin (Info),
       ObjectObserverUtil (Info, local),
+      QtWidget (Info),
       _log (Info),
       _inUpdate (False),
       _arena (0),
-      _channel (0),
       _mitesHandle (0),
       _chipsHandle (0),
       _speedHandle (0),
@@ -26,9 +24,7 @@ dmz::MitesPluginControls::MitesPluginControls (const PluginInfo &Info, Config &l
       _turnHandle (0),
       _turnDelayHandle (0),
       _lua (0),
-      _canvas (0),
-      _window (0),
-      _dock (0) {
+      _canvas (0) {
 
    setObjectName (get_plugin_name ().get_buffer ());
 
@@ -89,39 +85,12 @@ dmz::MitesPluginControls::discover_plugin (
             }
          }
       }
-
-      if (!_window) {
-
-         _window = QtModuleMainWindow::cast (PluginPtr);
-
-         if (_window) {
-
-            _dock = new QDockWidget ("Controls", this);
-            _dock->setObjectName (get_plugin_name ().get_buffer ());
-            _dock->setAllowedAreas (Qt::AllDockWidgetAreas);
-
-            _dock->setFeatures (QDockWidget::NoDockWidgetFeatures);
-
-            _window->add_dock_widget (
-               _channel,
-               Qt::RightDockWidgetArea,
-               _dock);
-
-            _dock->setWidget (this);
-         }
-      }
    }
    else if (Mode == PluginDiscoverRemove) {
 
       if (_lua && (_lua == dmz::LuaModule::cast (PluginPtr))) { _lua = 0; }
 
       if (_canvas && (_canvas == dmz::QtModuleCanvas::cast (PluginPtr))) { _canvas = 0; }
-
-      if (_window && (_window == QtModuleMainWindow::cast (PluginPtr))) {
-
-         _window->remove_dock_widget (_channel, _dock);
-         _window = 0;
-      }
    }
 }
 
@@ -189,6 +158,11 @@ dmz::MitesPluginControls::update_object_scalar (
       _inUpdate = False;
    }
 }
+
+
+// QtWidget Interface
+QWidget *
+dmz::MitesPluginControls::get_qt_widget () { return this; }
 
 
 void
@@ -312,9 +286,6 @@ dmz::MitesPluginControls::slot_scale_changed (qreal value) {
 
 void
 dmz::MitesPluginControls::_init (Config &local) {
-
-   _channel = Definitions (get_plugin_runtime_context ()).create_named_handle (
-      InputChannelDefaultName);
 
    _mitesHandle = activate_object_attribute ("Mites", ObjectCounterMask);
    _chipsHandle = activate_object_attribute ("Chips", ObjectCounterMask);
