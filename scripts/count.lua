@@ -20,14 +20,27 @@ local function find_chip_count (self, object, pos)
 end
 
 local function update_chips (self)
-   for chip, _ in pairs (self.chips) do
-      local count = find_chip_count (self, chip, dmz.object.position (chip))
-      dmz.object.counter (chip, const.CountHandle, count)
+   local count = 0
+   while count < 5 do
+      count = count + 1
+      local valid = nil
+      self.chip, valid = next (self.chips, self.chip)
+      if self.chip and valid then
+         local count = find_chip_count (self, self.chip, dmz.object.position (self.chip))
+         dmz.object.counter (self.chip, const.CountHandle, count)
+      else
+         count = 5
+      end
    end
+  --  for chip, _ in pairs (self.chips) do
+  --     local count = find_chip_count (self, chip, dmz.object.position (chip))
+  --     dmz.object.counter (chip, const.CountHandle, count)
+  --  end
 end
 
 local function create_object (self, object, type)
    if type:is_of_type (const.ChipType) then
+      self.chip = nil
       self.chips[object] = true
    end
 end
@@ -59,7 +72,7 @@ function new (config, name)
       volume = dmz.sphere.new (),
    }
 
-   self.volume:set_radius (500) --256)
+   self.volume:set_radius (1000) --256)
 
    self.log:info ("Creating plugin: " .. name)
 
