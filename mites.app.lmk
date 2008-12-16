@@ -12,7 +12,7 @@ lmk.add_files ({"version.xml",}, {src="version"})
 lmk.add_files {"mites.app"}
 lmk.add_preqs {
    "scripts",
-   "dmzQtAppShell",
+   "mites",
    "dmzArchiveModuleBasic",
    "dmzArchivePluginAutoLoad",
    "dmzArchivePluginObject",
@@ -51,7 +51,7 @@ lmk.add_preqs {
    "dmzQtPluginLuaProfiler",
 }
 
-app.set_app ("dmzQtAppShell", "mites")
+app.set_app ("mites")
 
 app.set_plist ("Info.plist")
 
