@@ -2,14 +2,18 @@ require "const"
 local Offset = dmz.vector.new (0, 0, -96)
 local UnitMatrix = dmz.matrix.new ()
 
+local local_object_find = dmz.object.find
+local local_object_type = dmz.object.type
+local local_object_counter = dmz.object.counter
+
 local function find_chip_count (self, object, pos)
    local result = 0
    self.volume:set_origin (pos)
-   local net = dmz.object.find (self.volume)
+   local net = local_object_find (self.volume)
    if net then
       for _, chip in ipairs (net) do
          if object ~= chip then 
-            local type = dmz.object.type (chip)
+            local type = local_object_type (chip)
             if type and type:is_of_type (const.ChipType) then
                result = result + 1
             end
@@ -27,7 +31,7 @@ local function update_chips (self)
       self.chip, valid = next (self.chips, self.chip)
       if self.chip and valid then
          local count = find_chip_count (self, self.chip, dmz.object.position (self.chip))
-         dmz.object.counter (self.chip, const.CountHandle, count)
+         local_object_counter (self.chip, const.CountHandle, count)
       else
          count = 5
       end

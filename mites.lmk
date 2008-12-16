@@ -1,0 +1,3 @@
+require "qtshell"
+
+qtshell.set_up ("mites")

@@ -2,19 +2,27 @@ require "const"
 local Offset = dmz.vector.new (0, 0, -96)
 local UnitMatrix = dmz.matrix.new ()
 
+local local_object_position = dmz.object.position
+local local_object_find = dmz.object.find
+local local_object_type = dmz.object.type
+local local_object_super_links = dmz.object.super_links
+local local_object_unlink = dmz.object.unlink
+local local_object_link = dmz.object.link
+local local_object_time_stamp = dmz.object.time_stamp
+
 local function find_nearest_chip (self, pos)
    local result = nil
    self.volume:set_origin (pos)
-   local net = dmz.object.find (self.volume)
+   local net = local_object_find (self.volume)
    if net then
       local done = false
       local count = 1
       while not done do
          local object = net[count]
          if object then
-            local type = dmz.object.type (object)
+            local type = local_object_type (object)
             if type and type:is_of_type (const.ChipType) then
-               local links = dmz.object.super_links (object, const.LinkHandle)
+               local links = local_object_super_links (object, const.LinkHandle)
                if not links then
                   result = object
                   done = true
@@ -31,17 +39,17 @@ end
 local function update_chips (self, time)
    local CTime = dmz.time.frame_time ()
    for object, mite in pairs (self.mites) do
-      local Timer = dmz.object.time_stamp (object, const.TimerHandle)
+      local Timer = local_object_time_stamp (object, const.TimerHandle)
       if not Timer then Timer = CTime end
       if Timer <= CTime then
-         local chip = find_nearest_chip (self, dmz.object.position (object))
+         local chip = find_nearest_chip (self, local_object_position (object))
          if chip then
             if mite.link then
-               dmz.object.unlink (mite.link)
+               local_object_unlink (mite.link)
                mite.link = nil
-            else mite.link = dmz.object.link (const.LinkHandle, object, chip)
+            else mite.link = local_object_link (const.LinkHandle, object, chip)
             end
-            dmz.object.time_stamp (object, const.TimerHandle, CTime + self.wait)
+            local_object_time_stamp (object, const.TimerHandle, CTime + self.wait)
          end
       end
    end
