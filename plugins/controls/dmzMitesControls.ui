@@ -41,6 +41,19 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout" >
      <item>
+      <spacer name="horizontalSpacer" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="QLabel" name="label" >
        <property name="text" >
         <string>Mites</string>
@@ -53,19 +66,6 @@
         <number>200</number>
        </property>
       </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer" >
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
      </item>
     </layout>
    </item>
@@ -82,6 +82,19 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2" >
      <item>
+      <spacer name="horizontalSpacer_2" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="QLabel" name="label_2" >
        <property name="text" >
         <string>Chips</string>
@@ -94,19 +107,6 @@
         <number>200</number>
        </property>
       </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_2" >
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
      </item>
     </layout>
    </item>
@@ -123,6 +123,19 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3" >
      <item>
+      <spacer name="horizontalSpacer_3" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="QLabel" name="label_3" >
        <property name="text" >
         <string>Speed</string>
@@ -135,19 +148,6 @@
         <number>100</number>
        </property>
       </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_3" >
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
      </item>
     </layout>
    </item>
@@ -164,6 +164,19 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_7" >
      <item>
+      <spacer name="horizontalSpacer_7" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="QLabel" name="label_6" >
        <property name="text" >
         <string>Max Turn</string>
@@ -179,19 +192,6 @@
         <number>360</number>
        </property>
       </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_7" >
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
      </item>
     </layout>
    </item>
@@ -211,6 +211,19 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_8" >
      <item>
+      <spacer name="horizontalSpacer_8" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="QLabel" name="label_7" >
        <property name="text" >
         <string>Turn Delay</string>
@@ -229,19 +242,6 @@
         <number>0</number>
        </property>
       </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_8" >
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
      </item>
     </layout>
    </item>
@@ -264,6 +264,19 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_4" >
      <item>
+      <spacer name="horizontalSpacer_4" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="QLabel" name="label_4" >
        <property name="text" >
         <string>Hunt Delay</string>
@@ -279,19 +292,6 @@
         <number>100</number>
        </property>
       </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_4" >
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
      </item>
     </layout>
    </item>
@@ -324,9 +324,9 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_5" >
      <item>
-      <widget class="QToolButton" name="PlayButton" >
+      <widget class="QPushButton" name="PauseButton" >
        <property name="text" >
-        <string/>
+        <string>Stop</string>
        </property>
       </widget>
      </item>
@@ -355,14 +355,21 @@
   </layout>
  </widget>
  <tabstops>
+  <tabstop>ZoomSlider</tabstop>
   <tabstop>MitesSpinBox</tabstop>
   <tabstop>MitesSlider</tabstop>
   <tabstop>ChipsSpinBox</tabstop>
   <tabstop>ChipsSlider</tabstop>
   <tabstop>SpeedSpinBox</tabstop>
   <tabstop>SpeedSlider</tabstop>
+  <tabstop>TurnSpinBox</tabstop>
+  <tabstop>TurnSlider</tabstop>
+  <tabstop>TurnDelaySpinBox</tabstop>
+  <tabstop>TurnDelaySlider</tabstop>
   <tabstop>WaitSpinBox</tabstop>
   <tabstop>WaitSlider</tabstop>
+  <tabstop>PauseButton</tabstop>
+  <tabstop>ResetButton</tabstop>
  </tabstops>
  <resources/>
  <connections>

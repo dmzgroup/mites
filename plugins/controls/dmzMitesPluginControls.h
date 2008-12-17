@@ -36,6 +36,13 @@ namespace dmz {
             const Plugin *PluginPtr);
 
          // Object Observer Interface
+         virtual void update_object_flag (
+            const UUID &Identity,
+            const Handle ObjectHandle,
+            const Handle AttributeHandle,
+            const Boolean Value,
+            const Boolean *PreviousValue);
+
          virtual void update_object_counter (
             const UUID &Identity,
             const Handle ObjectHandle,
@@ -62,6 +69,7 @@ namespace dmz {
          void on_TurnDelaySlider_valueChanged (int value);
          void on_ZoomSlider_valueChanged (int value);
          void on_ResetButton_clicked ();
+         void on_PauseButton_clicked ();
          void slot_scale_changed (qreal value);
 
       protected:
@@ -76,6 +84,7 @@ namespace dmz {
          Handle _waitHandle;
          Handle _turnHandle;
          Handle _turnDelayHandle;
+         Handle _pauseHandle;
          Ui::MitesControls _ui;
          LuaModule *_lua;
          QtModuleCanvas *_canvas;
