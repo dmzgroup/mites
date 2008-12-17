@@ -15,6 +15,10 @@
    <hide value="true"/>
 </dmzQtPluginCanvasZoomPan>
 <dmzQtModuleMainWindowBasic>
+   <corners>
+      <top right="true" left="true"/>
+      <bottom right="true" left="true"/>
+   </corners>
    <window title="DMZ: Mites"/>
    <channel>
       <group area="main">
