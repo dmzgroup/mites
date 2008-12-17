@@ -30,6 +30,7 @@ lmk.add_preqs {
    "dmzQtPluginCanvasZoomPan",
    "dmzQtPluginVersion",
    "dmzQtPluginHistogram",
+   "dmzQtPluginWidget",
    "dmzQtUtil",
    "dmzApplication",
    "dmzArchiveUtil",
