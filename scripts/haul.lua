@@ -37,19 +37,21 @@ local function find_nearest_chip (self, pos)
 end
 
 local function update_chips (self, time)
-   local CTime = dmz.time.frame_time ()
-   for object, mite in pairs (self.mites) do
-      local Timer = local_object_time_stamp (object, const.TimerHandle)
-      if not Timer then Timer = CTime end
-      if Timer <= CTime then
-         local chip = find_nearest_chip (self, local_object_position (object))
-         if chip then
-            if mite.link then
-               local_object_unlink (mite.link)
-               mite.link = nil
-            else mite.link = local_object_link (const.LinkHandle, object, chip)
+   if not self.paused then
+      local CTime = dmz.time.frame_time ()
+      for object, mite in pairs (self.mites) do
+         local Timer = local_object_time_stamp (object, const.TimerHandle)
+         if not Timer then Timer = CTime end
+         if Timer <= CTime then
+            local chip = find_nearest_chip (self, local_object_position (object))
+            if chip then
+               if mite.link then
+                  local_object_unlink (mite.link)
+                  mite.link = nil
+               else mite.link = local_object_link (const.LinkHandle, object, chip)
+               end
+               local_object_time_stamp (object, const.TimerHandle, CTime + self.wait)
             end
-            local_object_time_stamp (object, const.TimerHandle, CTime + self.wait)
          end
       end
    end
@@ -69,12 +71,17 @@ local function update_wait (self, object, handle, wait)
    self.wait = wait
 end
 
+local function update_paused (self, object, handle, value)
+   self.paused = value
+end
+
 local function start (self)
    self.objObs:register (
       nil,
       { create_object = create_object, destroy_object = destroy_object, },
       self)
    self.objObs:register ("Wait", { update_object_scalar = update_wait, }, self)
+   self.objObs:register ("Pause", { update_object_flag = update_paused, }, self)
    self.tsHandle = self.timeSlice:create (update_chips, self, self.name)
 end
 
@@ -92,6 +99,7 @@ function new (config, name)
       mites = {},
       volume = dmz.sphere.new (),
       wait = 1,
+      paused = false,
    }
 
    self.volume:set_radius (256)
