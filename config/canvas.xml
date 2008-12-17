@@ -68,7 +68,7 @@
    </set>
    <ascending value="false"/>
    <attribute name="Chip_Count" type="counter"/>
-   <bar height="50" width="12" space="5" divisions="2">
+   <bar height="50" width="20" space="5" divisions="2" steps="5">
       <stroke>
          <color green="1"/>
       </stroke>
