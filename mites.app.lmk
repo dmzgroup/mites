@@ -29,7 +29,7 @@ lmk.add_preqs {
    "dmzQtPluginCanvasObjectBasic",
    "dmzQtPluginCanvasZoomPan",
    "dmzQtPluginVersion",
-   "dmzQtPluginHistogram",
+   "dmzQtPluginGraph",
    "dmzQtPluginWidget",
    "dmzQtUtil",
    "dmzApplication",
