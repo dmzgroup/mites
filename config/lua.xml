@@ -2,12 +2,14 @@
 <dmz>
 <plugins>
    <plugin name="dmzLuaModuleBasic"/>
+   <!-- <plugin name="dmzQtPluginLuaProfiler"/> -->
 </plugins>
 <dmzLuaPluginTimedReset>
    <time value="0.5"/>
 </dmzLuaPluginTimedReset>
 <dmzLuaModuleBasic>
    <path value="./scripts/?.lua"/>
+   <path value="../dmz/frameworks/lua/3rdparty/lua/jit/?.lua"/>
    <instance name="mites"/>
    <instance name="chips"/>
    <instance name="haul"/>
