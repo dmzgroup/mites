@@ -6,7 +6,7 @@
    <plugin name="dmzQtPluginCanvasObject"/>
    <plugin name="dmzQtPluginCanvasZoomPan"/>
    <plugin name="dmzQtPluginVersion"/>
-   <plugin name="dmzQtPluginWidget" unique="histogram"/>
+   <plugin name="dmzQtPluginWidget" unique="graph"/>
    <plugin name="dmzQtPluginWidget" unique="controls"/>
    <plugin name="dmzQtPluginGraph"/>
    <plugin name="dmzMitesPluginControls"/>
@@ -29,14 +29,14 @@
          <widget name="controls" title="Controls"/>
       </group>
       <group area="bottom">
-         <widget name="histogram" title="Chip Clusters"/>
+         <widget name="graph" title="Chip Clusters"/>
       </group>
    </channel>
 </dmzQtModuleMainWindowBasic>
-<histogram>
-   <minimum-size width="300" height="130"/>
+<graph>
+   <minimum-size width="300" height="165"/>
    <widget name="dmzQtPluginGraph" title="Chip Clusters"/>
-</histogram>
+</graph>
 <controls>
    <widget name="dmzMitesPluginControls"/>
 </controls>
