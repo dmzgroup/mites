@@ -3,6 +3,7 @@ local Offset = dmz.vector.new (0, 0, -96)
 local UnitMatrix = dmz.matrix.new ()
 
 local local_object_position = dmz.object.position
+local local_object_orientation = dmz.object.orientation
 local local_object_find = dmz.object.find
 local local_object_type = dmz.object.type
 local local_object_super_links = dmz.object.super_links
@@ -43,7 +44,10 @@ local function update_chips (self, time)
          local Timer = local_object_time_stamp (object, const.TimerHandle)
          if not Timer then Timer = CTime end
          if Timer <= CTime then
-            local chip = find_nearest_chip (self, local_object_position (object))
+            local ori = local_object_orientation (object)
+            if not ori then ori = UnitMatrix end
+            local pos = local_object_position (object) + (ori:transform (Offset))
+            local chip = find_nearest_chip (self, pos)
             if chip then
                if mite.link then
                   local_object_unlink (mite.link)
@@ -102,7 +106,7 @@ function new (config, name)
       paused = false,
    }
 
-   self.volume:set_radius (256)
+   self.volume:set_radius (80) -- 256)
 
    self.log:info ("Creating plugin: " .. name)
 

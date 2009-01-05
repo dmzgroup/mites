@@ -1,24 +1,22 @@
 require "const"
-local Offset = dmz.vector.new (0, 0, -96)
-local UnitMatrix = dmz.matrix.new ()
 
 local local_object_find = dmz.object.find
 local local_object_type = dmz.object.type
 local local_object_counter = dmz.object.counter
 local local_object_position = dmz.object.position
 
-local function find_chip_count (self, chips, object, pos)
+local function find_chip_cluster (self, chips, object)
    local result = {object}
-   self.volume:set_origin (pos)
+   self.volume:set_origin (local_object_position (object))
    local net = local_object_find (self.volume)
    if net then
       for _, chip in ipairs (net) do
-         if (object ~= chip) and not chips[chip] then 
+         if not chips[chip] then 
             local type = local_object_type (chip)
             if type and type:is_of_type (const.ChipType) then
-               chips[chip] = true
                result[#result + 1] = chip
             end
+            chips[chip] = true
          end
       end
    end
@@ -31,8 +29,7 @@ local function update_chips (self)
    for chip, valid in pairs (self.chips) do
       if not chips[chip] then
          chips[chip] = true
-         clusters[#clusters + 1] =
-            find_chip_count (self, chips, chip, local_object_position (chip))
+         clusters[#clusters + 1] = find_chip_cluster (self, chips, chip)
       end
    end
    table.sort (clusters, function (c1, c2) return #c1 > #c2 end)
@@ -45,7 +42,6 @@ end
 
 local function create_object (self, object, type)
    if type:is_of_type (const.ChipType) then
-      self.chip = nil
       self.chips[object] = true
    end
 end
@@ -77,7 +73,7 @@ function new (config, name)
       volume = dmz.sphere.new (),
    }
 
-   self.volume:set_radius (750) --256)
+   self.volume:set_radius (800)
 
    self.log:info ("Creating plugin: " .. name)
 
