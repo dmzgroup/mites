@@ -67,6 +67,11 @@
       <object-type name="chip"/>
    </set>
    <attribute name="Chip_Count" type="counter"/>
+   <power-law>
+      <stroke>
+         <color red="0.8"/>
+      </stroke>
+   </power-law>
    <bar height="80" width="20" space="5" divisions="4">
       <stroke>
          <color green="1"/>
