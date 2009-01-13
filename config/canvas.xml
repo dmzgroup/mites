@@ -67,7 +67,7 @@
       <object-type name="chip"/>
    </set>
    <attribute name="Chip_Count" type="counter"/>
-   <power-law>
+   <power-law show="true">
       <stroke>
          <color red="0.8"/>
       </stroke>
