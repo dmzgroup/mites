@@ -7,6 +7,7 @@
    <plugin name="dmzQtPluginCanvasZoomPan"/>
    <plugin name="dmzQtPluginVersion"/>
    <plugin name="dmzQtPluginWidget" unique="histogram"/>
+   <plugin name="dmzQtPluginWidget" unique="controls"/>
    <plugin name="dmzQtPluginHistogram"/>
    <plugin name="dmzMitesPluginControls"/>
 </plugins>
@@ -25,7 +26,7 @@
          <widget name="dmzQtModuleCanvasBasic"/>
       </group>
       <group area="right">
-         <widget name="dmzMitesPluginControls" title="Controls"/>
+         <widget name="controls" title="Controls"/>
       </group>
       <group area="bottom">
          <widget name="histogram" title="Chip Neighbor Data"/>
@@ -36,6 +37,9 @@
    <minimum-size width="300" height="130"/>
    <widget name="dmzQtPluginHistogram" title="Chip Neighbor Data"/>
 </histogram>
+<controls>
+   <widget name="dmzMitesPluginControls"/>
+</controls>
 <dmzQtModuleCanvasBasic>
    <widget>
       <minimum-size width="550" height="550"/>
@@ -64,7 +68,7 @@
    </set>
    <ascending value="false"/>
    <attribute name="Chip_Count" type="counter"/>
-   <bar height="50" width="12" space="5" divisions="2">
+   <bar height="50" width="20" space="5" divisions="2" steps="5">
       <stroke>
          <color green="1"/>
       </stroke>

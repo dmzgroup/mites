@@ -26,18 +26,20 @@ local function validate_position (self, pos)
 end
 
 local function update_mites (self, time)
-   for i, m in ipairs (self.mites) do
-      local pos = local_object_position (m.object)
-      local ori = local_object_orientation (m.object)
-      m.nextTurn = m.nextTurn - time
-      if m.nextTurn <= 0 then
-         ori = dmz.matrix.new (Up, (math.random () - 0.5) * self.maxTurn) * ori
-         m.nextTurn = calc_next_turn_time (self.turnDelay)
+   if not self.paused then
+      for i, m in ipairs (self.mites) do
+         local pos = local_object_position (m.object)
+         local ori = local_object_orientation (m.object)
+         m.nextTurn = m.nextTurn - time
+         if m.nextTurn <= 0 then
+            ori = dmz.matrix.new (Up, (math.random () - 0.5) * self.maxTurn) * ori
+            m.nextTurn = calc_next_turn_time (self.turnDelay)
+         end
+         pos = pos + (ori:transform (Forward) * time * self.speed)
+         validate_position (self, pos)
+         local_object_position (m.object, nil, pos)
+         local_object_orientation (m.object, nil, ori)
       end
-      pos = pos + (ori:transform (Forward) * time * self.speed)
-      validate_position (self, pos)
-      local_object_position (m.object, nil, pos)
-      local_object_orientation (m.object, nil, ori)
    end
 end
 
@@ -93,6 +95,10 @@ local function update_mite_turn_delay (self, object, handle, value)
    self.turnDelay = value
 end
 
+local function update_pause (self, object, handle, value)
+   self.paused = value
+end
+
 local function start (self)
    local callbacks = { update_object_position = update_area_minimum, }
    self.objObs:register ("Minimum_Area", callbacks, self)
@@ -106,6 +112,8 @@ local function start (self)
    self.objObs:register ("Turn", callbacks, self)
    callbacks = { update_object_scalar = update_mite_turn_delay, }
    self.objObs:register ("TurnDelay", callbacks, self)
+   callbacks = { update_object_flag = update_pause, }
+   self.objObs:register ("Pause", callbacks, self)
    self.tsHandle = self.timeSlice:create (update_mites, self, self.name)
 end
 
@@ -128,6 +136,7 @@ function new (config, name)
       maxTurn = dmz.math.HalfPi,
       turnDelay = 3,
       mites = {},
+      paused = false,
    }
 
    self.log:info ("Creating plugin: " .. name)

@@ -97,6 +97,19 @@ dmz::MitesPluginControls::discover_plugin (
 
 // Object Observer Interface
 void
+dmz::MitesPluginControls::update_object_flag (
+      const UUID &Identity,
+      const Handle ObjectHandle,
+      const Handle AttributeHandle,
+      const Boolean Value,
+      const Boolean *PreviousValue) {
+
+   if (Value) { _ui.PauseButton->setText ("Start"); }
+   else { _ui.PauseButton->setText ("Stop"); }
+}
+
+
+void
 dmz::MitesPluginControls::update_object_counter (
       const UUID &Identity,
       const Handle ObjectHandle,
@@ -245,6 +258,20 @@ dmz::MitesPluginControls::on_ResetButton_clicked () {
 
 
 void
+dmz::MitesPluginControls::on_PauseButton_clicked () {
+
+   ObjectModule *objMod (get_object_module ());
+
+   if (_arena && objMod) {
+
+      const Boolean Flag = objMod->lookup_flag (_arena, _pauseHandle);
+
+      objMod->store_flag (_arena, _pauseHandle, !Flag);
+   }
+}
+
+
+void
 dmz::MitesPluginControls::on_ZoomSlider_valueChanged (int value) {
 
    if (_canvas && !_inUpdate) {
@@ -293,6 +320,7 @@ dmz::MitesPluginControls::_init (Config &local) {
    _waitHandle = activate_object_attribute ("Wait", ObjectScalarMask);
    _turnHandle = activate_object_attribute ("Turn", ObjectScalarMask);
    _turnDelayHandle = activate_object_attribute ("TurnDelay", ObjectScalarMask);
+   _pauseHandle = activate_object_attribute ("Pause", ObjectFlagMask);
 }
 
 
