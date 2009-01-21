@@ -14,6 +14,7 @@
    <instance name="mites"/>
    <instance name="chips"/>
    <instance name="haul"/>
+   <instance name="count"/>
    <extensions>
       <plugin name="dmzLuaExtObject"/>
       <plugin name="dmzQtExtLuaConsole"/>

@@ -6,6 +6,7 @@
    <plugin name="dmzQtPluginCanvasObject"/>
    <plugin name="dmzQtPluginCanvasZoomPan"/>
    <plugin name="dmzQtPluginVersion"/>
+   <plugin name="dmzQtPluginHistogram"/>
    <plugin name="dmzMitesPluginControls"/>
 </plugins>
 <dmzQtPluginCanvasZoomPan>
@@ -19,7 +20,10 @@
          <widget name="dmzQtModuleCanvasBasic"/>
       </group>
       <group area="right">
-         <widget name="dmzMitesPluginControls"/>
+         <widget name="dmzMitesPluginControls" title="Controls"/>
+      </group>
+      <group area="bottom">
+         <widget name="dmzQtPluginHistogram" title="Chip Neighbor Data"/>
       </group>
    </channel>
 </dmzQtModuleMainWindowBasic>
@@ -42,4 +46,11 @@
 <dmzQtPluginCanvasLayer>
    <dockWidget title="Networks"/>
 </dmzQtPluginCanvasLayer>
+<dmzQtPluginHistogram>
+   <set>
+      <object-type name="chip"/>
+   </set>
+   <ascending value="false"/>
+   <attribute name="Chip_Count" type="counter"/>
+</dmzQtPluginHistogram>
 </dmz>

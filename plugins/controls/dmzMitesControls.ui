@@ -324,13 +324,20 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_5" >
      <item>
+      <widget class="QToolButton" name="PlayButton" >
+       <property name="text" >
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
       <spacer name="horizontalSpacer_5" >
        <property name="orientation" >
         <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0" >
         <size>
-         <width>78</width>
+         <width>118</width>
          <height>17</height>
         </size>
        </property>
@@ -346,16 +353,6 @@
     </layout>
    </item>
   </layout>
-  <zorder>line</zorder>
-  <zorder>MitesSlider</zorder>
-  <zorder>ChipsSlider</zorder>
-  <zorder>SpeedSlider</zorder>
-  <zorder>WaitSlider</zorder>
-  <zorder>TurnSlider</zorder>
-  <zorder>TurnDelaySlider</zorder>
-  <zorder>label_4</zorder>
-  <zorder>horizontalSpacer_5</zorder>
-  <zorder>ResetButton</zorder>
  </widget>
  <tabstops>
   <tabstop>MitesSpinBox</tabstop>
