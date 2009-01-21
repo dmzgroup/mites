@@ -6,6 +6,7 @@
    <plugin name="dmzQtPluginCanvasObject"/>
    <plugin name="dmzQtPluginCanvasZoomPan"/>
    <plugin name="dmzQtPluginVersion"/>
+   <plugin name="dmzQtPluginWidget" unique="histogram"/>
    <plugin name="dmzQtPluginHistogram"/>
    <plugin name="dmzMitesPluginControls"/>
 </plugins>
@@ -14,6 +15,10 @@
    <hide value="true"/>
 </dmzQtPluginCanvasZoomPan>
 <dmzQtModuleMainWindowBasic>
+   <corners>
+      <top right="true" left="true"/>
+      <bottom right="true" left="true"/>
+   </corners>
    <window title="DMZ: Mites"/>
    <channel>
       <group area="main">
@@ -23,11 +28,18 @@
          <widget name="dmzMitesPluginControls" title="Controls"/>
       </group>
       <group area="bottom">
-         <widget name="dmzQtPluginHistogram" title="Chip Neighbor Data"/>
+         <widget name="histogram" title="Chip Neighbor Data"/>
       </group>
    </channel>
 </dmzQtModuleMainWindowBasic>
+<histogram>
+   <minimum-size width="300" height="130"/>
+   <widget name="dmzQtPluginHistogram" title="Chip Neighbor Data"/>
+</histogram>
 <dmzQtModuleCanvasBasic>
+   <widget>
+      <minimum-size width="550" height="550"/>
+   </widget>
    <canvas opengl="true" antialiasing="true" textantialiasing="true"/>
    <scene>
       <min x="-2500" y="-2500"/>
@@ -52,5 +64,13 @@
    </set>
    <ascending value="false"/>
    <attribute name="Chip_Count" type="counter"/>
+   <bar height="50" width="12" space="5" divisions="2">
+      <stroke>
+         <color green="1"/>
+      </stroke>
+      <fill>
+         <color red="0.5" green="1" blue="0.5"/>
+      </fill>
+   </bar>
 </dmzQtPluginHistogram>
 </dmz>

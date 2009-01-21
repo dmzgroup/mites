@@ -69,6 +69,7 @@ app.add_config {
 }
 
 app.add_data {
+   "assets/DMZ-Splash.png",
    "assets/DMZ-Icon.png",
    "assets/mite.png",
    "assets/chip.png",
