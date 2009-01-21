@@ -3,6 +3,9 @@ require "const"
 local Forward = dmz.math.forward ()
 local Up = dmz.math.up ()
 
+local local_object_position = dmz.object.position
+local local_object_orientation = dmz.object.orientation
+
 local function calc_next_turn_time (Delay)
    local result = (math.random () * Delay - 0.5) + 0.5
    if result < 0 then result = 0 end
@@ -24,8 +27,8 @@ end
 
 local function update_mites (self, time)
    for i, m in ipairs (self.mites) do
-      local pos = dmz.object.position (m.object)
-      local ori = dmz.object.orientation (m.object)
+      local pos = local_object_position (m.object)
+      local ori = local_object_orientation (m.object)
       m.nextTurn = m.nextTurn - time
       if m.nextTurn <= 0 then
          ori = dmz.matrix.new (Up, (math.random () - 0.5) * self.maxTurn) * ori
@@ -33,15 +36,15 @@ local function update_mites (self, time)
       end
       pos = pos + (ori:transform (Forward) * time * self.speed)
       validate_position (self, pos)
-      dmz.object.position (m.object, nil, pos)
-      dmz.object.orientation (m.object, nil, ori)
+      local_object_position (m.object, nil, pos)
+      local_object_orientation (m.object, nil, ori)
    end
 end
 
 local function update_mite_count (self, object, handle, count)
    --self.log:error ("Mites:", count)
-   self.arena.min = dmz.object.position (object, "Minimum_Area")
-   self.arena.max = dmz.object.position (object, "Maximum_Area")
+   self.arena.min = local_object_position (object, "Minimum_Area")
+   self.arena.max = local_object_position (object, "Maximum_Area")
    local mites = self.mites
    local MinX = self.arena.min:get_x ()
    local MaxX = self.arena.max:get_x () - MinX
@@ -50,12 +53,12 @@ local function update_mite_count (self, object, handle, count)
    while #mites < count do
       local m = {}
       m.object = dmz.object.create (const.MiteType)
-      dmz.object.position (m.object, nil, {
+      local_object_position (m.object, nil, {
          (MaxX * math.random ()) + MinX,
          0,
          (MaxZ * math.random ()) + MinZ,
       })
-      dmz.object.orientation (
+      local_object_orientation (
          m.object,
          nil,
          dmz.matrix.new (Up, math.random () * dmz.math.TwoPi))
