@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest>
    <!--<resource file="data/mites.rcc"/>-->
-   <searchPath prefix="images" path=":/Images"/>
+   <search>
+      <path prefix="images" value=":/Images"/>
+   </search>
    <config file="config/runtime.xml"/>
    <config file="config/canvas.xml"/>
    <config file="config/common.xml"/>
