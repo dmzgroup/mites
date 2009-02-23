@@ -1,0 +1,4 @@
+require "qtshell"
+
+qtshell.set_up ("mites")
+lmk.add_files ({"mites.rc"},{win32 = true})

@@ -16,10 +16,10 @@
          <position x="2500" y="0" z="2500"/>
       </attributes>
       <attributes name="Mites">
-         <counter value="20"/>
+         <counter value="15"/>
       </attributes>
       <attributes name="Speed">
-         <scalar value="1000"/>
+         <scalar value="3000"/>
       </attributes>
       <attributes name="Wait">
          <scalar value="1"/>
@@ -28,10 +28,10 @@
          <counter value="50"/>
       </attributes>
       <attributes name="Turn">
-         <scalar value="1.570796326794897"/>
+         <scalar value="3.141592653589793"/>
       </attributes>
       <attributes name="TurnDelay">
-         <scalar value="3"/>
+         <scalar value="0.2"/>
       </attributes>
    </object>
 </archive>

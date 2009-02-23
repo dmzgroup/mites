@@ -1,18 +1,22 @@
 require "const"
-local Offset = dmz.vector.new (0, 0, -96)
-local UnitMatrix = dmz.matrix.new ()
 
-local function find_chip_count (self, object, pos)
-   local result = 0
-   self.volume:set_origin (pos)
-   local net = dmz.object.find (self.volume)
+local local_object_find = dmz.object.find
+local local_object_type = dmz.object.type
+local local_object_counter = dmz.object.counter
+local local_object_position = dmz.object.position
+
+local function find_chip_cluster (self, chips, object)
+   local result = {object}
+   self.volume:set_origin (local_object_position (object))
+   local net = local_object_find (self.volume)
    if net then
       for _, chip in ipairs (net) do
-         if object ~= chip then 
-            local type = dmz.object.type (chip)
+         if not chips[chip] then 
+            local type = local_object_type (chip)
             if type and type:is_of_type (const.ChipType) then
-               result = result + 1
+               result[#result + 1] = chip
             end
+            chips[chip] = true
          end
       end
    end
@@ -20,27 +24,24 @@ local function find_chip_count (self, object, pos)
 end
 
 local function update_chips (self)
-   local count = 0
-   while count < 5 do
-      count = count + 1
-      local valid = nil
-      self.chip, valid = next (self.chips, self.chip)
-      if self.chip and valid then
-         local count = find_chip_count (self, self.chip, dmz.object.position (self.chip))
-         dmz.object.counter (self.chip, const.CountHandle, count)
-      else
-         count = 5
+   local chips = {}
+   local clusters = {}
+   for chip, valid in pairs (self.chips) do
+      if not chips[chip] then
+         chips[chip] = true
+         clusters[#clusters + 1] = find_chip_cluster (self, chips, chip)
       end
    end
-  --  for chip, _ in pairs (self.chips) do
-  --     local count = find_chip_count (self, chip, dmz.object.position (chip))
-  --     dmz.object.counter (chip, const.CountHandle, count)
-  --  end
+   table.sort (clusters, function (c1, c2) return #c1 > #c2 end)
+   for index, cluster in ipairs (clusters) do
+      for _, chip in ipairs (cluster) do
+         local_object_counter (chip, const.CountHandle, index)
+      end
+   end
 end
 
 local function create_object (self, object, type)
    if type:is_of_type (const.ChipType) then
-      self.chip = nil
       self.chips[object] = true
    end
 end
@@ -72,7 +73,7 @@ function new (config, name)
       volume = dmz.sphere.new (),
    }
 
-   self.volume:set_radius (1000) --256)
+   self.volume:set_radius (800)
 
    self.log:info ("Creating plugin: " .. name)
 

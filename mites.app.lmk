@@ -5,14 +5,14 @@ lmk.add_vars {
    majorVersion = "1",
    minorVersion = "0",
    bugVersion = "0",
-   releaseType = "alpha 4",
+   releaseType = "",
    aboutImage = "./assets/DMZ-Icon.png",
 }
 lmk.add_files ({"version.xml",}, {src="version"})
 lmk.add_files {"mites.app"}
 lmk.add_preqs {
    "scripts",
-   "dmzQtAppShell",
+   "mites",
    "dmzArchiveModuleBasic",
    "dmzArchivePluginAutoLoad",
    "dmzArchivePluginObject",
@@ -29,29 +29,16 @@ lmk.add_preqs {
    "dmzQtPluginCanvasObjectBasic",
    "dmzQtPluginCanvasZoomPan",
    "dmzQtPluginVersion",
-   "dmzQtPluginHistogram",
-   "dmzQtUtil",
-   "dmzApplication",
-   "dmzArchiveUtil",
-   "dmzFileCacheLocal",
-   "dmzInputEvents",
+   "dmzQtPluginGraph",
+   "dmzQtPluginWidget",
    "dmzInputPluginKeyEventToMessage",
    "dmzInputPluginExit",
-   "dmzInputUtil",
-   "dmzKernel",
-   "dmzLuaKernel",
-   "dmzObjectUtil",
-   "dmzQtCanvasView",
-   "dmzQtLogObserver",
-   "dmzXML",
-   "expat",
-   "lua",
 -- dev plugins
    "dmzQtExtLuaConsole",
    "dmzQtPluginLuaProfiler",
 }
 
-app.set_app ("dmzQtAppShell", "mites")
+app.set_app ("mites")
 
 app.set_plist ("Info.plist")
 
@@ -69,6 +56,7 @@ app.add_config {
 }
 
 app.add_data {
+   "assets/DMZ-Splash.png",
    "assets/DMZ-Icon.png",
    "assets/mite.png",
    "assets/chip.png",
