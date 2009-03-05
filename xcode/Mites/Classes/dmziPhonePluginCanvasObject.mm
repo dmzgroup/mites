@@ -92,19 +92,31 @@ dmz::iPhonePluginCanvasObject::create_object (
    ObjectType currentType (Type);
    
    if (_find_config_from_type (data, currentType)) {
+
+      ObjectType miteType;
+      _defs.lookup_object_type ("mite", miteType);
       
       String name (currentType.get_name ());
       name << "." << ObjectHandle;
       
 //      ObjectStruct *os (new ObjectStruct (ObjectHandle));
       
-      UIImage *image = [UIImage imageNamed:@"mite.png"];
+      UIImage *image;
+      
+      if (currentType.is_of_type (miteType)) {
+         
+         image = [UIImage imageNamed:@"mite-small.png"];
+      }
+      else {
+         
+         image = [UIImage imageNamed:@"chip-small.png"];
+      }
       
       UIImageView *item = [[UIImageView alloc] initWithImage:image];
       item.tag = ObjectHandle;
       
-      CGAffineTransform transform = CGAffineTransformMakeScale (0.5, 0.01);
-		item.transform = transform;
+//      CGAffineTransform transform = CGAffineTransformMakeScale (0.1, 0.1);
+//		item.transform = transform;
             
       ObjectModule *objMod (get_object_module ());
       
@@ -180,7 +192,7 @@ dmz::iPhonePluginCanvasObject::update_object_orientation (
       
       if (item) {
 
-         item.transform= CGAffineTransformMakeRotation (get_heading (Value));
+         item.transform = CGAffineTransformMakeRotation (get_heading (Value));
       }
    }
 }
