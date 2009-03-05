@@ -1,0 +1,1516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		7A981FFE0EB7042C004B0CAC /* dmz_create_plugins */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 7A9820010EB7044B004B0CAC /* Build configuration list for PBXAggregateTarget "dmz_create_plugins" */;
+			buildPhases = (
+				7A981FFD0EB7042C004B0CAC /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = dmz_create_plugins;
+			productName = dmz_create_plugins;
+		};
+		7AA9C9DB0EB713F600A97E88 /* copy_headers */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 7AA9C9E30EB7144500A97E88 /* Build configuration list for PBXAggregateTarget "copy_headers" */;
+			buildPhases = (
+				7AA9C9DA0EB713F600A97E88 /* CopyFiles */,
+			);
+			dependencies = (
+			);
+			name = copy_headers;
+			productName = copy_headers;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		280E754D0DD40C5E005A515E /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754A0DD40C5E005A515E /* FlipsideView.xib */; };
+		280E754E0DD40C5E005A515E /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754B0DD40C5E005A515E /* MainView.xib */; };
+		288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765580DF743DE002DB57D /* CoreGraphics.framework */; };
+		289233A60DB2D0840083E9F9 /* FlipsideView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 289233A30DB2D0840083E9F9 /* FlipsideView.mm */; };
+		289233A70DB2D0840083E9F9 /* MainView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 289233A50DB2D0840083E9F9 /* MainView.mm */; };
+		289233AE0DB2D0DB0083E9F9 /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.mm */; };
+		289233AF0DB2D0DB0083E9F9 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 289233AB0DB2D0DB0083E9F9 /* RootViewController.mm */; };
+		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.mm */; };
+		7A4684BE0EBA641B0034D89B /* Canvas.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A4684BC0EBA641B0034D89B /* Canvas.mm */; };
+		7A46858D0EBA71C00034D89B /* chips.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7A46858A0EBA71C00034D89B /* chips.lua */; };
+		7A46858E0EBA71C00034D89B /* const.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7A46858B0EBA71C00034D89B /* const.lua */; };
+		7A46858F0EBA71C00034D89B /* haul.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7A46858C0EBA71C00034D89B /* haul.lua */; };
+		7A4685A80EBA78870034D89B /* dmziPhonePluginLuaSearchPath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A4685A70EBA78870034D89B /* dmziPhonePluginLuaSearchPath.mm */; };
+		7A4686260EBA7F030034D89B /* libdmzObjectModuleGridBasic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA9C9040EB709F900A97E88 /* libdmzObjectModuleGridBasic.a */; };
+		7A88A3E30F5E02B50000B366 /* chip-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A88A3E10F5E02B50000B366 /* chip-small.png */; };
+		7A88A3E40F5E02B50000B366 /* mite-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A88A3E20F5E02B50000B366 /* mite-small.png */; };
+		7A981F4E0EB7003B004B0CAC /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A981F4D0EB7003B004B0CAC /* Icon.png */; };
+		7A981F5D0EB700CE004B0CAC /* chip.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A981F5B0EB700CE004B0CAC /* chip.png */; };
+		7A981F5E0EB700CE004B0CAC /* mite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A981F5C0EB700CE004B0CAC /* mite.png */; };
+		7A981FFB0EB703C8004B0CAC /* dmz_create_plugins.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A981FF90EB703C8004B0CAC /* dmz_create_plugins.cpp */; };
+		7A9820160EB70507004B0CAC /* libdmzKernel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A981F930EB70194004B0CAC /* libdmzKernel.a */; };
+		7A98201D0EB70683004B0CAC /* libexpat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A981F950EB70194004B0CAC /* libexpat.a */; };
+		7A98201E0EB70683004B0CAC /* libdmzXML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A981F970EB70194004B0CAC /* libdmzXML.a */; };
+		7A98201F0EB70683004B0CAC /* libdmzPluginMsgDump.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A981F990EB70194004B0CAC /* libdmzPluginMsgDump.a */; };
+		7A9820200EB70683004B0CAC /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A981FA50EB70194004B0CAC /* liblua.a */; };
+		7A9820210EB70683004B0CAC /* libdmzLuaKernel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A981FA70EB70194004B0CAC /* libdmzLuaKernel.a */; };
+		7A9820220EB70683004B0CAC /* libdmzLuaExtObject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A981FAB0EB70194004B0CAC /* libdmzLuaExtObject.a */; };
+		7A9820230EB70683004B0CAC /* libdmzLuaModuleBasic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A981FAF0EB70194004B0CAC /* libdmzLuaModuleBasic.a */; };
+		7A9820240EB70683004B0CAC /* libdmzObjectModuleBasic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A981FB10EB70194004B0CAC /* libdmzObjectModuleBasic.a */; };
+		7A9820250EB70683004B0CAC /* libdmzObjectUtil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A981FB30EB70194004B0CAC /* libdmzObjectUtil.a */; };
+		7A9820260EB70683004B0CAC /* libdmzInputEvents.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A981FB70EB70194004B0CAC /* libdmzInputEvents.a */; };
+		7A9820270EB70683004B0CAC /* libdmzInputUtil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A981FB90EB70194004B0CAC /* libdmzInputUtil.a */; };
+		7A9820280EB70683004B0CAC /* libdmzInputModuleBasic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A981FBB0EB70194004B0CAC /* libdmzInputModuleBasic.a */; };
+		7A9820290EB70683004B0CAC /* libdmzArchiveUtil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A981FC50EB70194004B0CAC /* libdmzArchiveUtil.a */; };
+		7A98202A0EB70683004B0CAC /* libdmzArchiveModuleBasic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A981FC70EB70194004B0CAC /* libdmzArchiveModuleBasic.a */; };
+		7A98202B0EB70683004B0CAC /* libdmzArchivePluginAutoLoad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A981FC90EB70194004B0CAC /* libdmzArchivePluginAutoLoad.a */; };
+		7A9820540EB70740004B0CAC /* libdmzArchivePluginObject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A981FCB0EB70194004B0CAC /* libdmzArchivePluginObject.a */; };
+		7AA9C9680EB70E3200A97E88 /* dmzAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AA9C9560EB70D9600A97E88 /* dmzAppDelegate.mm */; };
+		7AA9C9690EB70E6B00A97E88 /* dmzApplicationiPhone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7AA9C9570EB70D9600A97E88 /* dmzApplicationiPhone.cpp */; };
+		7AA9C96A0EB70E6B00A97E88 /* dmzLogObserverNSLog.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AA9C95A0EB70D9600A97E88 /* dmzLogObserverNSLog.mm */; };
+		7AA9C96B0EB70E6B00A97E88 /* dmzSystemFileMacOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AA9C95D0EB70D9600A97E88 /* dmzSystemFileMacOS.mm */; };
+		7AA9C9860EB70EAC00A97E88 /* dmzApplicationStateBasic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7AA9C9840EB70EAC00A97E88 /* dmzApplicationStateBasic.cpp */; };
+		7AA9C9880EB70EF700A97E88 /* libdmzFileCacheLocal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A981FA30EB70194004B0CAC /* libdmzFileCacheLocal.a */; };
+		7AA9C99C0EB70F6400A97E88 /* dmzMainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA9C95B0EB70D9600A97E88 /* dmzMainWindow.xib */; };
+		7AA9C9A70EB70FE200A97E88 /* mites.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7AA9C9A60EB70FE200A97E88 /* mites.lua */; };
+		7AA9C9AC0EB711A500A97E88 /* manifest.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7AA9C9AB0EB711A500A97E88 /* manifest.xml */; };
+		7AA9C9B00EB7133400A97E88 /* common.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7AA9C9AD0EB7133400A97E88 /* common.xml */; };
+		7AA9C9B10EB7133400A97E88 /* lua.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7AA9C9AE0EB7133400A97E88 /* lua.xml */; };
+		7AA9C9B20EB7133400A97E88 /* runtime.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7AA9C9AF0EB7133400A97E88 /* runtime.xml */; };
+		7AA9C9DE0EB7141A00A97E88 /* dmziPhoneCanvasConsts.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AA9C94A0EB70D8600A97E88 /* dmziPhoneCanvasConsts.h */; };
+		7AA9C9DF0EB7141A00A97E88 /* dmziPhoneModuleCanvas.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AA9C94C0EB70D8600A97E88 /* dmziPhoneModuleCanvas.h */; };
+		7AA9C9E60EB714FF00A97E88 /* dmzMitesModuleiPhone.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AA9C9E40EB714FF00A97E88 /* dmzMitesModuleiPhone.mm */; };
+		7AA9C9EA0EB718F500A97E88 /* RootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA9C9E90EB718F500A97E88 /* RootView.xib */; };
+		7AA9CA3B0EB725B600A97E88 /* dmziPhonePluginCanvasObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AA9CA3A0EB725B600A97E88 /* dmziPhonePluginCanvasObject.mm */; };
+		D281B01C0EDCAA3100CFD21B /* dmzMitesPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D281B01B0EDCAA3100CFD21B /* dmzMitesPlugin.cpp */; };
+		D2FEED210EBB97F800D5280D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FEED200EBB97F800D5280D /* Default.png */; };
+		D2FEEDEB0EBC200200D5280D /* Mites-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FEEDEA0EBC200200D5280D /* Mites-Default.png */; };
+		D2FEEEBE0EBC4BAB00D5280D /* ControlsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FEEEBD0EBC4BAB00D5280D /* ControlsView.xib */; };
+		D2FEEEC90EBC4BF400D5280D /* ControlsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D2FEEEC80EBC4BF400D5280D /* ControlsViewController.mm */; };
+		D2FEEECE0EBC4C2100D5280D /* ControlsView.mm in Sources */ = {isa = PBXBuildFile; fileRef = D2FEEECD0EBC4C2100D5280D /* ControlsView.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7A4686330EBA7F770034D89B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AA9C8FB0EB709F400A97E88;
+			remoteInfo = dmzObjectModuleGridBasic;
+		};
+		7A981F920EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A0E0D5D0E117CC100E55011;
+			remoteInfo = dmzKernel;
+		};
+		7A981F940EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A09AFF00E118D45003C5B32;
+			remoteInfo = expat;
+		};
+		7A981F960EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A09B0160E118F86003C5B32;
+			remoteInfo = dmzXML;
+		};
+		7A981F980EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A09B0860E119A3C003C5B32;
+			remoteInfo = dmzPluginMsgDump;
+		};
+		7A981F9A0EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A09B0930E119A72003C5B32;
+			remoteInfo = dmzPluginUndo;
+		};
+		7A981F9C0EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A09B0A00E119A9A003C5B32;
+			remoteInfo = dmzPluginUndoDump;
+		};
+		7A981F9E0EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A09B0CF0E119B2D003C5B32;
+			remoteInfo = dmzExPluginMessageReceive;
+		};
+		7A981FA00EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A09B0DE0E119B5A003C5B32;
+			remoteInfo = dmzExPluginMessageSend;
+		};
+		7A981FA20EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A09B1660E11A688003C5B32;
+			remoteInfo = dmzFileCacheLocal;
+		};
+		7A981FA40EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A560B6B0E12D2F60049409D;
+			remoteInfo = lua;
+		};
+		7A981FA60EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A560BA70E12D6B90049409D;
+			remoteInfo = dmzLuaKernel;
+		};
+		7A981FA80EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A6F1BD20E5CA509004FB18E;
+			remoteInfo = dmzLuaExtInput;
+		};
+		7A981FAA0EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A6F1BAE0E5CA27B004FB18E;
+			remoteInfo = dmzLuaExtObject;
+		};
+		7A981FAC0EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A6F1BF00E5CA5CB004FB18E;
+			remoteInfo = dmzLuaExtPick;
+		};
+		7A981FAE0EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A560BD10E12D9490049409D;
+			remoteInfo = dmzLuaModuleBasic;
+		};
+		7A981FB00EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2280F5E50E19A623003A2238;
+			remoteInfo = dmzObjectModuleBasic;
+		};
+		7A981FB20EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A64E65C0E241E0A008FFC86;
+			remoteInfo = dmzObjectUtil;
+		};
+		7A981FB40EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A35FBD60E5CCCF90002DA61;
+			remoteInfo = dmzObjectPluginCleanup;
+		};
+		7A981FB60EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A20C0110E52311500D169ED;
+			remoteInfo = dmzInputEvents;
+		};
+		7A981FB80EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A20C04B0E52350200D169ED;
+			remoteInfo = dmzInputUtil;
+		};
+		7A981FBA0EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A8C27A00E5247B700343AC9;
+			remoteInfo = dmzInputModuleBasic;
+		};
+		7A981FBC0EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D249EF010E5B8B2900A57803;
+			remoteInfo = dmzInputPluginMouseEventToMessage;
+		};
+		7A981FBE0EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A202F520E5CAD4A007F800D;
+			remoteInfo = dmzRenderIsect;
+		};
+		7A981FC00EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A202F960E5CADDE007F800D;
+			remoteInfo = dmzRenderUtil;
+		};
+		7A981FC20EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A202FB80E5CAE4D007F800D;
+			remoteInfo = dmzRenderModulePickBasic;
+		};
+		7A981FC40EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A202FFD0E5CAF66007F800D;
+			remoteInfo = dmzArchiveUtil;
+		};
+		7A981FC60EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A2030210E5CC86D007F800D;
+			remoteInfo = dmzArchiveModuleBasic;
+		};
+		7A981FC80EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A2030340E5CC9CB007F800D;
+			remoteInfo = dmzArchivePluginAutoLoad;
+		};
+		7A981FCA0EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A2030560E5CCA4D007F800D;
+			remoteInfo = dmzArchivePluginObject;
+		};
+		7A981FCC0EB70194004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7A2030690E5CCAAC007F800D;
+			remoteInfo = dmzArchivePluginAutoSave;
+		};
+		7A9820140EB704D3004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A981FFE0EB7042C004B0CAC;
+			remoteInfo = dmz_create_plugins;
+		};
+		7A9820170EB70510004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A0E0D5C0E117CC100E55011;
+			remoteInfo = dmzKernel;
+		};
+		7A98202C0EB706A1004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A09B0670E1193B4003C5B32;
+			remoteInfo = dmzFoundation;
+		};
+		7A98202E0EB706AC004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A09AFEF0E118D45003C5B32;
+			remoteInfo = expat;
+		};
+		7A9820300EB706AF004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A09B0150E118F86003C5B32;
+			remoteInfo = dmzXML;
+		};
+		7A9820320EB706CE004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A560BDF0E12D99C0049409D;
+			remoteInfo = dmzLuaFramework;
+		};
+		7A9820340EB706D4004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A560B6A0E12D2F60049409D;
+			remoteInfo = lua;
+		};
+		7A9820360EB706D8004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A560BA60E12D6B90049409D;
+			remoteInfo = dmzLuaKernel;
+		};
+		7A9820380EB706E6004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A6F1BAD0E5CA27B004FB18E;
+			remoteInfo = dmzLuaExtObject;
+		};
+		7A98203A0EB706EA004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A560BD00E12D9490049409D;
+			remoteInfo = dmzLuaModuleBasic;
+		};
+		7A98203C0EB706FC004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2280F5C80E19A55C003A2238;
+			remoteInfo = dmzObjectFramework;
+		};
+		7A98203E0EB706FF004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2280F5E40E19A623003A2238;
+			remoteInfo = dmzObjectModuleBasic;
+		};
+		7A9820400EB70702004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A64E65B0E241E0A008FFC86;
+			remoteInfo = dmzObjectUtil;
+		};
+		7A9820420EB7070C004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A20BF610E522FD600D169ED;
+			remoteInfo = dmzInputFramework;
+		};
+		7A9820440EB7070F004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A20C0100E52311500D169ED;
+			remoteInfo = dmzInputEvents;
+		};
+		7A9820460EB70713004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A20C04A0E52350200D169ED;
+			remoteInfo = dmzInputUtil;
+		};
+		7A9820480EB70715004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A8C279F0E5247B700343AC9;
+			remoteInfo = dmzInputModuleBasic;
+		};
+		7A98204A0EB70722004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A202FF30E5CAF25007F800D;
+			remoteInfo = dmzArchiveFramework;
+		};
+		7A98204C0EB70725004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A202FFC0E5CAF66007F800D;
+			remoteInfo = dmzArchiveUtil;
+		};
+		7A98204E0EB70727004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A2030200E5CC86D007F800D;
+			remoteInfo = dmzArchiveModuleBasic;
+		};
+		7A9820500EB7072A004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A2030330E5CC9CB007F800D;
+			remoteInfo = dmzArchivePluginAutoLoad;
+		};
+		7A9820520EB70731004B0CAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A2030550E5CCA4D007F800D;
+			remoteInfo = dmzArchivePluginObject;
+		};
+		7AA9C9030EB709F900A97E88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7AA9C8FC0EB709F400A97E88;
+			remoteInfo = dmzObjectModuleGridBasic;
+		};
+		7AA9C92B0EB70D1600A97E88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A09B0850E119A3C003C5B32;
+			remoteInfo = dmzPluginMsgDump;
+		};
+		7AA9C9890EB70F0000A97E88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A09B1650E11A688003C5B32;
+			remoteInfo = dmzFileCacheLocal;
+		};
+		7AA9C9E00EB7142200A97E88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AA9C9DB0EB713F600A97E88;
+			remoteInfo = copy_headers;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7AA9C9DA0EB713F600A97E88 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = ../../include/dmz;
+			dstSubfolderSpec = 16;
+			files = (
+				7AA9C9DE0EB7141A00A97E88 /* dmziPhoneCanvasConsts.h in CopyFiles */,
+				7AA9C9DF0EB7141A00A97E88 /* dmziPhoneModuleCanvas.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D6058910D05DD3D006BFB54 /* Mites.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mites.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		280E754A0DD40C5E005A515E /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
+		280E754B0DD40C5E005A515E /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		288765580DF743DE002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		289233A20DB2D0840083E9F9 /* FlipsideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipsideView.h; path = Classes/FlipsideView.h; sourceTree = "<group>"; };
+		289233A30DB2D0840083E9F9 /* FlipsideView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FlipsideView.mm; path = Classes/FlipsideView.mm; sourceTree = "<group>"; };
+		289233A40DB2D0840083E9F9 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainView.h; path = Classes/MainView.h; sourceTree = "<group>"; };
+		289233A50DB2D0840083E9F9 /* MainView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MainView.mm; path = Classes/MainView.mm; sourceTree = "<group>"; };
+		289233A80DB2D0DB0083E9F9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
+		289233A90DB2D0DB0083E9F9 /* MainViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MainViewController.mm; path = Classes/MainViewController.mm; sourceTree = "<group>"; };
+		289233AA0DB2D0DB0083E9F9 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		289233AB0DB2D0DB0083E9F9 /* RootViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RootViewController.mm; sourceTree = "<group>"; };
+		289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipsideViewController.h; path = Classes/FlipsideViewController.h; sourceTree = "<group>"; };
+		289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FlipsideViewController.mm; path = Classes/FlipsideViewController.mm; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* Mites_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mites_Prefix.pch; sourceTree = "<group>"; };
+		7A4684BC0EBA641B0034D89B /* Canvas.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Canvas.mm; path = Classes/Canvas.mm; sourceTree = "<group>"; };
+		7A4684C20EBA64D80034D89B /* Canvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Canvas.h; path = Classes/Canvas.h; sourceTree = "<group>"; };
+		7A46858A0EBA71C00034D89B /* chips.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = chips.lua; path = ../../scripts/chips.lua; sourceTree = SOURCE_ROOT; };
+		7A46858B0EBA71C00034D89B /* const.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = const.lua; path = ../../scripts/const.lua; sourceTree = SOURCE_ROOT; };
+		7A46858C0EBA71C00034D89B /* haul.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = haul.lua; path = ../../scripts/haul.lua; sourceTree = SOURCE_ROOT; };
+		7A4685A60EBA78870034D89B /* dmziPhonePluginLuaSearchPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmziPhonePluginLuaSearchPath.h; sourceTree = "<group>"; };
+		7A4685A70EBA78870034D89B /* dmziPhonePluginLuaSearchPath.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dmziPhonePluginLuaSearchPath.mm; sourceTree = "<group>"; };
+		7A88A3E10F5E02B50000B366 /* chip-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "chip-small.png"; path = "../../assets/chip-small.png"; sourceTree = SOURCE_ROOT; };
+		7A88A3E20F5E02B50000B366 /* mite-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mite-small.png"; path = "../../assets/mite-small.png"; sourceTree = SOURCE_ROOT; };
+		7A981F4D0EB7003B004B0CAC /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		7A981F5B0EB700CE004B0CAC /* chip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chip.png; path = ../../assets/chip.png; sourceTree = SOURCE_ROOT; };
+		7A981F5C0EB700CE004B0CAC /* mite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mite.png; path = ../../assets/mite.png; sourceTree = SOURCE_ROOT; };
+		7A981F650EB7018B004B0CAC /* dmz.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = dmz.xcconfig; path = ../../../dmz/xcode/dmz.xcconfig; sourceTree = SOURCE_ROOT; };
+		7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = dmzXcode.xcodeproj; path = ../../../dmz/xcode/dmzXcode/dmzXcode.xcodeproj; sourceTree = SOURCE_ROOT; };
+		7A981FF90EB703C8004B0CAC /* dmz_create_plugins.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dmz_create_plugins.cpp; sourceTree = "<group>"; };
+		7A981FFA0EB703C8004B0CAC /* plugins.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = plugins.lua; sourceTree = "<group>"; };
+		7AA9C94A0EB70D8600A97E88 /* dmziPhoneCanvasConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmziPhoneCanvasConsts.h; sourceTree = "<group>"; };
+		7AA9C94B0EB70D8600A97E88 /* dmziPhoneFramework.lmk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dmziPhoneFramework.lmk; sourceTree = "<group>"; };
+		7AA9C94C0EB70D8600A97E88 /* dmziPhoneModuleCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmziPhoneModuleCanvas.h; sourceTree = "<group>"; };
+		7AA9C94F0EB70D9600A97E88 /* dmziPhoneCanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmziPhoneCanvasView.h; sourceTree = "<group>"; };
+		7AA9C9500EB70D9600A97E88 /* dmziPhoneCanvasView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dmziPhoneCanvasView.mm; sourceTree = "<group>"; };
+		7AA9C9510EB70D9600A97E88 /* dmziPhoneModuleCanvasBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmziPhoneModuleCanvasBasic.h; sourceTree = "<group>"; };
+		7AA9C9520EB70D9600A97E88 /* dmziPhoneModuleCanvasBasic.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dmziPhoneModuleCanvasBasic.mm; sourceTree = "<group>"; };
+		7AA9C9550EB70D9600A97E88 /* dmzAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmzAppDelegate.h; sourceTree = "<group>"; };
+		7AA9C9560EB70D9600A97E88 /* dmzAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dmzAppDelegate.mm; sourceTree = "<group>"; };
+		7AA9C9570EB70D9600A97E88 /* dmzApplicationiPhone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dmzApplicationiPhone.cpp; sourceTree = "<group>"; };
+		7AA9C9580EB70D9600A97E88 /* dmzApplicationiPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmzApplicationiPhone.h; sourceTree = "<group>"; };
+		7AA9C9590EB70D9600A97E88 /* dmzLogObserverNSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmzLogObserverNSLog.h; sourceTree = "<group>"; };
+		7AA9C95A0EB70D9600A97E88 /* dmzLogObserverNSLog.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dmzLogObserverNSLog.mm; sourceTree = "<group>"; };
+		7AA9C95B0EB70D9600A97E88 /* dmzMainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = dmzMainWindow.xib; sourceTree = "<group>"; };
+		7AA9C95C0EB70D9600A97E88 /* dmzSystemFileMacOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmzSystemFileMacOS.h; sourceTree = "<group>"; };
+		7AA9C95D0EB70D9600A97E88 /* dmzSystemFileMacOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dmzSystemFileMacOS.mm; sourceTree = "<group>"; };
+		7AA9C9840EB70EAC00A97E88 /* dmzApplicationStateBasic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dmzApplicationStateBasic.cpp; path = ../../../dmz/foundation/libs/application/dmzApplicationStateBasic.cpp; sourceTree = SOURCE_ROOT; };
+		7AA9C9850EB70EAC00A97E88 /* dmzApplicationStateBasic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dmzApplicationStateBasic.h; path = ../../../dmz/foundation/libs/application/dmzApplicationStateBasic.h; sourceTree = SOURCE_ROOT; };
+		7AA9C9A60EB70FE200A97E88 /* mites.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = mites.lua; path = ../../scripts/mites.lua; sourceTree = SOURCE_ROOT; };
+		7AA9C9AB0EB711A500A97E88 /* manifest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = manifest.xml; sourceTree = "<group>"; };
+		7AA9C9AD0EB7133400A97E88 /* common.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = common.xml; sourceTree = "<group>"; };
+		7AA9C9AE0EB7133400A97E88 /* lua.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lua.xml; sourceTree = "<group>"; };
+		7AA9C9AF0EB7133400A97E88 /* runtime.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = runtime.xml; sourceTree = "<group>"; };
+		7AA9C9E40EB714FF00A97E88 /* dmzMitesModuleiPhone.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dmzMitesModuleiPhone.mm; sourceTree = "<group>"; };
+		7AA9C9E50EB714FF00A97E88 /* dmzMitesModuleiPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmzMitesModuleiPhone.h; sourceTree = "<group>"; };
+		7AA9C9E90EB718F500A97E88 /* RootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootView.xib; sourceTree = "<group>"; };
+		7AA9CA390EB725B600A97E88 /* dmziPhonePluginCanvasObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmziPhonePluginCanvasObject.h; sourceTree = "<group>"; };
+		7AA9CA3A0EB725B600A97E88 /* dmziPhonePluginCanvasObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dmziPhonePluginCanvasObject.mm; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D281B01A0EDCAA3100CFD21B /* dmzMitesPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dmzMitesPlugin.h; path = ../../plugins/mites/dmzMitesPlugin.h; sourceTree = SOURCE_ROOT; };
+		D281B01B0EDCAA3100CFD21B /* dmzMitesPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dmzMitesPlugin.cpp; path = ../../plugins/mites/dmzMitesPlugin.cpp; sourceTree = SOURCE_ROOT; };
+		D2FEED200EBB97F800D5280D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		D2FEEDEA0EBC200200D5280D /* Mites-Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mites-Default.png"; sourceTree = "<group>"; };
+		D2FEEEBD0EBC4BAB00D5280D /* ControlsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ControlsView.xib; sourceTree = "<group>"; };
+		D2FEEEC70EBC4BF400D5280D /* ControlsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlsViewController.h; path = Classes/ControlsViewController.h; sourceTree = "<group>"; };
+		D2FEEEC80EBC4BF400D5280D /* ControlsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ControlsViewController.mm; path = Classes/ControlsViewController.mm; sourceTree = "<group>"; };
+		D2FEEECC0EBC4C2100D5280D /* ControlsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlsView.h; sourceTree = "<group>"; };
+		D2FEEECD0EBC4C2100D5280D /* ControlsView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControlsView.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A9820160EB70507004B0CAC /* libdmzKernel.a in Frameworks */,
+				7A98201D0EB70683004B0CAC /* libexpat.a in Frameworks */,
+				7A98201E0EB70683004B0CAC /* libdmzXML.a in Frameworks */,
+				7A98201F0EB70683004B0CAC /* libdmzPluginMsgDump.a in Frameworks */,
+				7AA9C9880EB70EF700A97E88 /* libdmzFileCacheLocal.a in Frameworks */,
+				7A9820200EB70683004B0CAC /* liblua.a in Frameworks */,
+				7A9820210EB70683004B0CAC /* libdmzLuaKernel.a in Frameworks */,
+				7A9820220EB70683004B0CAC /* libdmzLuaExtObject.a in Frameworks */,
+				7A9820230EB70683004B0CAC /* libdmzLuaModuleBasic.a in Frameworks */,
+				7A9820240EB70683004B0CAC /* libdmzObjectModuleBasic.a in Frameworks */,
+				7A4686260EBA7F030034D89B /* libdmzObjectModuleGridBasic.a in Frameworks */,
+				7A9820250EB70683004B0CAC /* libdmzObjectUtil.a in Frameworks */,
+				7A9820260EB70683004B0CAC /* libdmzInputEvents.a in Frameworks */,
+				7A9820270EB70683004B0CAC /* libdmzInputUtil.a in Frameworks */,
+				7A9820280EB70683004B0CAC /* libdmzInputModuleBasic.a in Frameworks */,
+				7A9820290EB70683004B0CAC /* libdmzArchiveUtil.a in Frameworks */,
+				7A98202A0EB70683004B0CAC /* libdmzArchiveModuleBasic.a in Frameworks */,
+				7A98202B0EB70683004B0CAC /* libdmzArchivePluginAutoLoad.a in Frameworks */,
+				7A9820540EB70740004B0CAC /* libdmzArchivePluginObject.a in Frameworks */,
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Application Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7AA9C9E50EB714FF00A97E88 /* dmzMitesModuleiPhone.h */,
+				7AA9C9E40EB714FF00A97E88 /* dmzMitesModuleiPhone.mm */,
+				7A4685A60EBA78870034D89B /* dmziPhonePluginLuaSearchPath.h */,
+				7A4685A70EBA78870034D89B /* dmziPhonePluginLuaSearchPath.mm */,
+				7AA9CA390EB725B600A97E88 /* dmziPhonePluginCanvasObject.h */,
+				7AA9CA3A0EB725B600A97E88 /* dmziPhonePluginCanvasObject.mm */,
+				289233AA0DB2D0DB0083E9F9 /* RootViewController.h */,
+				289233AB0DB2D0DB0083E9F9 /* RootViewController.mm */,
+			);
+			name = "Application Controllers";
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Mites.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		281C6CD70DB2D82200F60ACC /* Flipside View */ = {
+			isa = PBXGroup;
+			children = (
+				289233A20DB2D0840083E9F9 /* FlipsideView.h */,
+				289233A30DB2D0840083E9F9 /* FlipsideView.mm */,
+				289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */,
+				289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.mm */,
+			);
+			name = "Flipside View";
+			sourceTree = "<group>";
+		};
+		289233A00DB2D0730083E9F9 /* Main View */ = {
+			isa = PBXGroup;
+			children = (
+				289233A40DB2D0840083E9F9 /* MainView.h */,
+				289233A50DB2D0840083E9F9 /* MainView.mm */,
+				7A4684C20EBA64D80034D89B /* Canvas.h */,
+				7A4684BC0EBA641B0034D89B /* Canvas.mm */,
+				289233A80DB2D0DB0083E9F9 /* MainViewController.h */,
+				289233A90DB2D0DB0083E9F9 /* MainViewController.mm */,
+			);
+			name = "Main View";
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */,
+				7A981F650EB7018B004B0CAC /* dmz.xcconfig */,
+				7AA9C9460EB70D6100A97E88 /* dmz */,
+				D2FEEECA0EBC4BFA00D5280D /* Controls View */,
+				289233A00DB2D0730083E9F9 /* Main View */,
+				281C6CD70DB2D82200F60ACC /* Flipside View */,
+				080E96DDFE201D6D7F000001 /* Application Controllers */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				7A981FE60EB70208004B0CAC /* Assets */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7A981FFA0EB703C8004B0CAC /* plugins.lua */,
+				7A981FF90EB703C8004B0CAC /* dmz_create_plugins.cpp */,
+				32CA4F630368D1EE00C91783 /* Mites_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7A981F4D0EB7003B004B0CAC /* Icon.png */,
+				D2FEED200EBB97F800D5280D /* Default.png */,
+				D2FEEDEA0EBC200200D5280D /* Mites-Default.png */,
+				7AA9C9E90EB718F500A97E88 /* RootView.xib */,
+				280E754A0DD40C5E005A515E /* FlipsideView.xib */,
+				280E754B0DD40C5E005A515E /* MainView.xib */,
+				D2FEEEBD0EBC4BAB00D5280D /* ControlsView.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				7AA9C9AB0EB711A500A97E88 /* manifest.xml */,
+				7AA9C9A30EB70FAA00A97E88 /* config */,
+				7AA9C9A40EB70FBD00A97E88 /* scripts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765580DF743DE002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A981F670EB70194004B0CAC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A981F930EB70194004B0CAC /* libdmzKernel.a */,
+				7A981F950EB70194004B0CAC /* libexpat.a */,
+				7A981F970EB70194004B0CAC /* libdmzXML.a */,
+				7A981F990EB70194004B0CAC /* libdmzPluginMsgDump.a */,
+				7A981F9B0EB70194004B0CAC /* libdmzPluginUndo.a */,
+				7A981F9D0EB70194004B0CAC /* libdmzPluginUndoDump.a */,
+				7A981F9F0EB70194004B0CAC /* libdmzExPluginMessageReceive.a */,
+				7A981FA10EB70194004B0CAC /* libdmzExPluginMessageSend.a */,
+				7A981FA30EB70194004B0CAC /* libdmzFileCacheLocal.a */,
+				7A981FA50EB70194004B0CAC /* liblua.a */,
+				7A981FA70EB70194004B0CAC /* libdmzLuaKernel.a */,
+				7A981FA90EB70194004B0CAC /* libdmzLuaExtInput.a */,
+				7A981FAB0EB70194004B0CAC /* libdmzLuaExtObject.a */,
+				7A981FAD0EB70194004B0CAC /* libdmzLuaExtPick.a */,
+				7A981FAF0EB70194004B0CAC /* libdmzLuaModuleBasic.a */,
+				7A981FB10EB70194004B0CAC /* libdmzObjectModuleBasic.a */,
+				7A981FB30EB70194004B0CAC /* libdmzObjectUtil.a */,
+				7A981FB50EB70194004B0CAC /* libdmzObjectPluginCleanup.a */,
+				7A981FB70EB70194004B0CAC /* libdmzInputEvents.a */,
+				7A981FB90EB70194004B0CAC /* libdmzInputUtil.a */,
+				7A981FBB0EB70194004B0CAC /* libdmzInputModuleBasic.a */,
+				7A981FBD0EB70194004B0CAC /* libdmzInputPluginMouseEventToMessage.a */,
+				7A981FBF0EB70194004B0CAC /* libdmzRenderIsect.a */,
+				7A981FC10EB70194004B0CAC /* libdmzRenderUtil.a */,
+				7A981FC30EB70194004B0CAC /* libdmzRenderModulePickBasic.a */,
+				7A981FC50EB70194004B0CAC /* libdmzArchiveUtil.a */,
+				7A981FC70EB70194004B0CAC /* libdmzArchiveModuleBasic.a */,
+				7A981FC90EB70194004B0CAC /* libdmzArchivePluginAutoLoad.a */,
+				7A981FCB0EB70194004B0CAC /* libdmzArchivePluginObject.a */,
+				7A981FCD0EB70194004B0CAC /* libdmzArchivePluginAutoSave.a */,
+				7AA9C9040EB709F900A97E88 /* libdmzObjectModuleGridBasic.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7A981FE60EB70208004B0CAC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7A88A3E10F5E02B50000B366 /* chip-small.png */,
+				7A88A3E20F5E02B50000B366 /* mite-small.png */,
+				7A981F5B0EB700CE004B0CAC /* chip.png */,
+				7A981F5C0EB700CE004B0CAC /* mite.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		7AA9C9460EB70D6100A97E88 /* dmz */ = {
+			isa = PBXGroup;
+			children = (
+				7AA9C9490EB70D8600A97E88 /* interfaces */,
+				7AA9C94D0EB70D9600A97E88 /* modules */,
+				D281B0180EDCA9EE00CFD21B /* plugins */,
+				7AA9C9540EB70D9600A97E88 /* util */,
+			);
+			name = dmz;
+			sourceTree = "<group>";
+		};
+		7AA9C9490EB70D8600A97E88 /* interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				7AA9C94A0EB70D8600A97E88 /* dmziPhoneCanvasConsts.h */,
+				7AA9C94B0EB70D8600A97E88 /* dmziPhoneFramework.lmk */,
+				7AA9C94C0EB70D8600A97E88 /* dmziPhoneModuleCanvas.h */,
+			);
+			name = interfaces;
+			path = ../../../dmz/frameworks/iphone/interfaces;
+			sourceTree = SOURCE_ROOT;
+		};
+		7AA9C94D0EB70D9600A97E88 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				7AA9C94E0EB70D9600A97E88 /* canvas */,
+			);
+			name = modules;
+			path = ../../../dmz/frameworks/iphone/modules;
+			sourceTree = SOURCE_ROOT;
+		};
+		7AA9C94E0EB70D9600A97E88 /* canvas */ = {
+			isa = PBXGroup;
+			children = (
+				7AA9C94F0EB70D9600A97E88 /* dmziPhoneCanvasView.h */,
+				7AA9C9500EB70D9600A97E88 /* dmziPhoneCanvasView.mm */,
+				7AA9C9510EB70D9600A97E88 /* dmziPhoneModuleCanvasBasic.h */,
+				7AA9C9520EB70D9600A97E88 /* dmziPhoneModuleCanvasBasic.mm */,
+			);
+			path = canvas;
+			sourceTree = "<group>";
+		};
+		7AA9C9540EB70D9600A97E88 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				7AA9C9550EB70D9600A97E88 /* dmzAppDelegate.h */,
+				7AA9C9560EB70D9600A97E88 /* dmzAppDelegate.mm */,
+				7AA9C9570EB70D9600A97E88 /* dmzApplicationiPhone.cpp */,
+				7AA9C9580EB70D9600A97E88 /* dmzApplicationiPhone.h */,
+				7AA9C9590EB70D9600A97E88 /* dmzLogObserverNSLog.h */,
+				7AA9C95A0EB70D9600A97E88 /* dmzLogObserverNSLog.mm */,
+				7AA9C95B0EB70D9600A97E88 /* dmzMainWindow.xib */,
+				7AA9C95C0EB70D9600A97E88 /* dmzSystemFileMacOS.h */,
+				7AA9C95D0EB70D9600A97E88 /* dmzSystemFileMacOS.mm */,
+				7AA9C9840EB70EAC00A97E88 /* dmzApplicationStateBasic.cpp */,
+				7AA9C9850EB70EAC00A97E88 /* dmzApplicationStateBasic.h */,
+			);
+			name = util;
+			path = ../../../dmz/frameworks/iphone/util;
+			sourceTree = SOURCE_ROOT;
+		};
+		7AA9C9A30EB70FAA00A97E88 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				7AA9C9AD0EB7133400A97E88 /* common.xml */,
+				7AA9C9AE0EB7133400A97E88 /* lua.xml */,
+				7AA9C9AF0EB7133400A97E88 /* runtime.xml */,
+			);
+			name = config;
+			sourceTree = "<group>";
+		};
+		7AA9C9A40EB70FBD00A97E88 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				7A46858A0EBA71C00034D89B /* chips.lua */,
+				7A46858B0EBA71C00034D89B /* const.lua */,
+				7A46858C0EBA71C00034D89B /* haul.lua */,
+				7AA9C9A60EB70FE200A97E88 /* mites.lua */,
+			);
+			name = scripts;
+			sourceTree = "<group>";
+		};
+		D281B0180EDCA9EE00CFD21B /* plugins */ = {
+			isa = PBXGroup;
+			children = (
+				D281B01A0EDCAA3100CFD21B /* dmzMitesPlugin.h */,
+				D281B01B0EDCAA3100CFD21B /* dmzMitesPlugin.cpp */,
+			);
+			name = plugins;
+			sourceTree = "<group>";
+		};
+		D2FEEECA0EBC4BFA00D5280D /* Controls View */ = {
+			isa = PBXGroup;
+			children = (
+				D2FEEECC0EBC4C2100D5280D /* ControlsView.h */,
+				D2FEEECD0EBC4C2100D5280D /* ControlsView.mm */,
+				D2FEEEC70EBC4BF400D5280D /* ControlsViewController.h */,
+				D2FEEEC80EBC4BF400D5280D /* ControlsViewController.mm */,
+			);
+			name = "Controls View";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Mites */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Mites" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7AA9C9E10EB7142200A97E88 /* PBXTargetDependency */,
+				7A9820150EB704D3004B0CAC /* PBXTargetDependency */,
+				7A9820180EB70510004B0CAC /* PBXTargetDependency */,
+				7A98202D0EB706A1004B0CAC /* PBXTargetDependency */,
+				7A98202F0EB706AC004B0CAC /* PBXTargetDependency */,
+				7A9820310EB706AF004B0CAC /* PBXTargetDependency */,
+				7AA9C92C0EB70D1600A97E88 /* PBXTargetDependency */,
+				7A9820330EB706CE004B0CAC /* PBXTargetDependency */,
+				7A9820350EB706D4004B0CAC /* PBXTargetDependency */,
+				7A9820370EB706D8004B0CAC /* PBXTargetDependency */,
+				7A9820390EB706E6004B0CAC /* PBXTargetDependency */,
+				7A98203B0EB706EA004B0CAC /* PBXTargetDependency */,
+				7A98203D0EB706FC004B0CAC /* PBXTargetDependency */,
+				7A98203F0EB706FF004B0CAC /* PBXTargetDependency */,
+				7A9820410EB70702004B0CAC /* PBXTargetDependency */,
+				7A9820430EB7070C004B0CAC /* PBXTargetDependency */,
+				7A9820450EB7070F004B0CAC /* PBXTargetDependency */,
+				7A9820470EB70713004B0CAC /* PBXTargetDependency */,
+				7A9820490EB70715004B0CAC /* PBXTargetDependency */,
+				7A98204B0EB70722004B0CAC /* PBXTargetDependency */,
+				7A98204D0EB70725004B0CAC /* PBXTargetDependency */,
+				7A98204F0EB70727004B0CAC /* PBXTargetDependency */,
+				7A9820510EB7072A004B0CAC /* PBXTargetDependency */,
+				7A9820530EB70731004B0CAC /* PBXTargetDependency */,
+				7AA9C98A0EB70F0000A97E88 /* PBXTargetDependency */,
+				7A4686340EBA7F770034D89B /* PBXTargetDependency */,
+			);
+			name = Mites;
+			productName = Mites;
+			productReference = 1D6058910D05DD3D006BFB54 /* Mites.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Mites" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7A981F670EB70194004B0CAC /* Products */;
+					ProjectRef = 7A981F660EB70194004B0CAC /* dmzXcode.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Mites */,
+				7A981FFE0EB7042C004B0CAC /* dmz_create_plugins */,
+				7AA9C9DB0EB713F600A97E88 /* copy_headers */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		7A981F930EB70194004B0CAC /* libdmzKernel.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzKernel.a;
+			remoteRef = 7A981F920EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981F950EB70194004B0CAC /* libexpat.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libexpat.a;
+			remoteRef = 7A981F940EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981F970EB70194004B0CAC /* libdmzXML.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzXML.a;
+			remoteRef = 7A981F960EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981F990EB70194004B0CAC /* libdmzPluginMsgDump.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzPluginMsgDump.a;
+			remoteRef = 7A981F980EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981F9B0EB70194004B0CAC /* libdmzPluginUndo.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzPluginUndo.a;
+			remoteRef = 7A981F9A0EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981F9D0EB70194004B0CAC /* libdmzPluginUndoDump.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzPluginUndoDump.a;
+			remoteRef = 7A981F9C0EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981F9F0EB70194004B0CAC /* libdmzExPluginMessageReceive.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzExPluginMessageReceive.a;
+			remoteRef = 7A981F9E0EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FA10EB70194004B0CAC /* libdmzExPluginMessageSend.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzExPluginMessageSend.a;
+			remoteRef = 7A981FA00EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FA30EB70194004B0CAC /* libdmzFileCacheLocal.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzFileCacheLocal.a;
+			remoteRef = 7A981FA20EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FA50EB70194004B0CAC /* liblua.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = liblua.a;
+			remoteRef = 7A981FA40EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FA70EB70194004B0CAC /* libdmzLuaKernel.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzLuaKernel.a;
+			remoteRef = 7A981FA60EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FA90EB70194004B0CAC /* libdmzLuaExtInput.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzLuaExtInput.a;
+			remoteRef = 7A981FA80EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FAB0EB70194004B0CAC /* libdmzLuaExtObject.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzLuaExtObject.a;
+			remoteRef = 7A981FAA0EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FAD0EB70194004B0CAC /* libdmzLuaExtPick.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzLuaExtPick.a;
+			remoteRef = 7A981FAC0EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FAF0EB70194004B0CAC /* libdmzLuaModuleBasic.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzLuaModuleBasic.a;
+			remoteRef = 7A981FAE0EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FB10EB70194004B0CAC /* libdmzObjectModuleBasic.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzObjectModuleBasic.a;
+			remoteRef = 7A981FB00EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FB30EB70194004B0CAC /* libdmzObjectUtil.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzObjectUtil.a;
+			remoteRef = 7A981FB20EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FB50EB70194004B0CAC /* libdmzObjectPluginCleanup.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzObjectPluginCleanup.a;
+			remoteRef = 7A981FB40EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FB70EB70194004B0CAC /* libdmzInputEvents.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzInputEvents.a;
+			remoteRef = 7A981FB60EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FB90EB70194004B0CAC /* libdmzInputUtil.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzInputUtil.a;
+			remoteRef = 7A981FB80EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FBB0EB70194004B0CAC /* libdmzInputModuleBasic.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzInputModuleBasic.a;
+			remoteRef = 7A981FBA0EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FBD0EB70194004B0CAC /* libdmzInputPluginMouseEventToMessage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzInputPluginMouseEventToMessage.a;
+			remoteRef = 7A981FBC0EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FBF0EB70194004B0CAC /* libdmzRenderIsect.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzRenderIsect.a;
+			remoteRef = 7A981FBE0EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FC10EB70194004B0CAC /* libdmzRenderUtil.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzRenderUtil.a;
+			remoteRef = 7A981FC00EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FC30EB70194004B0CAC /* libdmzRenderModulePickBasic.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzRenderModulePickBasic.a;
+			remoteRef = 7A981FC20EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FC50EB70194004B0CAC /* libdmzArchiveUtil.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzArchiveUtil.a;
+			remoteRef = 7A981FC40EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FC70EB70194004B0CAC /* libdmzArchiveModuleBasic.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzArchiveModuleBasic.a;
+			remoteRef = 7A981FC60EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FC90EB70194004B0CAC /* libdmzArchivePluginAutoLoad.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzArchivePluginAutoLoad.a;
+			remoteRef = 7A981FC80EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FCB0EB70194004B0CAC /* libdmzArchivePluginObject.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzArchivePluginObject.a;
+			remoteRef = 7A981FCA0EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A981FCD0EB70194004B0CAC /* libdmzArchivePluginAutoSave.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzArchivePluginAutoSave.a;
+			remoteRef = 7A981FCC0EB70194004B0CAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7AA9C9040EB709F900A97E88 /* libdmzObjectModuleGridBasic.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libdmzObjectModuleGridBasic.a;
+			remoteRef = 7AA9C9030EB709F900A97E88 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AA9C99C0EB70F6400A97E88 /* dmzMainWindow.xib in Resources */,
+				280E754D0DD40C5E005A515E /* FlipsideView.xib in Resources */,
+				280E754E0DD40C5E005A515E /* MainView.xib in Resources */,
+				7AA9C9EA0EB718F500A97E88 /* RootView.xib in Resources */,
+				7A981F4E0EB7003B004B0CAC /* Icon.png in Resources */,
+				7A981F5D0EB700CE004B0CAC /* chip.png in Resources */,
+				7A981F5E0EB700CE004B0CAC /* mite.png in Resources */,
+				7AA9C9AC0EB711A500A97E88 /* manifest.xml in Resources */,
+				7AA9C9B00EB7133400A97E88 /* common.xml in Resources */,
+				7AA9C9B10EB7133400A97E88 /* lua.xml in Resources */,
+				7AA9C9B20EB7133400A97E88 /* runtime.xml in Resources */,
+				7AA9C9A70EB70FE200A97E88 /* mites.lua in Resources */,
+				7A46858D0EBA71C00034D89B /* chips.lua in Resources */,
+				7A46858E0EBA71C00034D89B /* const.lua in Resources */,
+				7A46858F0EBA71C00034D89B /* haul.lua in Resources */,
+				D2FEED210EBB97F800D5280D /* Default.png in Resources */,
+				D2FEEDEB0EBC200200D5280D /* Mites-Default.png in Resources */,
+				D2FEEEBE0EBC4BAB00D5280D /* ControlsView.xib in Resources */,
+				7A88A3E30F5E02B50000B366 /* chip-small.png in Resources */,
+				7A88A3E40F5E02B50000B366 /* mite-small.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7A981FFD0EB7042C004B0CAC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/plugins.lua",
+			);
+			outputPaths = (
+				"$(SRCROOT)/dmz_create_plugins.cpp",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$LMK_HOME/ipgen $SRCROOT/plugins.lua > $SRCROOT/dmz_create_plugins.cpp";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				289233A60DB2D0840083E9F9 /* FlipsideView.mm in Sources */,
+				289233A70DB2D0840083E9F9 /* MainView.mm in Sources */,
+				289233AE0DB2D0DB0083E9F9 /* MainViewController.mm in Sources */,
+				289233AF0DB2D0DB0083E9F9 /* RootViewController.mm in Sources */,
+				289233B00DB2D0DB0083E9F9 /* FlipsideViewController.mm in Sources */,
+				7A981FFB0EB703C8004B0CAC /* dmz_create_plugins.cpp in Sources */,
+				7AA9C9680EB70E3200A97E88 /* dmzAppDelegate.mm in Sources */,
+				7AA9C9690EB70E6B00A97E88 /* dmzApplicationiPhone.cpp in Sources */,
+				7AA9C96A0EB70E6B00A97E88 /* dmzLogObserverNSLog.mm in Sources */,
+				7AA9C96B0EB70E6B00A97E88 /* dmzSystemFileMacOS.mm in Sources */,
+				7AA9C9860EB70EAC00A97E88 /* dmzApplicationStateBasic.cpp in Sources */,
+				7AA9C9E60EB714FF00A97E88 /* dmzMitesModuleiPhone.mm in Sources */,
+				7AA9CA3B0EB725B600A97E88 /* dmziPhonePluginCanvasObject.mm in Sources */,
+				7A4684BE0EBA641B0034D89B /* Canvas.mm in Sources */,
+				7A4685A80EBA78870034D89B /* dmziPhonePluginLuaSearchPath.mm in Sources */,
+				D2FEEEC90EBC4BF400D5280D /* ControlsViewController.mm in Sources */,
+				D2FEEECE0EBC4C2100D5280D /* ControlsView.mm in Sources */,
+				D281B01C0EDCAA3100CFD21B /* dmzMitesPlugin.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7A4686340EBA7F770034D89B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzObjectModuleGridBasic;
+			targetProxy = 7A4686330EBA7F770034D89B /* PBXContainerItemProxy */;
+		};
+		7A9820150EB704D3004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A981FFE0EB7042C004B0CAC /* dmz_create_plugins */;
+			targetProxy = 7A9820140EB704D3004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A9820180EB70510004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzKernel;
+			targetProxy = 7A9820170EB70510004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A98202D0EB706A1004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzFoundation;
+			targetProxy = 7A98202C0EB706A1004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A98202F0EB706AC004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = expat;
+			targetProxy = 7A98202E0EB706AC004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A9820310EB706AF004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzXML;
+			targetProxy = 7A9820300EB706AF004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A9820330EB706CE004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzLuaFramework;
+			targetProxy = 7A9820320EB706CE004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A9820350EB706D4004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = lua;
+			targetProxy = 7A9820340EB706D4004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A9820370EB706D8004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzLuaKernel;
+			targetProxy = 7A9820360EB706D8004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A9820390EB706E6004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzLuaExtObject;
+			targetProxy = 7A9820380EB706E6004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A98203B0EB706EA004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzLuaModuleBasic;
+			targetProxy = 7A98203A0EB706EA004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A98203D0EB706FC004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzObjectFramework;
+			targetProxy = 7A98203C0EB706FC004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A98203F0EB706FF004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzObjectModuleBasic;
+			targetProxy = 7A98203E0EB706FF004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A9820410EB70702004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzObjectUtil;
+			targetProxy = 7A9820400EB70702004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A9820430EB7070C004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzInputFramework;
+			targetProxy = 7A9820420EB7070C004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A9820450EB7070F004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzInputEvents;
+			targetProxy = 7A9820440EB7070F004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A9820470EB70713004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzInputUtil;
+			targetProxy = 7A9820460EB70713004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A9820490EB70715004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzInputModuleBasic;
+			targetProxy = 7A9820480EB70715004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A98204B0EB70722004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzArchiveFramework;
+			targetProxy = 7A98204A0EB70722004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A98204D0EB70725004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzArchiveUtil;
+			targetProxy = 7A98204C0EB70725004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A98204F0EB70727004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzArchiveModuleBasic;
+			targetProxy = 7A98204E0EB70727004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A9820510EB7072A004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzArchivePluginAutoLoad;
+			targetProxy = 7A9820500EB7072A004B0CAC /* PBXContainerItemProxy */;
+		};
+		7A9820530EB70731004B0CAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzArchivePluginObject;
+			targetProxy = 7A9820520EB70731004B0CAC /* PBXContainerItemProxy */;
+		};
+		7AA9C92C0EB70D1600A97E88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzPluginMsgDump;
+			targetProxy = 7AA9C92B0EB70D1600A97E88 /* PBXContainerItemProxy */;
+		};
+		7AA9C98A0EB70F0000A97E88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = dmzFileCacheLocal;
+			targetProxy = 7AA9C9890EB70F0000A97E88 /* PBXContainerItemProxy */;
+		};
+		7AA9C9E10EB7142200A97E88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7AA9C9DB0EB713F600A97E88 /* copy_headers */;
+			targetProxy = 7AA9C9E00EB7142200A97E88 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Mites_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = Mites;
+				SYMROOT = build;
+			};
+			name = debug;
+		};
+		1D6058950D05DD3E006BFB54 /* opt */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Mites_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = Mites;
+			};
+			name = opt;
+		};
+		7A981FFF0EB7042C004B0CAC /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = dmz_create_plugins;
+			};
+			name = debug;
+		};
+		7A9820000EB7042C004B0CAC /* opt */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = dmz_create_plugins;
+			};
+			name = opt;
+		};
+		7AA9C9DC0EB713F600A97E88 /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = copy_headers;
+			};
+			name = debug;
+		};
+		7AA9C9DD0EB713F600A97E88 /* opt */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = copy_headers;
+			};
+			name = opt;
+		};
+		C01FCF4F08A954540054247B /* debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A981F650EB7018B004B0CAC /* dmz.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.2.1;
+			};
+			name = debug;
+		};
+		C01FCF5008A954540054247B /* opt */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.2.1;
+			};
+			name = opt;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Mites" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* debug */,
+				1D6058950D05DD3E006BFB54 /* opt */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = opt;
+		};
+		7A9820010EB7044B004B0CAC /* Build configuration list for PBXAggregateTarget "dmz_create_plugins" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A981FFF0EB7042C004B0CAC /* debug */,
+				7A9820000EB7042C004B0CAC /* opt */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = opt;
+		};
+		7AA9C9E30EB7144500A97E88 /* Build configuration list for PBXAggregateTarget "copy_headers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AA9C9DC0EB713F600A97E88 /* debug */,
+				7AA9C9DD0EB713F600A97E88 /* opt */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = opt;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Mites" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* debug */,
+				C01FCF5008A954540054247B /* opt */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = opt;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

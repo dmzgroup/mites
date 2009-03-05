@@ -12,7 +12,7 @@
 
 static const dmz::Vector ForwardVec (0.0, 0.0, -1.0);
 static const dmz::Vector UpVec (0.0, 1.0, 0.0);
-static const dmz::Vector ChipOffset (0.0, 0.0, -96.0);
+static const dmz::Vector ChipOffset (0.0, 0.0, -25.0);
 
 
 dmz::Float64 local_random () { 
@@ -56,7 +56,7 @@ dmz::MitesPlugin::MitesPlugin (const PluginInfo &Info, Config &local) :
       _chipType (),
       _miteTable (),
       _chipTable (),
-      _volume (Vector (), 256),
+      _volume (Vector (), 20),
       _time (Info.get_context ()) {
    
    _init (local);
