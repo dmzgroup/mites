@@ -49,6 +49,7 @@
 		7A46858F0EBA71C00034D89B /* haul.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7A46858C0EBA71C00034D89B /* haul.lua */; };
 		7A4685A80EBA78870034D89B /* dmziPhonePluginLuaSearchPath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A4685A70EBA78870034D89B /* dmziPhonePluginLuaSearchPath.mm */; };
 		7A4686260EBA7F030034D89B /* libdmzObjectModuleGridBasic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA9C9040EB709F900A97E88 /* libdmzObjectModuleGridBasic.a */; };
+		7A70C00E0F66FF50009CF02C /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A70C00D0F66FF50009CF02C /* Entitlements.plist */; };
 		7A88A3E30F5E02B50000B366 /* chip-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A88A3E10F5E02B50000B366 /* chip-small.png */; };
 		7A88A3E40F5E02B50000B366 /* mite-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A88A3E20F5E02B50000B366 /* mite-small.png */; };
 		7A981F4E0EB7003B004B0CAC /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A981F4D0EB7003B004B0CAC /* Icon.png */; };
@@ -539,6 +540,7 @@
 		7A46858C0EBA71C00034D89B /* haul.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = haul.lua; path = ../../scripts/haul.lua; sourceTree = SOURCE_ROOT; };
 		7A4685A60EBA78870034D89B /* dmziPhonePluginLuaSearchPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmziPhonePluginLuaSearchPath.h; sourceTree = "<group>"; };
 		7A4685A70EBA78870034D89B /* dmziPhonePluginLuaSearchPath.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dmziPhonePluginLuaSearchPath.mm; sourceTree = "<group>"; };
+		7A70C00D0F66FF50009CF02C /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		7A88A3E10F5E02B50000B366 /* chip-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "chip-small.png"; path = "../../assets/chip-small.png"; sourceTree = SOURCE_ROOT; };
 		7A88A3E20F5E02B50000B366 /* mite-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mite-small.png"; path = "../../assets/mite-small.png"; sourceTree = SOURCE_ROOT; };
 		7A981F4D0EB7003B004B0CAC /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -684,6 +686,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				7A70C00D0F66FF50009CF02C /* Entitlements.plist */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -1201,6 +1204,7 @@
 				D2FEEEBE0EBC4BAB00D5280D /* ControlsView.xib in Resources */,
 				7A88A3E30F5E02B50000B366 /* chip-small.png in Resources */,
 				7A88A3E40F5E02B50000B366 /* mite-small.png in Resources */,
+				7A70C00E0F66FF50009CF02C /* Entitlements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1443,6 +1447,50 @@
 			};
 			name = opt;
 		};
+		7AD284960F66FDDA009F27D4 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A981F650EB7018B004B0CAC /* dmz.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MPSC";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A7B5517B-1CB5-4629-9F87-1BE6CF3CF438";
+				SDKROOT = iphoneos2.2.1;
+				SYMROOT = build;
+			};
+			name = Distribution;
+		};
+		7AD284970F66FDDA009F27D4 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Mites_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = Mites;
+			};
+			name = Distribution;
+		};
+		7AD284980F66FDDA009F27D4 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = dmz_create_plugins;
+			};
+			name = Distribution;
+		};
+		7AD284990F66FDDA009F27D4 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = copy_headers;
+			};
+			name = Distribution;
+		};
 		C01FCF4F08A954540054247B /* debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7A981F650EB7018B004B0CAC /* dmz.xcconfig */;
@@ -1455,19 +1503,23 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = iphoneos2.2.1;
+				SYMROOT = build;
 			};
 			name = debug;
 		};
 		C01FCF5008A954540054247B /* opt */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A981F650EB7018B004B0CAC /* dmz.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = iphoneos2.2.1;
+				SYMROOT = build;
 			};
 			name = opt;
 		};
@@ -1479,6 +1531,7 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* debug */,
 				1D6058950D05DD3E006BFB54 /* opt */,
+				7AD284970F66FDDA009F27D4 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = opt;
@@ -1488,6 +1541,7 @@
 			buildConfigurations = (
 				7A981FFF0EB7042C004B0CAC /* debug */,
 				7A9820000EB7042C004B0CAC /* opt */,
+				7AD284980F66FDDA009F27D4 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = opt;
@@ -1497,6 +1551,7 @@
 			buildConfigurations = (
 				7AA9C9DC0EB713F600A97E88 /* debug */,
 				7AA9C9DD0EB713F600A97E88 /* opt */,
+				7AD284990F66FDDA009F27D4 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = opt;
@@ -1506,6 +1561,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* debug */,
 				C01FCF5008A954540054247B /* opt */,
+				7AD284960F66FDDA009F27D4 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = opt;
