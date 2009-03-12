@@ -8,7 +8,11 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+<<<<<<< HEAD:xcode/Mites/FlipsideView.xib
 			<integer value="64"/>
+=======
+			<integer value="40"/>
+>>>>>>> fe1f49bf1edaf762043ecc026cfb292058578e28:xcode/Mites/FlipsideView.xib
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
