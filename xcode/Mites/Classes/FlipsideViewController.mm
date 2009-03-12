@@ -6,12 +6,23 @@
 
 @synthesize mitesLabel, chipsLabel, speedLabel, waitLabel;
 @synthesize mitesSlider, chipsSlider, speedSlider, waitSlider;
-
+@synthesize resetButton;
 
 - (void)viewDidLoad {
    
    [super viewDidLoad];
-   self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];      
+   self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor]; 
+   self.view.contentMode = UIViewContentModeScaleToFill;
+   
+   dmz::MitesModuleiPhone *mod (dmz::MitesModuleiPhone::get_instance ());
+   if (mod) {
+      
+      if (!(mod->reset_lua ())) {
+
+         // failed resetting lua most likely because there was no lua module
+         [resetButton removeFromSuperview];
+      } 
+   }
 }
 
 
@@ -26,6 +37,8 @@
    [chipsSlider release];
    [speedSlider release];
    [waitSlider release];
+   
+   [resetButton release];
    
    [super dealloc];
 }

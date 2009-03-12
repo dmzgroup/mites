@@ -24,10 +24,6 @@
    
    MainViewController *viewController = [[MainViewController alloc] initWithNibName:@"MainView" bundle:nil];
    self.mainViewController = viewController;
-//   self.mainViewController.mainView.delegate = self;
-//   [self.mainViewController.mainView setControlsDelegate:self];
-//   self.mainViewController.mainView.controlsDelegate = self;
-
    [viewController release];
 }
 
@@ -57,12 +53,6 @@
    
    ControlsViewController *controlsController = [[ControlsViewController alloc] initWithNibName:@"ControlsView" bundle:nil];
    self.controlsViewController = controlsController;
-   
-   CGRect appFrame = [[UIScreen mainScreen] applicationFrame];
-
-//   CGRect frame = controlsViewController.view.frame;
-//   controlsViewController.view.frame = CGRectOffset (frame, 0, appFrame.size.height);
-   
    [controlsController release];
 }
 
@@ -82,7 +72,6 @@
    
    [self loadMainViewController];
    [self.view insertSubview:mainViewController.view belowSubview:infoButton];
-//   [self.view addSubview:mainViewController.view];
 
    [self.mainViewController.mainView setControlsDelegate:self];
    
@@ -107,7 +96,6 @@
 
    CGRect appFrame = [[UIScreen mainScreen] applicationFrame];
    
-   NSLog (@"toggleControl");
    if (controlsViewController == nil) {
     
       [self loadControlsViewController];
@@ -132,6 +120,8 @@
       
       if (mod) {
          
+         [infoButton removeFromSuperview];
+
          [controlsViewController.mitesSlider setValue:mod->get_mites ()];
          [controlsViewController.chipsSlider setValue:mod->get_chips ()];
          [controlsViewController.speedSlider setValue:mod->get_speed ()];
@@ -140,6 +130,10 @@
       }
       
       offset = -offset;
+   }
+   else {
+      
+      [self.view insertSubview:infoButton aboveSubview:mainViewController.view];
    }
    
    controlsViewController.view.frame = CGRectOffset (frame, 0, offset);
@@ -152,7 +146,7 @@
    
     if (flipsideViewController == nil) {
        
-        [self loadFlipsideViewController];
+       [self loadFlipsideViewController];
     }
     
     UIView *mainView = mainViewController.view;
@@ -191,10 +185,10 @@
        
        if (mod) {
         
-          mod->set_mites (dmz::Int64 ([flipsideViewController.mitesSlider value]));
-          mod->set_chips (dmz::Int64 ([flipsideViewController.chipsSlider value]));
-          mod->set_speed ([flipsideViewController.speedSlider value]);
-          mod->set_wait ([flipsideViewController.waitSlider value]);
+          mod->set_mites (dmz::Int64 ([flipsideViewController.mitesSlider value] + 0.5f));
+          mod->set_chips (dmz::Int64 ([flipsideViewController.chipsSlider value] + 0.5f));
+          mod->set_speed ([flipsideViewController.speedSlider value] + 0.5f);
+          mod->set_wait ([flipsideViewController.waitSlider value] + 0.5f);
        }
       
       [mainViewController viewWillAppear:YES];

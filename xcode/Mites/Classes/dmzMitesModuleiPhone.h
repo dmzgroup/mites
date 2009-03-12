@@ -68,7 +68,7 @@ namespace dmz {
          void set_wait (const Float64 Value);
          Float64 get_wait ();
             
-         void reset_lua ();
+         Boolean reset_lua ();
             
       protected:
          static MitesModuleiPhone *_instance;

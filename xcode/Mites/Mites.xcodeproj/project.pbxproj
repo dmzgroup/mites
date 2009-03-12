@@ -90,6 +90,7 @@
 		7AA9C9E60EB714FF00A97E88 /* dmzMitesModuleiPhone.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AA9C9E40EB714FF00A97E88 /* dmzMitesModuleiPhone.mm */; };
 		7AA9C9EA0EB718F500A97E88 /* RootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA9C9E90EB718F500A97E88 /* RootView.xib */; };
 		7AA9CA3B0EB725B600A97E88 /* dmziPhonePluginCanvasObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AA9CA3A0EB725B600A97E88 /* dmziPhonePluginCanvasObject.mm */; };
+		7AE6DCF30F69B8000093CF11 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 7AE6DCF20F69B8000093CF11 /* iTunesArtwork */; };
 		D281B01C0EDCAA3100CFD21B /* dmzMitesPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D281B01B0EDCAA3100CFD21B /* dmzMitesPlugin.cpp */; };
 		D2FEED210EBB97F800D5280D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FEED200EBB97F800D5280D /* Default.png */; };
 		D2FEEDEB0EBC200200D5280D /* Mites-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FEEDEA0EBC200200D5280D /* Mites-Default.png */; };
@@ -504,7 +505,7 @@
 		7AA9C9DA0EB713F600A97E88 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = ../../include/dmz;
+			dstPath = ../../../../../../include/dmz;
 			dstSubfolderSpec = 16;
 			files = (
 				7AA9C9DE0EB7141A00A97E88 /* dmziPhoneCanvasConsts.h in CopyFiles */,
@@ -578,6 +579,7 @@
 		7AA9C9E90EB718F500A97E88 /* RootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootView.xib; sourceTree = "<group>"; };
 		7AA9CA390EB725B600A97E88 /* dmziPhonePluginCanvasObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmziPhonePluginCanvasObject.h; sourceTree = "<group>"; };
 		7AA9CA3A0EB725B600A97E88 /* dmziPhonePluginCanvasObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dmziPhonePluginCanvasObject.mm; sourceTree = "<group>"; };
+		7AE6DCF20F69B8000093CF11 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D281B01A0EDCAA3100CFD21B /* dmzMitesPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dmzMitesPlugin.h; path = ../../plugins/mites/dmzMitesPlugin.h; sourceTree = SOURCE_ROOT; };
 		D281B01B0EDCAA3100CFD21B /* dmzMitesPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dmzMitesPlugin.cpp; path = ../../plugins/mites/dmzMitesPlugin.cpp; sourceTree = SOURCE_ROOT; };
@@ -705,6 +707,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7AE6DCF20F69B8000093CF11 /* iTunesArtwork */,
 				7A981F4D0EB7003B004B0CAC /* Icon.png */,
 				D2FEED200EBB97F800D5280D /* Default.png */,
 				D2FEEDEA0EBC200200D5280D /* Mites-Default.png */,
@@ -1205,6 +1208,7 @@
 				7A88A3E30F5E02B50000B366 /* chip-small.png in Resources */,
 				7A88A3E40F5E02B50000B366 /* mite-small.png in Resources */,
 				7A70C00E0F66FF50009CF02C /* Entitlements.plist in Resources */,
+				7AE6DCF30F69B8000093CF11 /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

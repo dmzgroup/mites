@@ -10,7 +10,9 @@
    IBOutlet UISlider *mitesSlider;
    IBOutlet UISlider *chipsSlider;
    IBOutlet UISlider *speedSlider;
-   IBOutlet UISlider *waitSlider;   
+   IBOutlet UISlider *waitSlider;  
+   
+   IBOutlet UIButton *resetButton;
 }
 
 @property (nonatomic, retain) UILabel *mitesLabel;
@@ -22,6 +24,8 @@
 @property (nonatomic, retain) UISlider *chipsSlider;
 @property (nonatomic, retain) UISlider *speedSlider;
 @property (nonatomic, retain) UISlider *waitSlider;
+
+@property (nonatomic, retain) UIButton *resetButton;
 
 
 - (IBAction)sliderValueChanged:(id)sender;

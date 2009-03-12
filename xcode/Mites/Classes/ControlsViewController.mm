@@ -70,7 +70,7 @@
       
       if (mod) {
          
-         mod->set_mites (dmz::Int64 ([mitesSlider value]));
+         mod->set_mites (dmz::Int64 ([mitesSlider value] + 0.5f));
       }
    }
    else if (sender == chipsSlider) {
@@ -79,7 +79,7 @@
       
       if (mod) {
          
-         mod->set_chips (dmz::Int64 ([chipsSlider value]));
+         mod->set_chips (dmz::Int64 ([chipsSlider value] + 0.5f));
       }
    }
    else if (sender == speedSlider) {
@@ -88,7 +88,7 @@
       
       if (mod) {
          
-         mod->set_speed ([speedSlider value]);
+         mod->set_speed ([speedSlider value] + 0.5f);
       }
    }
    else if (sender == waitSlider) {
@@ -97,7 +97,7 @@
       
       if (mod) {
          
-         mod->set_wait ([waitSlider value]);
+         mod->set_wait ([waitSlider value] + 0.5f);
       }
    }
 }

@@ -9,7 +9,7 @@
 
 - (void) awakeFromNib {
    
-   _canvas = [[Canvas alloc] initWithFrame:CGRectMake (0, 0, 640, 920)];
+   _canvas = [[Canvas alloc] initWithFrame:CGRectMake (0, 0, 320*2, 480*2)];
    
    self.contentSize = _canvas.bounds.size;
    self.minimumZoomScale = 0.5;
