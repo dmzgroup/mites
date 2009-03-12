@@ -35,6 +35,8 @@ dmz::MitesModuleiPhone::MitesModuleiPhone (const PluginInfo &Info, Config &local
       localInstance = _instance;
    }
 
+   [[UIApplication sharedApplication] setStatusBarHidden:YES animated:NO];
+   
    _rootViewController = [[RootViewController alloc] 
       initWithNibName:@"RootView" bundle:nil];
          
@@ -82,9 +84,11 @@ dmz::MitesModuleiPhone::update_plugin_state (
    }
    else if (State == PluginStateStart) {
 
+      [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
    }
    else if (State == PluginStateStop) {
 
+      [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
    }
    else if (State == PluginStateShutdown) {
 

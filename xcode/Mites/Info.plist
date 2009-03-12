@@ -26,5 +26,7 @@
 	<true/>
 	<key>NSMainNibFile</key>
 	<string>dmzMainWindow</string>
+	<key>UIStatusBarHidden</key>
+	<true/>
 </dict>
 </plist>
