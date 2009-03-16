@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dmz>
-   <plugins>
+   <plugin-list>
       <plugin name="dmzAudioModuleFMOD"/>
       <plugin name="dmzAudioModulePortalBasic"/>
       <plugin name="dmzAudioPluginObject" />
-   </plugins>
+   </plugin-list>
    <dmzAudioModulePortalBasic>
      <name value="audioportal1"/>
    </dmzAudioModulePortalBasic>

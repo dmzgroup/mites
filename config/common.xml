@@ -3,7 +3,7 @@
 <dmzFileCacheLocal>
    <path value="./scripts"/>
 </dmzFileCacheLocal>
-<plugins>
+<plugin-list>
    <plugin name="dmzArchiveModuleBasic"/>
    <plugin name="dmzArchivePluginAutoLoad"/>
    <plugin name="dmzArchivePluginObject"/>
@@ -11,7 +11,7 @@
    <plugin name="dmzObjectModuleGridBasic"/>
    <!-- <plugin name="dmzObjectPluginDump"/> -->
    <!-- <plugin name="dmzPluginTermExit"/> -->
-</plugins>
+</plugin-list>
 <dmzObjectModuleGridBase>
    <grid>
       <cell x="100" y="100"/>
