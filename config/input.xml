@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dmz>
-<plugins>
+<plugin-list>
    <plugin name="dmzInputModuleBasic"/>
    <plugin name="dmzInputPluginExit"/>
    <plugin name="dmzInputPluginKeyEventToMessage"/>
-</plugins>
+</plugin-list>
 <dmzInputPluginKeyEventToMessage>
    <channel>
       <converter key="L">
