@@ -45,6 +45,13 @@ namespace dmz {
             const Int64 Value,
             const Int64 *PreviousValue);
 
+         virtual void update_object_flag (
+            const UUID &Identity,
+            const Handle ObjectHandle,
+            const Handle AttributeHandle,
+            const Boolean Value,
+            const Boolean *PreviousValue);
+            
          virtual void update_object_position (
             const UUID &Identity,
             const Handle ObjectHandle,
@@ -97,7 +104,9 @@ namespace dmz {
          Handle _turnDelayAttrHandle;
          Handle _linkAttrHandle;
          Handle _timerAttrHandle;
+         Handle _countAttrHandle;
          Handle _waitAttrHandle;
+         Handle _pauseAttrHandle;
          Vector _arenaMin;
          Vector _arenaMax;
          Float64 _speed;
@@ -110,6 +119,7 @@ namespace dmz {
          HashTableHandleTemplate<ChipStruct> _chipTable;
          Sphere _volume;
          Time _time;
+         Boolean _paused;
          
       private:
          MitesPlugin ();

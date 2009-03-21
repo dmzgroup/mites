@@ -91,6 +91,11 @@
 		7AA9C9EA0EB718F500A97E88 /* RootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA9C9E90EB718F500A97E88 /* RootView.xib */; };
 		7AA9CA3B0EB725B600A97E88 /* dmziPhonePluginCanvasObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AA9CA3A0EB725B600A97E88 /* dmziPhonePluginCanvasObject.mm */; };
 		7AE6DCF30F69B8000093CF11 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 7AE6DCF20F69B8000093CF11 /* iTunesArtwork */; };
+		D208E7C50F71AC1900EB18A8 /* slider_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = D208E7C20F71AC1900EB18A8 /* slider_thumb.png */; };
+		D208E7C60F71AC1900EB18A8 /* slider_left.png in Resources */ = {isa = PBXBuildFile; fileRef = D208E7C30F71AC1900EB18A8 /* slider_left.png */; };
+		D208E7C70F71AC1900EB18A8 /* slider_right.png in Resources */ = {isa = PBXBuildFile; fileRef = D208E7C40F71AC1900EB18A8 /* slider_right.png */; };
+		D208E7EF0F71B6B800EB18A8 /* dmzUIKitUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = D208E7EE0F71B6B800EB18A8 /* dmzUIKitUtil.mm */; };
+		D208E81E0F71C22000EB18A8 /* info-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D208E81D0F71C22000EB18A8 /* info-button.png */; };
 		D281B01C0EDCAA3100CFD21B /* dmzMitesPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D281B01B0EDCAA3100CFD21B /* dmzMitesPlugin.cpp */; };
 		D2FEED210EBB97F800D5280D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FEED200EBB97F800D5280D /* Default.png */; };
 		D2FEEDEB0EBC200200D5280D /* Mites-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FEEDEA0EBC200200D5280D /* Mites-Default.png */; };
@@ -581,6 +586,12 @@
 		7AA9CA3A0EB725B600A97E88 /* dmziPhonePluginCanvasObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dmziPhonePluginCanvasObject.mm; sourceTree = "<group>"; };
 		7AE6DCF20F69B8000093CF11 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D208E7C20F71AC1900EB18A8 /* slider_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_thumb.png; sourceTree = "<group>"; };
+		D208E7C30F71AC1900EB18A8 /* slider_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_left.png; sourceTree = "<group>"; };
+		D208E7C40F71AC1900EB18A8 /* slider_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_right.png; sourceTree = "<group>"; };
+		D208E7ED0F71B6B800EB18A8 /* dmzUIKitUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmzUIKitUtil.h; sourceTree = "<group>"; };
+		D208E7EE0F71B6B800EB18A8 /* dmzUIKitUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = dmzUIKitUtil.mm; sourceTree = "<group>"; };
+		D208E81D0F71C22000EB18A8 /* info-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info-button.png"; sourceTree = "<group>"; };
 		D281B01A0EDCAA3100CFD21B /* dmzMitesPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dmzMitesPlugin.h; path = ../../plugins/mites/dmzMitesPlugin.h; sourceTree = SOURCE_ROOT; };
 		D281B01B0EDCAA3100CFD21B /* dmzMitesPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dmzMitesPlugin.cpp; path = ../../plugins/mites/dmzMitesPlugin.cpp; sourceTree = SOURCE_ROOT; };
 		D2FEED200EBB97F800D5280D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -707,6 +718,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D208E81D0F71C22000EB18A8 /* info-button.png */,
+				D208E7C20F71AC1900EB18A8 /* slider_thumb.png */,
+				D208E7C30F71AC1900EB18A8 /* slider_left.png */,
+				D208E7C40F71AC1900EB18A8 /* slider_right.png */,
 				7AE6DCF20F69B8000093CF11 /* iTunesArtwork */,
 				7A981F4D0EB7003B004B0CAC /* Icon.png */,
 				D2FEED200EBB97F800D5280D /* Default.png */,
@@ -827,6 +842,8 @@
 		7AA9C9540EB70D9600A97E88 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				D208E7ED0F71B6B800EB18A8 /* dmzUIKitUtil.h */,
+				D208E7EE0F71B6B800EB18A8 /* dmzUIKitUtil.mm */,
 				7AA9C9550EB70D9600A97E88 /* dmzAppDelegate.h */,
 				7AA9C9560EB70D9600A97E88 /* dmzAppDelegate.mm */,
 				7AA9C9570EB70D9600A97E88 /* dmzApplicationiPhone.cpp */,
@@ -1209,6 +1226,10 @@
 				7A88A3E40F5E02B50000B366 /* mite-small.png in Resources */,
 				7A70C00E0F66FF50009CF02C /* Entitlements.plist in Resources */,
 				7AE6DCF30F69B8000093CF11 /* iTunesArtwork in Resources */,
+				D208E7C50F71AC1900EB18A8 /* slider_thumb.png in Resources */,
+				D208E7C60F71AC1900EB18A8 /* slider_left.png in Resources */,
+				D208E7C70F71AC1900EB18A8 /* slider_right.png in Resources */,
+				D208E81E0F71C22000EB18A8 /* info-button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1256,6 +1277,7 @@
 				D2FEEEC90EBC4BF400D5280D /* ControlsViewController.mm in Sources */,
 				D2FEEECE0EBC4C2100D5280D /* ControlsView.mm in Sources */,
 				D281B01C0EDCAA3100CFD21B /* dmzMitesPlugin.cpp in Sources */,
+				D208E7EF0F71B6B800EB18A8 /* dmzUIKitUtil.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1463,7 +1485,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A7B5517B-1CB5-4629-9F87-1BE6CF3CF438";
-				SDKROOT = iphoneos2.2.1;
+				SDKROOT = iphoneos2.2;
 				SYMROOT = build;
 			};
 			name = Distribution;
@@ -1506,7 +1528,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.2.1;
+				SDKROOT = iphoneos2.2;
 				SYMROOT = build;
 			};
 			name = debug;
@@ -1522,7 +1544,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.2.1;
+				SDKROOT = iphoneos2.2;
 				SYMROOT = build;
 			};
 			name = opt;

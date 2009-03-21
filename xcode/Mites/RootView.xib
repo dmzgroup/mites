@@ -50,8 +50,11 @@
 							<double key="NSSize">1.500000e+01</double>
 							<int key="NSfFlags">16</int>
 						</object>
-						<int key="IBUIButtonType">3</int>
 						<bool key="IBUIShowsTouchWhenHighlighted">YES</bool>
+						<string key="IBUIHighlightedTitle"/>
+						<string key="IBUIDisabledTitle"/>
+						<string key="IBUISelectedTitle"/>
+						<string key="IBUINormalTitle"/>
 						<object class="NSColor" key="IBUIHighlightedTitleColor" id="732399466">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -60,6 +63,13 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MyAwLjMwOTgwMzkzIDAuNTIxNTY4NjYAA</bytes>
 						</object>
+						<object class="NSCustomResource" key="IBUIHighlightedImage" id="454024941">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">info-button.png</string>
+						</object>
+						<reference key="IBUIDisabledImage" ref="454024941"/>
+						<reference key="IBUISelectedImage" ref="454024941"/>
+						<reference key="IBUINormalImage" ref="454024941"/>
 					</object>
 				</object>
 				<string key="NSFrameSize">{320, 460}</string>
@@ -149,7 +159,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>RootViewController</string>
 					<string>UIResponder</string>
-					<string>{{768, 346}, {320, 460}}</string>
+					<string>{{726, 346}, {320, 460}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>

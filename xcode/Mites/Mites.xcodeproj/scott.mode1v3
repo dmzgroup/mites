@@ -232,6 +232,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -312,7 +314,7 @@
 							<real>266</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>230 197 1031 804 0 0 1680 1028 </string>
+						<string>111 203 1031 804 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -340,7 +342,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>D2ACE0010EDCC65900C4EAC9</string>
+										<string>D2DF95910F7037700005FA6F</string>
 										<key>history</key>
 										<array>
 											<string>D2FEED940EBBD30900D5280D</string>
@@ -377,7 +379,7 @@
 											<string>D281B0450EDCACAA00CFD21B</string>
 											<string>D281B0460EDCACAA00CFD21B</string>
 											<string>D2ACDFFE0EDCC65900C4EAC9</string>
-											<string>D2ACDFFF0EDCC65900C4EAC9</string>
+											<string>D2ACE0010EDCC65900C4EAC9</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -428,7 +430,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {743, 531}}</string>
 								<key>RubberWindowFrame</key>
-								<string>230 197 1031 804 0 0 1680 1028 </string>
+								<string>111 203 1031 804 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -448,7 +450,7 @@
 								<key>Frame</key>
 								<string>{{0, 536}, {743, 227}}</string>
 								<key>RubberWindowFrame</key>
-								<string>230 197 1031 804 0 0 1680 1028 </string>
+								<string>111 203 1031 804 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -472,9 +474,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>D2ACE0020EDCC65900C4EAC9</string>
+				<string>D2DF95920F7037700005FA6F</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>D2ACE0030EDCC65900C4EAC9</string>
+				<string>D2DF95930F7037700005FA6F</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -608,15 +610,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>D2ACE00C0EDCC65900C4EAC9</string>
-		<string>D2ACE00D0EDCC65900C4EAC9</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>D2FEED8A0EBBD2EF00D5280D</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/scott/cm/src/mites/xcode/Mites/Mites.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>230 197 1031 804 0 0 1680 1028 </string>
+	<string>111 203 1031 804 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

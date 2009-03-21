@@ -1,21 +1,25 @@
 #import "dmzMitesModuleiPhone.h"
 #import "ControlsViewController.h"
-
+#import "dmzUIKitUtil.h"
 
 @implementation ControlsViewController
 
 @synthesize mitesLabel, chipsLabel, speedLabel, waitLabel;
 @synthesize mitesSlider, chipsSlider, speedSlider, waitSlider;
 
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
    
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+   if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
        
-       self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];      
-    }
+      self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];      
+   }
    
-    return self;
+   UIKitImproveSliderAccuracy (mitesSlider);
+   UIKitImproveSliderAccuracy (chipsSlider);
+   UIKitImproveSliderAccuracy (speedSlider);
+   UIKitImproveSliderAccuracy (waitSlider);
+   
+   return self;
 }
 
 
@@ -58,6 +62,7 @@
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
     // Release anything that's not essential, such as cached data
 }
+
 
 
 - (IBAction)sliderValueChanged:(id)sender {

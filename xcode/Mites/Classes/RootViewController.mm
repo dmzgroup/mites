@@ -165,7 +165,9 @@
           [flipsideViewController.mitesSlider setValue:mod->get_mites ()];
           [flipsideViewController.chipsSlider setValue:mod->get_chips ()];
           [flipsideViewController.speedSlider setValue:mod->get_speed ()];
-          [flipsideViewController.waitSlider setValue:mod->get_wait ()];
+          [flipsideViewController.maxTurnSlider setValue:mod->get_max_turn ()];
+          [flipsideViewController.turnDelaySlider setValue:mod->get_turn_delay()];
+          [flipsideViewController.huntDelaySlider setValue:mod->get_wait ()];
           
           [flipsideViewController updateLabels];
        }
@@ -188,7 +190,9 @@
           mod->set_mites (dmz::Int64 ([flipsideViewController.mitesSlider value] + 0.5f));
           mod->set_chips (dmz::Int64 ([flipsideViewController.chipsSlider value] + 0.5f));
           mod->set_speed ([flipsideViewController.speedSlider value] + 0.5f);
-          mod->set_wait ([flipsideViewController.waitSlider value] + 0.5f);
+          mod->set_max_turn ([flipsideViewController.maxTurnSlider value] + 0.5f);
+          mod->set_turn_delay ([flipsideViewController.turnDelaySlider value] + 0.5f);
+          mod->set_wait ([flipsideViewController.huntDelaySlider value] + 0.5f);
        }
       
       [mainViewController viewWillAppear:YES];

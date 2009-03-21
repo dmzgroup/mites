@@ -13,7 +13,7 @@
 static const dmz::Vector ForwardVec (0.0, 0.0, -1.0);
 static const dmz::Vector UpVec (0.0, 1.0, 0.0);
 static const dmz::Vector ChipOffset (0.0, 0.0, -25.0);
-
+static const dmz::Matrix UnitMatrix ();
 
 dmz::Float64 local_random () { 
    
@@ -45,7 +45,9 @@ dmz::MitesPlugin::MitesPlugin (const PluginInfo &Info, Config &local) :
       _turnDelayAttrHandle (0),
       _linkAttrHandle (0),
       _timerAttrHandle (0),
+      _countAttrHandle (0),
       _waitAttrHandle (0),
+      _pauseAttrHandle (0),
       _arenaMin (-3000, 0, -2000),
       _arenaMax (3000, 0, 2000),
       _speed (3000.0),
@@ -57,7 +59,8 @@ dmz::MitesPlugin::MitesPlugin (const PluginInfo &Info, Config &local) :
       _miteTable (),
       _chipTable (),
       _volume (Vector (), 20),
-      _time (Info.get_context ()) {
+      _time (Info.get_context ()),
+      _paused (False) {
    
    _init (local);
 }
@@ -125,10 +128,10 @@ dmz::MitesPlugin::update_time_slice (const Float64 TimeDelta) {
       Matrix ori;
       
       // update mites
-      
+
       MiteStruct *mite = _miteTable.get_first (it);
 
-      while (mite) {
+      while (mite && !_paused) {
          
          // move
          objMod->lookup_position (mite->Object, _defaultAttrHandle, pos);
@@ -185,7 +188,7 @@ dmz::MitesPlugin::update_time_slice (const Float64 TimeDelta) {
       
       ChipStruct *chip = _chipTable.get_first (it);
       
-      while (chip) {
+      while (chip && !_paused) {
       
          const Handle Mite (_get_mite (chip->Object));
          
@@ -296,6 +299,20 @@ dmz::MitesPlugin::update_object_counter (
             }
          }
       }
+   }
+}
+
+void
+dmz::MitesPlugin::update_object_flag (
+      const UUID &Identity,
+      const Handle ObjectHandle,
+      const Handle AttributeHandle,
+      const Boolean Value,
+      const Boolean *PreviousValue) {
+
+   if (AttributeHandle == _pauseAttrHandle) {
+    
+      _paused = Value;
    }
 }
 
@@ -450,9 +467,11 @@ dmz::MitesPlugin::_init (Config &local) {
    _turnAttrHandle = activate_object_attribute ("Turn", ObjectScalarMask);
    _waitAttrHandle = activate_object_attribute ("Wait", ObjectScalarMask);
    _turnDelayAttrHandle = activate_object_attribute ("TurnDelay", ObjectScalarMask);
+   _pauseAttrHandle = activate_object_attribute ("Pause", ObjectFlagMask);
 
    _linkAttrHandle = defs.create_named_handle ("Chip_Link");
    _timerAttrHandle = defs.create_named_handle ("Mite_Timer");
+   _countAttrHandle = defs.create_named_handle ("Chip_Count");
 
    defs.lookup_object_type (
       config_to_string ("object_type", local, "mite"), _miteType);

@@ -67,12 +67,24 @@ namespace dmz {
             
          void set_wait (const Float64 Value);
          Float64 get_wait ();
+
+         void set_max_turn (const Float64 Value);
+         Float64 get_max_turn ();
             
+         void set_turn_delay (const Float64 Value);
+         Float64 get_turn_delay ();
+         
          Boolean reset_lua ();
             
       protected:
          static MitesModuleiPhone *_instance;
-            
+         
+         void _set_arena_counter (const Handle AttrHandle, const Int64 Value);
+         Int64 _get_arena_counter (const Handle AttrHandle);            
+         
+         void _set_arena_scalar (const Handle AttrHandle, const Float64 Value);            
+         Float64 _get_arena_scalar (const Handle AttrHandle);
+               
          void _init (Config &local);
 
          Log _log;
@@ -84,6 +96,8 @@ namespace dmz {
          Handle _chipsHandle;
          Handle _speedHandle;
          Handle _waitHandle;
+         Handle _maxTurnHandle;
+         Handle _turnDelayHandle;
          LuaModule *_lua;
             
       private:

@@ -27,6 +27,8 @@ dmz::MitesModuleiPhone::MitesModuleiPhone (const PluginInfo &Info, Config &local
       _chipsHandle (0),
       _speedHandle (0),
       _waitHandle (0),
+      _maxTurnHandle (0),
+      _turnDelayHandle (0),
       _lua (0) {
 
    if (!_instance) {
@@ -214,115 +216,84 @@ dmz::MitesModuleiPhone::remove_item (const Handle ObjectHandle) {
 void
 dmz::MitesModuleiPhone::set_mites (const Int64 Value) {
 
-   dmz::ObjectModule *objMod (get_object_module ());
-   
-   if (_arena && objMod) {
-   
-      objMod->store_counter (_arena, _mitesHandle, Value);
-   }
+   _set_arena_counter (_mitesHandle, Value);
 }
 
 
 dmz::Int64
 dmz::MitesModuleiPhone::get_mites () {
  
-   dmz::Int64 retVal (0);
-   
-   ObjectModule *objMod  (get_object_module ());
-   
-   if (_arena && objMod) {
-    
-      objMod->lookup_counter (_arena, _mitesHandle, retVal);
-   }
-   
-   return retVal;
+   return _get_arena_counter (_mitesHandle);
 }
 
 
 
 void
 dmz::MitesModuleiPhone::set_chips (const Int64 Value) {
-   
-   dmz::ObjectModule *objMod (get_object_module ());
-   
-   if (_arena && objMod) {
-      
-      objMod->store_counter (_arena, _chipsHandle, Value);
-   }
+
+   _set_arena_counter (_chipsHandle, Value);
 }
 
 
 dmz::Int64
 dmz::MitesModuleiPhone::get_chips () {
-   
-   Int64 retVal (0);
-   
-   ObjectModule *objMod  (get_object_module ());
-   
-   if (_arena && objMod) {
-      
-      objMod->lookup_counter (_arena, _chipsHandle, retVal);
-   }
-   
-   return retVal;
+
+   return _get_arena_counter (_chipsHandle);
 }
 
 
 void
 dmz::MitesModuleiPhone::set_speed (const Float64 Value) {
    
-   ObjectModule *objMod (get_object_module ());
-   
-   if (_arena && objMod) {
-      
-      objMod->store_scalar (_arena, _speedHandle, Value * 100.0);
-   }
+   _set_arena_scalar (_speedHandle, Value * 100.0);
 }
 
 
 dmz::Float64
 dmz::MitesModuleiPhone::get_speed () {
    
-   Float64 retVal (0);
-   
-   ObjectModule *objMod  (get_object_module ());
-   
-   if (_arena && objMod) {
-      
-      objMod->lookup_scalar (_arena, _speedHandle, retVal);
-      
-      retVal = retVal / 100.0;
-   }
-   
-   return retVal;
+   return (_get_arena_scalar (_speedHandle) / 100.0);
 }
 
 
 void
 dmz::MitesModuleiPhone::set_wait (const Float64 Value) {
-   
-   ObjectModule *objMod (get_object_module ());
-   
-   if (_arena && objMod) {
-      
-      objMod->store_scalar (_arena, _waitHandle, Value);
-   }
+
+   _set_arena_scalar (_waitHandle, Value / 100.0);
 }
 
 
 dmz::Float64
 dmz::MitesModuleiPhone::get_wait () {
    
-   Float64 retVal (0);
+   return (_get_arena_scalar (_waitHandle) * 100.0);
+}
+
+
+void
+dmz::MitesModuleiPhone::set_max_turn (const Float64 Value) {
+
+   _set_arena_scalar (_maxTurnHandle, Value);
+}
+
+
+dmz::Float64
+dmz::MitesModuleiPhone::get_max_turn () {
    
-   ObjectModule *objMod  (get_object_module ());
+   return _get_arena_scalar (_maxTurnHandle);
+}
+
+void
+dmz::MitesModuleiPhone::set_turn_delay (const Float64 Value) {
    
-   if (_arena && objMod) {
-      
-      objMod->lookup_scalar (_arena, _waitHandle, retVal);
-   }
+   _set_arena_scalar (_turnDelayHandle, Value);
+}
+
+
+dmz::Float64
+dmz::MitesModuleiPhone::get_turn_delay () {
    
-   return retVal;
+   return _get_arena_scalar (_turnDelayHandle);
 }
 
 
@@ -341,6 +312,61 @@ dmz::MitesModuleiPhone::reset_lua () {
 }
 
 
+void
+dmz::MitesModuleiPhone::_set_arena_counter (const Handle AttrHandle, const Int64 Value) {
+   
+   dmz::ObjectModule *objMod (get_object_module ());
+   
+   if (_arena && objMod) {
+      
+      objMod->store_counter (_arena, AttrHandle, Value);
+   }
+}
+
+
+dmz::Int64
+dmz::MitesModuleiPhone::_get_arena_counter (const Handle AttrHandle) {
+   
+   dmz::Int64 retVal (0);
+   
+   ObjectModule *objMod  (get_object_module ());
+   
+   if (_arena && objMod) {
+      
+      objMod->lookup_counter (_arena, AttrHandle, retVal);
+   }
+   
+   return retVal;
+}
+
+
+void
+dmz::MitesModuleiPhone::_set_arena_scalar (const Handle AttrHandle, const Float64 Value) {
+   
+   ObjectModule *objMod (get_object_module ());
+   
+   if (_arena && objMod) {
+      
+      objMod->store_scalar (_arena, AttrHandle, Value);
+   }
+}
+
+
+dmz::Float64
+dmz::MitesModuleiPhone::_get_arena_scalar (const Handle AttrHandle) {
+   
+   Float64 retVal (0);
+   
+   ObjectModule *objMod  (get_object_module ());
+   
+   if (_arena && objMod) {
+      
+      objMod->lookup_scalar (_arena, AttrHandle, retVal);
+   }
+   
+   return retVal;
+}
+
 
 void
 dmz::MitesModuleiPhone::_init (Config &local) {
@@ -348,7 +374,9 @@ dmz::MitesModuleiPhone::_init (Config &local) {
    _mitesHandle = activate_object_attribute ("Mites", ObjectCounterMask);
    _chipsHandle = activate_object_attribute ("Chips", ObjectCounterMask);
    _speedHandle = activate_object_attribute ("Speed", ObjectScalarMask);
-   _waitHandle = activate_object_attribute ("Wait", ObjectScalarMask);   
+   _waitHandle = activate_object_attribute ("Wait", ObjectScalarMask);
+   _maxTurnHandle = activate_object_attribute ("Turn", ObjectScalarMask);
+   _turnDelayHandle = activate_object_attribute ("TurnDelay", ObjectScalarMask);
 }
 
 

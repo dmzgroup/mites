@@ -1,12 +1,13 @@
 #import "dmzMitesModuleiPhone.h"
 #import "FlipsideViewController.h"
+#import "dmzUIKitUtil.h"
 
 
 @implementation FlipsideViewController
 
-@synthesize mitesLabel, chipsLabel, speedLabel, waitLabel;
-@synthesize mitesSlider, chipsSlider, speedSlider, waitSlider;
-@synthesize resetButton;
+@synthesize mitesLabel, chipsLabel, speedLabel, maxTurnLabel, turnDelayLabel, huntDelayLabel;
+@synthesize mitesSlider, chipsSlider, speedSlider, maxTurnSlider, turnDelaySlider, huntDelaySlider;
+@synthesize stopButton, resetButton;
 
 - (void)viewDidLoad {
    
@@ -14,15 +15,15 @@
    self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor]; 
    self.view.contentMode = UIViewContentModeScaleToFill;
    
-   dmz::MitesModuleiPhone *mod (dmz::MitesModuleiPhone::get_instance ());
-   if (mod) {
-      
-      if (!(mod->reset_lua ())) {
-
-         // failed resetting lua most likely because there was no lua module
-         [resetButton removeFromSuperview];
-      } 
-   }
+   UIKitImproveSliderAccuracy (mitesSlider);
+   UIKitImproveSliderAccuracy (chipsSlider);
+   UIKitImproveSliderAccuracy (speedSlider);
+   UIKitImproveSliderAccuracy (maxTurnSlider);
+   UIKitImproveSliderAccuracy (turnDelaySlider);
+   UIKitImproveSliderAccuracy (huntDelaySlider);
+   
+   [stopButton removeFromSuperview];
+   [resetButton removeFromSuperview];
 }
 
 
@@ -31,13 +32,18 @@
    [mitesLabel release];
    [chipsLabel release];
    [speedLabel release];
-   [waitLabel release];
-
+   [maxTurnLabel release];
+   [turnDelayLabel release];
+   [huntDelayLabel release];
+   
    [mitesSlider release];
    [chipsSlider release];
    [speedSlider release];
-   [waitSlider release];
+   [maxTurnSlider release];
+   [turnDelaySlider release];
+   [huntDelaySlider release];
    
+   [stopButton release];
    [resetButton release];
    
    [super dealloc];
@@ -73,17 +79,32 @@
       
       speedLabel.text = [NSString stringWithFormat:@"%.0f", [speedSlider value]];
    }
-   else if (sender == waitSlider) {
+   else if (sender == maxTurnSlider) {
       
-      waitLabel.text = [NSString stringWithFormat:@"%.1f", [waitSlider value]];
+      maxTurnLabel.text = [NSString stringWithFormat:@"%.0f", [maxTurnSlider value]];
    }
+   else if (sender == turnDelaySlider) {
+      
+      turnDelayLabel.text = [NSString stringWithFormat:@"%.0f", [turnDelaySlider value]];
+   }
+   else if (sender == huntDelaySlider) {
+      
+      huntDelayLabel.text = [NSString stringWithFormat:@"%.0f", [huntDelaySlider value]];
+   }
+}
+
+
+- (IBAction)stopButtonPressed {
+   
+//   dmz::MitesModuleiPhone *mod (dmz::MitesModuleiPhone::get_instance ());
+//   if (mod) { mod->reset_lua (); }   
 }
 
 
 - (IBAction)resetButtonPressed {
 
-   dmz::MitesModuleiPhone *mod (dmz::MitesModuleiPhone::get_instance ());
-   if (mod) { mod->reset_lua (); }   
+//   dmz::MitesModuleiPhone *mod (dmz::MitesModuleiPhone::get_instance ());
+//   if (mod) { mod->reset_lua (); }   
 }
 
 
@@ -92,7 +113,9 @@
    mitesLabel.text = [NSString stringWithFormat:@"%.0f", [mitesSlider value]];
    chipsLabel.text = [NSString stringWithFormat:@"%.0f", [chipsSlider value]];
    speedLabel.text = [NSString stringWithFormat:@"%.0f", [speedSlider value]];
-   waitLabel.text = [NSString stringWithFormat:@"%.1f", [waitSlider value]];
+   maxTurnLabel.text = [NSString stringWithFormat:@"%.0f", [maxTurnSlider value]];
+   turnDelayLabel.text = [NSString stringWithFormat:@"%.0f", [turnDelaySlider value]];
+   huntDelayLabel.text = [NSString stringWithFormat:@"%.0f", [huntDelaySlider value]];
 }
 
 
