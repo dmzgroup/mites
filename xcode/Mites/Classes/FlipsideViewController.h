@@ -18,6 +18,8 @@
    
    IBOutlet UIButton *stopButton;
    IBOutlet UIButton *resetButton;
+   
+   BOOL resetRequired;
 }
 
 @property (nonatomic, retain) UILabel *mitesLabel;
@@ -37,7 +39,9 @@
 @property (nonatomic, retain) UIButton *stopButton;
 @property (nonatomic, retain) UIButton *resetButton;
 
- 
+@property (nonatomic) BOOL resetRequired;
+
+
 - (IBAction)sliderValueChanged:(id)sender;
 - (IBAction)stopButtonPressed;
 - (IBAction)resetButtonPressed;

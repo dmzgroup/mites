@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="63"/>
+			<integer value="64"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -193,7 +193,7 @@
 								<bool key="IBUIMultipleTouchEnabled">YES</bool>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<float key="IBUIMaxValue">1.000000e+02</float>
+								<float key="IBUIMaxValue">2.000000e+01</float>
 							</object>
 							<object class="IBUILabel" id="644394869">
 								<reference key="NSNextResponder" ref="146891847"/>
@@ -315,13 +315,14 @@
 					<object class="IBUISlider" id="731460790">
 						<reference key="NSNextResponder" ref="249263867"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{94, 327}, {169, 23}}</string>
+						<string key="NSFrame">{{94, 326}, {169, 23}}</string>
 						<reference key="NSSuperview" ref="249263867"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
+						<float key="IBUIMinValue">1.000000e+00</float>
 						<float key="IBUIMaxValue">1.000000e+02</float>
 					</object>
 					<object class="IBUILabel" id="400735624">
@@ -650,12 +651,12 @@
 							<reference ref="598220408"/>
 							<reference ref="166518977"/>
 							<reference ref="400735624"/>
-							<reference ref="731460790"/>
 							<reference ref="96020647"/>
 							<reference ref="38936694"/>
 							<reference ref="44294121"/>
 							<reference ref="1053914009"/>
 							<reference ref="697091536"/>
+							<reference ref="731460790"/>
 						</object>
 						<reference key="parent" ref="360949347"/>
 					</object>
@@ -665,7 +666,6 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="723491641"/>
-							<reference ref="618216605"/>
 							<reference ref="281699537"/>
 							<reference ref="530494076"/>
 							<reference ref="570899492"/>
@@ -676,6 +676,7 @@
 							<reference ref="252534492"/>
 							<reference ref="364085317"/>
 							<reference ref="883956876"/>
+							<reference ref="618216605"/>
 						</object>
 						<reference key="parent" ref="249263867"/>
 					</object>

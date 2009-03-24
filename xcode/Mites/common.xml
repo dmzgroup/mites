@@ -27,10 +27,16 @@
          <counter value="30"/>
       </attributes>
       <attributes name="Speed">
-         <scalar value="200"/>
+         <scalar value="500"/>
       </attributes>
       <attributes name="Wait">
          <scalar value="0.6"/>
+      </attributes>
+      <attributes name="Turn">
+         <scalar value="3.141592653589793"/>
+      </attributes>
+      <attributes name="TurnDelay">
+         <scalar value="0.2"/>
       </attributes>
    </object>
 </archive>

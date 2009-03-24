@@ -259,41 +259,41 @@ dmz::MitesModuleiPhone::get_speed () {
 void
 dmz::MitesModuleiPhone::set_wait (const Float64 Value) {
 
-   _set_arena_scalar (_waitHandle, Value / 100.0);
+   _set_arena_scalar (_waitHandle, Value / 10.0);
 }
 
 
 dmz::Float64
 dmz::MitesModuleiPhone::get_wait () {
    
-   return (_get_arena_scalar (_waitHandle) * 100.0);
+   return (_get_arena_scalar (_waitHandle) * 10.0);
 }
 
 
 void
 dmz::MitesModuleiPhone::set_max_turn (const Float64 Value) {
 
-   _set_arena_scalar (_maxTurnHandle, Value);
+   _set_arena_scalar (_maxTurnHandle, to_radians (Value));
 }
 
 
 dmz::Float64
 dmz::MitesModuleiPhone::get_max_turn () {
    
-   return _get_arena_scalar (_maxTurnHandle);
+   return to_degrees (_get_arena_scalar (_maxTurnHandle));
 }
 
 void
 dmz::MitesModuleiPhone::set_turn_delay (const Float64 Value) {
    
-   _set_arena_scalar (_turnDelayHandle, Value);
+   _set_arena_scalar (_turnDelayHandle, Value / 10.0);
 }
 
 
 dmz::Float64
 dmz::MitesModuleiPhone::get_turn_delay () {
    
-   return _get_arena_scalar (_turnDelayHandle);
+   return (_get_arena_scalar (_turnDelayHandle) * 10.0);
 }
 
 
@@ -306,6 +306,15 @@ dmz::MitesModuleiPhone::reset_lua () {
    
       _lua->reset_lua ();
       result = True;
+   }
+   else {
+      
+      Int64 miteCount = get_mites ();
+      Int64 chipCount = get_chips ();
+      set_mites (0);
+      set_chips (0);
+      set_mites (miteCount);
+      set_chips (chipCount);
    }
    
    return result;

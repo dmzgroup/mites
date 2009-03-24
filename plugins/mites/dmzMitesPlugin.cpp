@@ -58,7 +58,7 @@ dmz::MitesPlugin::MitesPlugin (const PluginInfo &Info, Config &local) :
       _chipType (),
       _miteTable (),
       _chipTable (),
-      _volume (Vector (), 20),
+      _volume (Vector (), 5),
       _time (Info.get_context ()),
       _paused (False) {
    

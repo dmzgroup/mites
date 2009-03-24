@@ -8,6 +8,8 @@
 @synthesize mitesLabel, chipsLabel, speedLabel, maxTurnLabel, turnDelayLabel, huntDelayLabel;
 @synthesize mitesSlider, chipsSlider, speedSlider, maxTurnSlider, turnDelaySlider, huntDelaySlider;
 @synthesize stopButton, resetButton;
+@synthesize resetRequired;
+
 
 - (void)viewDidLoad {
    
@@ -23,7 +25,7 @@
    UIKitImproveSliderAccuracy (huntDelaySlider);
    
    [stopButton removeFromSuperview];
-   [resetButton removeFromSuperview];
+//   [resetButton removeFromSuperview];
 }
 
 
@@ -67,6 +69,9 @@
 
 - (IBAction)sliderValueChanged:(id)sender {
 
+   [self updateLabels];
+   
+/*
    if (sender == mitesSlider) {
     
       mitesLabel.text = [NSString stringWithFormat:@"%.0f", [mitesSlider value]];
@@ -91,6 +96,7 @@
       
       huntDelayLabel.text = [NSString stringWithFormat:@"%.0f", [huntDelaySlider value]];
    }
+*/
 }
 
 
@@ -103,8 +109,8 @@
 
 - (IBAction)resetButtonPressed {
 
-//   dmz::MitesModuleiPhone *mod (dmz::MitesModuleiPhone::get_instance ());
-//   if (mod) { mod->reset_lua (); }   
+   dmz::MitesModuleiPhone *mod (dmz::MitesModuleiPhone::get_instance ());
+   if (mod) { mod->reset_lua (); }   
 }
 
 

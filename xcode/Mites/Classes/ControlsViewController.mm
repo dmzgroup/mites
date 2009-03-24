@@ -71,7 +71,7 @@
    
    if (sender == mitesSlider) {
       
-      mitesLabel.text = [NSString stringWithFormat:@"%.0f", [mitesSlider value]];
+//      mitesLabel.text = [NSString stringWithFormat:@"%.0f", [mitesSlider value]];
       
       if (mod) {
          
@@ -80,7 +80,7 @@
    }
    else if (sender == chipsSlider) {
       
-      chipsLabel.text = [NSString stringWithFormat:@"%.0f", [chipsSlider value]];
+//      chipsLabel.text = [NSString stringWithFormat:@"%.0f", [chipsSlider value]];
       
       if (mod) {
          
@@ -89,7 +89,7 @@
    }
    else if (sender == speedSlider) {
       
-      speedLabel.text = [NSString stringWithFormat:@"%.0f", [speedSlider value]];
+//      speedLabel.text = [NSString stringWithFormat:@"%.0f", [speedSlider value]];
       
       if (mod) {
          
@@ -98,13 +98,15 @@
    }
    else if (sender == waitSlider) {
       
-      waitLabel.text = [NSString stringWithFormat:@"%.1f", [waitSlider value]];
+//      waitLabel.text = [NSString stringWithFormat:@"%.0f", [waitSlider value]];
       
       if (mod) {
          
          mod->set_wait ([waitSlider value] + 0.5f);
       }
    }
+   
+   [self updateLabels];
 }
 
 
@@ -113,7 +115,7 @@
    mitesLabel.text = [NSString stringWithFormat:@"%.0f", [mitesSlider value]];
    chipsLabel.text = [NSString stringWithFormat:@"%.0f", [chipsSlider value]];
    speedLabel.text = [NSString stringWithFormat:@"%.0f", [speedSlider value]];
-   waitLabel.text = [NSString stringWithFormat:@"%.1f", [waitSlider value]];
+   waitLabel.text = [NSString stringWithFormat:@"%.0f", [waitSlider value]];
 }
 
 
