@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="21"/>
+			<integer value="1"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -146,7 +146,7 @@
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<float key="IBUIMaxValue">2.000000e+01</float>
+						<float key="IBUIMaxValue">1.000000e+01</float>
 					</object>
 					<object class="IBUILabel" id="394042899">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -383,9 +383,9 @@
 							<reference ref="939600708"/>
 							<reference ref="320905211"/>
 							<reference ref="394042899"/>
-							<reference ref="344842058"/>
 							<reference ref="648869460"/>
 							<reference ref="800148751"/>
+							<reference ref="344842058"/>
 						</object>
 						<reference key="parent" ref="360949347"/>
 					</object>

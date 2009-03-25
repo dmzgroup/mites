@@ -193,7 +193,7 @@
 								<bool key="IBUIMultipleTouchEnabled">YES</bool>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<float key="IBUIMaxValue">2.000000e+01</float>
+								<float key="IBUIMaxValue">1.000000e+01</float>
 							</object>
 							<object class="IBUILabel" id="644394869">
 								<reference key="NSNextResponder" ref="146891847"/>

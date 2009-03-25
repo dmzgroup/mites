@@ -69,40 +69,23 @@
    
    dmz::MitesModuleiPhone *mod (dmz::MitesModuleiPhone::get_instance ());
    
-   if (sender == mitesSlider) {
+   if (mod) {
       
-//      mitesLabel.text = [NSString stringWithFormat:@"%.0f", [mitesSlider value]];
-      
-      if (mod) {
+      if (sender == mitesSlider) {
          
          mod->set_mites (dmz::Int64 ([mitesSlider value] + 0.5f));
       }
-   }
-   else if (sender == chipsSlider) {
-      
-//      chipsLabel.text = [NSString stringWithFormat:@"%.0f", [chipsSlider value]];
-      
-      if (mod) {
+      else if (sender == chipsSlider) {
          
          mod->set_chips (dmz::Int64 ([chipsSlider value] + 0.5f));
       }
-   }
-   else if (sender == speedSlider) {
-      
-//      speedLabel.text = [NSString stringWithFormat:@"%.0f", [speedSlider value]];
-      
-      if (mod) {
+      else if (sender == speedSlider) {
          
-         mod->set_speed ([speedSlider value] + 0.5f);
+         mod->set_speed ([speedSlider value]);
       }
-   }
-   else if (sender == waitSlider) {
-      
-//      waitLabel.text = [NSString stringWithFormat:@"%.0f", [waitSlider value]];
-      
-      if (mod) {
+      else if (sender == waitSlider) {
          
-         mod->set_wait ([waitSlider value] + 0.5f);
+         mod->set_wait ([waitSlider value]);
       }
    }
    

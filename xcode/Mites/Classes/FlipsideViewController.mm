@@ -70,33 +70,6 @@
 - (IBAction)sliderValueChanged:(id)sender {
 
    [self updateLabels];
-   
-/*
-   if (sender == mitesSlider) {
-    
-      mitesLabel.text = [NSString stringWithFormat:@"%.0f", [mitesSlider value]];
-   }
-   else if (sender == chipsSlider) {
-      
-      chipsLabel.text = [NSString stringWithFormat:@"%.0f", [chipsSlider value]];
-   }
-   else if (sender == speedSlider) {
-      
-      speedLabel.text = [NSString stringWithFormat:@"%.0f", [speedSlider value]];
-   }
-   else if (sender == maxTurnSlider) {
-      
-      maxTurnLabel.text = [NSString stringWithFormat:@"%.0f", [maxTurnSlider value]];
-   }
-   else if (sender == turnDelaySlider) {
-      
-      turnDelayLabel.text = [NSString stringWithFormat:@"%.0f", [turnDelaySlider value]];
-   }
-   else if (sender == huntDelaySlider) {
-      
-      huntDelayLabel.text = [NSString stringWithFormat:@"%.0f", [huntDelaySlider value]];
-   }
-*/
 }
 
 
