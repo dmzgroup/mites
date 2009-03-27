@@ -246,7 +246,48 @@
 		</dict>
 	</array>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>7A5B24970F7C485300E2BA9A</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>RootViewController.mm</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>7A5B24A30F7C4A7B00E2BA9A</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>RootViewController.mm</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>7A5B24C10F7C57D000E2BA9A</string>
+						<key>history</key>
+						<array>
+							<string>7A5B24AA0F7C4ABD00E2BA9A</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {943, 780}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>328 452 943 821 0 0 2560 1578 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>1201</integer>
@@ -336,7 +377,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>50</integer>
+									<integer>71</integer>
+									<integer>70</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -374,7 +416,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>7AE6DCE60F69B7EC0093CF11</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>RootViewController.mm</string>
+								<string></string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -382,11 +424,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7AE6DCE70F69B7EC0093CF11</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>RootViewController.mm</string>
+										<string></string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7AF51EF90F79AC5300275AF9</string>
+										<string>7A5B24C00F7C57D000E2BA9A</string>
 										<key>history</key>
 										<array>
 											<string>7AB859370F797F880073DCE0</string>
@@ -397,36 +439,22 @@
 											<string>7AF51EAA0F79A02700275AF9</string>
 											<string>7AF51EBA0F79A13900275AF9</string>
 											<string>7AF51EC30F79A1D200275AF9</string>
-											<string>7AF51EE70F79A5B400275AF9</string>
-											<string>7AF51EE80F79A5B400275AF9</string>
-											<string>7AF51EE90F79A5B400275AF9</string>
+											<string>7A5B249E0F7C4A7B00E2BA9A</string>
+											<string>7A5B249F0F7C4A7B00E2BA9A</string>
 										</array>
 										<key>prevStack</key>
 										<array>
 											<string>7AB8590C0F7979010073DCE0</string>
-											<string>7AB859230F797A850073DCE0</string>
-											<string>7AB8592D0F797E140073DCE0</string>
 											<string>7AB8593C0F797F880073DCE0</string>
 											<string>7AB8593D0F797F880073DCE0</string>
-											<string>7AF51E670F79925900275AF9</string>
 											<string>7AF51E780F799D3400275AF9</string>
-											<string>7AF51E790F799D3400275AF9</string>
-											<string>7AF51E7A0F799D3400275AF9</string>
-											<string>7AF51E7B0F799D3400275AF9</string>
-											<string>7AF51E7C0F799D3400275AF9</string>
 											<string>7AF51E7D0F799D3400275AF9</string>
 											<string>7AF51E7E0F799D3400275AF9</string>
 											<string>7AF51E7F0F799D3400275AF9</string>
-											<string>7AF51E800F799D3400275AF9</string>
 											<string>7AF51E970F799F1D00275AF9</string>
-											<string>7AF51E980F799F1D00275AF9</string>
-											<string>7AF51E990F799F1D00275AF9</string>
-											<string>7AF51EA30F799F6A00275AF9</string>
-											<string>7AF51EAC0F79A02700275AF9</string>
 											<string>7AF51EBC0F79A13900275AF9</string>
-											<string>7AF51EC50F79A1D200275AF9</string>
-											<string>7AF51EEA0F79A5B400275AF9</string>
-											<string>7AF51EEB0F79A5B400275AF9</string>
+											<string>7A5B24A00F7C4A7B00E2BA9A</string>
+											<string>7A5B24A10F7C4A7B00E2BA9A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -465,7 +493,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {871, -27}}</string>
+										<string>{{10, 27}, {0, 327}}</string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -551,11 +579,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>7AF51E830F799D3400275AF9</string>
+				<string>7A5B247E0F7C2C7000E2BA9A</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>7AF51E840F799D3400275AF9</string>
+				<string>7A5B247F0F7C2C7000E2BA9A</string>
 				<string>7AE6DCE60F69B7EC0093CF11</string>
-				<string>7AF51E850F799D3400275AF9</string>
+				<string>7A5B24800F7C2C7000E2BA9A</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -702,14 +730,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>7AF51E860F799D3400275AF9</string>
+				<string>7A5B24AE0F7C4ACB00E2BA9A</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>7AF51E870F799D3400275AF9</string>
-				<string>7AF51E880F799D3400275AF9</string>
-				<string>7AF51E890F799D3400275AF9</string>
-				<string>7AF51E8A0F799D3400275AF9</string>
-				<string>7AE6DCE60F69B7EC0093CF11</string>
+				<string>7A5B24AF0F7C4ACB00E2BA9A</string>
+				<string>7A5B24B00F7C4ACB00E2BA9A</string>
+				<string>7A5B24B10F7C4ACB00E2BA9A</string>
+				<string>7A5B24B20F7C4ACB00E2BA9A</string>
+				<string>7A5B24B30F7C4ACB00E2BA9A</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -718,7 +746,7 @@
 	<key>PerspectivesBarVisible</key>
 	<true/>
 	<key>PinnedNavigatorIdentifier</key>
-	<string>7AF51ECD0F79A27100275AF9</string>
+	<string>7A5B24970F7C485300E2BA9A</string>
 	<key>ShelfIsVisible</key>
 	<false/>
 	<key>SourceDescription</key>
@@ -726,7 +754,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>259632211.50649101</real>
+	<real>259807184.23016101</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>1</integer>
 	<key>ToolbarIsVisible</key>
@@ -741,8 +769,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>7AF51E8C0F799D3400275AF9</string>
-		<string>7AF51E8D0F799D3400275AF9</string>
+		<string>7A5B24BA0F7C4AE600E2BA9A</string>
+		<string>7A5B24B60F7C4ACB00E2BA9A</string>
+		<string>7A5B24970F7C485300E2BA9A</string>
 		<string>/Users/shillcock/cm2/src/mites/xcode/Mites/Mites.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

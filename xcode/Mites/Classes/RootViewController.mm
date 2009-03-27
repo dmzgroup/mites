@@ -40,8 +40,14 @@
    self.flipsideNavigationBar = aNavigationBar;
    [aNavigationBar release];
    
+   NSBundle *mainBundle;
+   mainBundle = [NSBundle mainBundle];
+//   [mainBundle objectForInfoDictionaryKey:@"CFBundleVersion"];
+   
    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(toggleView)];
-   UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:@"DMZ: Mites"];
+   NSString *title = [NSString stringWithFormat:@"DMZ: Mites: %@", [mainBundle objectForInfoDictionaryKey:@"CFBundleVersion"]];
+
+   UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:title];
    navigationItem.rightBarButtonItem = buttonItem;
    [flipsideNavigationBar pushNavigationItem:navigationItem animated:NO];
    [navigationItem release];
