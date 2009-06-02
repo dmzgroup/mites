@@ -1,7 +1,7 @@
 #!/bin/sh
 DEPTH=../../..
 lmk -m opt -b
-cp -r $DEPTH/bin/macos-opt/mites.app $DEPTH
+cp -RL $DEPTH/bin/macos-opt/mites.app $DEPTH
 mkdir $DEPTH/mites.app/Contents/Frameworks/Qt
 cp $DEPTH/depend/Qt/QtCore $DEPTH/mites.app/Contents/Frameworks/Qt
 cp $DEPTH/depend/Qt/QtGui $DEPTH/mites.app/Contents/Frameworks/Qt

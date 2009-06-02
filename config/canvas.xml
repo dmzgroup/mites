@@ -1,29 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dmz>
-<plugins>
+<plugin-list>
    <plugin name="dmzQtModuleMainWindowBasic"/>
    <plugin name="dmzQtModuleCanvasBasic"/>
    <plugin name="dmzQtPluginCanvasObject"/>
    <plugin name="dmzQtPluginCanvasZoomPan"/>
    <plugin name="dmzQtPluginVersion"/>
+   <plugin name="dmzQtPluginWidget" unique="graph"/>
+   <plugin name="dmzQtPluginWidget" unique="controls"/>
+   <plugin name="dmzQtPluginGraph"/>
    <plugin name="dmzMitesPluginControls"/>
-</plugins>
+</plugin-list>
 <dmzQtPluginCanvasZoomPan>
    <zoom default="0.1" min="0.1" max="1.0"/>
    <hide value="true"/>
 </dmzQtPluginCanvasZoomPan>
 <dmzQtModuleMainWindowBasic>
+   <corners>
+      <top right="true" left="true"/>
+      <bottom right="true" left="true"/>
+   </corners>
    <window title="DMZ: Mites"/>
    <channel>
       <group area="main">
          <widget name="dmzQtModuleCanvasBasic"/>
       </group>
       <group area="right">
-         <widget name="dmzMitesPluginControls"/>
+         <widget name="controls" title="Controls"/>
+      </group>
+      <group area="bottom">
+         <widget name="graph" title="Chip Clusters"/>
       </group>
    </channel>
 </dmzQtModuleMainWindowBasic>
+<graph>
+   <minimum-size width="300" height="165"/>
+   <widget name="dmzQtPluginGraph" title="Chip Clusters"/>
+</graph>
+<controls>
+   <widget name="dmzMitesPluginControls"/>
+</controls>
 <dmzQtModuleCanvasBasic>
+   <widget>
+      <minimum-size width="550" height="550"/>
+   </widget>
    <canvas opengl="true" antialiasing="true" textantialiasing="true"/>
    <scene>
       <min x="-2500" y="-2500"/>
@@ -32,9 +52,9 @@
    <scrollbars value="true"/>
 </dmzQtModuleCanvasBasic>
 <dmzQtPluginCanvasObject>
-   <plugins>
+   <plugin-list>
       <plugin name="dmzQtPluginCanvasObjectBasic"/>
-   </plugins>
+   </plugin-list>
    <dmzQtPluginCanvasObjectBasic>
       <defaults zValue="1" itemIgnoresTransformations="false"/>
    </dmzQtPluginCanvasObjectBasic>
@@ -42,4 +62,23 @@
 <dmzQtPluginCanvasLayer>
    <dockWidget title="Networks"/>
 </dmzQtPluginCanvasLayer>
+<dmzQtPluginGraph>
+   <set>
+      <object-type name="chip"/>
+   </set>
+   <attribute name="Chip_Count" type="counter"/>
+   <power-law show="true">
+      <stroke>
+         <color red="0.8"/>
+      </stroke>
+   </power-law>
+   <bar height="80" width="20" space="5" divisions="4">
+      <stroke>
+         <color green="1"/>
+      </stroke>
+      <fill>
+         <color red="0.5" green="1" blue="0.5"/>
+      </fill>
+   </bar>
+</dmzQtPluginGraph>
 </dmz>

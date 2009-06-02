@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dmz>
-<plugins>
+<plugin-list>
    <plugin name="dmzLuaModuleBasic"/>
-
-   <!-- <plugin name="dmzMitesPlugin"/> -->
-   
-</plugins>
+   <!-- <plugin name="dmzQtPluginLuaProfiler"/> -->
+</plugin-list>
 <dmzLuaPluginTimedReset>
    <time value="0.5"/>
 </dmzLuaPluginTimedReset>
 <dmzLuaModuleBasic>
    <path value="./scripts/?.lua"/>
+   <path value="../dmz/frameworks/lua/3rdparty/lua/jit/?.lua"/>
    <instance name="mites"/>
    <instance name="chips"/>
    <instance name="haul"/>
+   <instance name="count"/>
    <extensions>
       <plugin name="dmzLuaExtObject"/>
       <plugin name="dmzQtExtLuaConsole"/>

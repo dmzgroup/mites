@@ -2,9 +2,13 @@ require "const"
 local Offset = dmz.vector.new (0, 0, -96)
 local UnitMatrix = dmz.matrix.new ()
 
+local local_position = dmz.object.position
+local local_orientation = dmz.object.orientation
+local local_super_links = dmz.object.super_links
+
 local function get_mite (object)
    local result = nil
-   local links = dmz.object.super_links (object, const.LinkHandle)
+   local links = local_super_links (object, const.LinkHandle)
    if links then result = links[1] end
    return result
 end
@@ -13,9 +17,9 @@ local function update_chips (self, time)
    for i, chip in ipairs (self.chips) do
       local mite = get_mite (chip.object)
       if mite then
-         local pos = dmz.object.position (mite)
-         local ori = dmz.object.orientation (mite)
-         dmz.object.position (chip.object, nil, pos + ori:transform (Offset))
+         local pos = local_position (mite)
+         local ori = local_orientation (mite)
+         local_position (chip.object, nil, pos + ori:transform (Offset))
       end
    end
 end
