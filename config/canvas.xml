@@ -21,17 +21,17 @@
       <bottom right="true" left="true"/>
    </corners>
    <window title="DMZ: Mites"/>
-   <channel>
-      <group area="main">
-         <widget name="dmzQtModuleCanvasBasic"/>
-      </group>
+   <central-widget name="dmzQtModuleCanvasBasic"/>
+   <dock-windows>
       <group area="right">
-         <widget name="controls" title="Controls"/>
+         <widget name="controls" title="Controls">
+            <allowed-areas left="true" right="true"/>
+         </widget>
       </group>
       <group area="bottom">
          <widget name="graph" title="Chip Clusters"/>
       </group>
-   </channel>
+   </dock-windows>
 </dmzQtModuleMainWindowBasic>
 <graph>
    <minimum-size width="300" height="165"/>
