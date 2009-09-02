@@ -5,7 +5,7 @@
 #include <dmzQtWidget.h>
 #include <dmzRuntimeLog.h>
 #include <dmzRuntimePlugin.h>
-#include <QtGui/QWidget>
+#include <QtGui/QFrame>
 #include <QtGui/QDockWidget>
 #include <ui_dmzMitesControls.h>
 
@@ -15,7 +15,7 @@ namespace dmz {
    class LuaModule;
 
    class MitesPluginControls :
-         public QWidget,
+         public QFrame,
          public Plugin,
          public ObjectObserverUtil,
          public QtWidget {
