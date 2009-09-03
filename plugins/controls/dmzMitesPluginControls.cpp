@@ -11,6 +11,7 @@
 
 
 dmz::MitesPluginControls::MitesPluginControls (const PluginInfo &Info, Config &local) :
+      QFrame (0),
       Plugin (Info),
       ObjectObserverUtil (Info, local),
       QtWidget (Info),

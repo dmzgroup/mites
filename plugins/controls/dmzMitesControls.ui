@@ -1,51 +1,74 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>MitesControls</class>
- <widget class="QWidget" name="MitesControls" >
-  <property name="geometry" >
+ <widget class="QWidget" name="MitesControls">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>306</width>
-    <height>576</height>
+    <width>300</width>
+    <height>580</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Controls</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" >
+  <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_6" >
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
      <item>
-      <widget class="QLabel" name="label_5" >
-       <property name="text" >
+      <widget class="QLabel" name="label_5">
+       <property name="text">
         <string>Zoom</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QSlider" name="ZoomSlider" >
-       <property name="orientation" >
+      <widget class="QSlider" name="ZoomSlider">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </item>
+     <item>
+      <spacer name="horizontalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Minimum</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
     </layout>
    </item>
    <item>
-    <widget class="Line" name="line" >
-     <property name="orientation" >
+    <widget class="Line" name="line">
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout" >
+    <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <spacer name="horizontalSpacer" >
-       <property name="orientation" >
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" stdset="0" >
+       <property name="sizeHint" stdset="0">
         <size>
          <width>40</width>
          <height>20</height>
@@ -54,15 +77,15 @@
       </spacer>
      </item>
      <item>
-      <widget class="QLabel" name="label" >
-       <property name="text" >
+      <widget class="QLabel" name="label">
+       <property name="text">
         <string>Mites</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="MitesSpinBox" >
-       <property name="maximum" >
+      <widget class="QSpinBox" name="MitesSpinBox">
+       <property name="maximum">
         <number>200</number>
        </property>
       </widget>
@@ -70,23 +93,49 @@
     </layout>
    </item>
    <item>
-    <widget class="QSlider" name="MitesSlider" >
-     <property name="maximum" >
-      <number>200</number>
-     </property>
-     <property name="orientation" >
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2" >
+    <layout class="QHBoxLayout" name="horizontalLayout_14">
      <item>
-      <spacer name="horizontalSpacer_2" >
-       <property name="orientation" >
+      <widget class="QSlider" name="MitesSlider">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximum">
+        <number>200</number>
+       </property>
+       <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" stdset="0" >
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_14">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Minimum</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
         <size>
          <width>40</width>
          <height>20</height>
@@ -95,15 +144,15 @@
       </spacer>
      </item>
      <item>
-      <widget class="QLabel" name="label_2" >
-       <property name="text" >
+      <widget class="QLabel" name="label_2">
+       <property name="text">
         <string>Chips</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="ChipsSpinBox" >
-       <property name="maximum" >
+      <widget class="QSpinBox" name="ChipsSpinBox">
+       <property name="maximum">
         <number>200</number>
        </property>
       </widget>
@@ -111,23 +160,49 @@
     </layout>
    </item>
    <item>
-    <widget class="QSlider" name="ChipsSlider" >
-     <property name="maximum" >
-      <number>200</number>
-     </property>
-     <property name="orientation" >
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_3" >
+    <layout class="QHBoxLayout" name="horizontalLayout_13">
      <item>
-      <spacer name="horizontalSpacer_3" >
-       <property name="orientation" >
+      <widget class="QSlider" name="ChipsSlider">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximum">
+        <number>200</number>
+       </property>
+       <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" stdset="0" >
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_13">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Minimum</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
         <size>
          <width>40</width>
          <height>20</height>
@@ -136,15 +211,15 @@
       </spacer>
      </item>
      <item>
-      <widget class="QLabel" name="label_3" >
-       <property name="text" >
+      <widget class="QLabel" name="label_3">
+       <property name="text">
         <string>Speed</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="SpeedSpinBox" >
-       <property name="maximum" >
+      <widget class="QSpinBox" name="SpeedSpinBox">
+       <property name="maximum">
         <number>100</number>
        </property>
       </widget>
@@ -152,23 +227,49 @@
     </layout>
    </item>
    <item>
-    <widget class="QSlider" name="SpeedSlider" >
-     <property name="maximum" >
-      <number>100</number>
-     </property>
-     <property name="orientation" >
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_7" >
+    <layout class="QHBoxLayout" name="horizontalLayout_12">
      <item>
-      <spacer name="horizontalSpacer_7" >
-       <property name="orientation" >
+      <widget class="QSlider" name="SpeedSlider">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" stdset="0" >
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_12">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Minimum</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_7">
+     <item>
+      <spacer name="horizontalSpacer_7">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
         <size>
          <width>40</width>
          <height>20</height>
@@ -177,18 +278,18 @@
       </spacer>
      </item>
      <item>
-      <widget class="QLabel" name="label_6" >
-       <property name="text" >
+      <widget class="QLabel" name="label_6">
+       <property name="text">
         <string>Max Turn</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="TurnSpinBox" >
-       <property name="minimum" >
+      <widget class="QSpinBox" name="TurnSpinBox">
+       <property name="minimum">
         <number>1</number>
        </property>
-       <property name="maximum" >
+       <property name="maximum">
         <number>360</number>
        </property>
       </widget>
@@ -196,26 +297,52 @@
     </layout>
    </item>
    <item>
-    <widget class="QSlider" name="TurnSlider" >
-     <property name="minimum" >
-      <number>1</number>
-     </property>
-     <property name="maximum" >
-      <number>360</number>
-     </property>
-     <property name="orientation" >
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_8" >
+    <layout class="QHBoxLayout" name="horizontalLayout_11">
      <item>
-      <spacer name="horizontalSpacer_8" >
-       <property name="orientation" >
+      <widget class="QSlider" name="TurnSlider">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>360</number>
+       </property>
+       <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" stdset="0" >
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_11">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Minimum</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_8">
+     <item>
+      <spacer name="horizontalSpacer_8">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
         <size>
          <width>40</width>
          <height>20</height>
@@ -224,21 +351,21 @@
       </spacer>
      </item>
      <item>
-      <widget class="QLabel" name="label_7" >
-       <property name="text" >
+      <widget class="QLabel" name="label_7">
+       <property name="text">
         <string>Turn Delay</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="TurnDelaySpinBox" >
-       <property name="minimum" >
+      <widget class="QSpinBox" name="TurnDelaySpinBox">
+       <property name="minimum">
         <number>0</number>
        </property>
-       <property name="maximum" >
+       <property name="maximum">
         <number>100</number>
        </property>
-       <property name="value" >
+       <property name="value">
         <number>0</number>
        </property>
       </widget>
@@ -246,29 +373,55 @@
     </layout>
    </item>
    <item>
-    <widget class="QSlider" name="TurnDelaySlider" >
-     <property name="minimum" >
-      <number>0</number>
-     </property>
-     <property name="maximum" >
-      <number>100</number>
-     </property>
-     <property name="sliderPosition" >
-      <number>0</number>
-     </property>
-     <property name="orientation" >
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_4" >
+    <layout class="QHBoxLayout" name="horizontalLayout_10">
      <item>
-      <spacer name="horizontalSpacer_4" >
-       <property name="orientation" >
+      <widget class="QSlider" name="TurnDelaySlider">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimum">
+        <number>0</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="sliderPosition">
+        <number>0</number>
+       </property>
+       <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" stdset="0" >
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_10">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Minimum</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
         <size>
          <width>40</width>
          <height>20</height>
@@ -277,18 +430,18 @@
       </spacer>
      </item>
      <item>
-      <widget class="QLabel" name="label_4" >
-       <property name="text" >
+      <widget class="QLabel" name="label_4">
+       <property name="text">
         <string>Hunt Delay</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QSpinBox" name="WaitSpinBox" >
-       <property name="minimum" >
+      <widget class="QSpinBox" name="WaitSpinBox">
+       <property name="minimum">
         <number>1</number>
        </property>
-       <property name="maximum" >
+       <property name="maximum">
         <number>100</number>
        </property>
       </widget>
@@ -296,46 +449,78 @@
     </layout>
    </item>
    <item>
-    <widget class="QSlider" name="WaitSlider" >
-     <property name="minimum" >
-      <number>1</number>
-     </property>
-     <property name="maximum" >
-      <number>100</number>
-     </property>
-     <property name="orientation" >
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
+    <layout class="QHBoxLayout" name="horizontalLayout_9">
+     <item>
+      <widget class="QSlider" name="WaitSlider">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_9">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Minimum</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
    </item>
    <item>
-    <spacer name="verticalSpacer" >
-     <property name="orientation" >
+    <spacer name="verticalSpacer">
+     <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeHint" stdset="0" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>17</width>
-       <height>242</height>
+       <height>20</height>
       </size>
      </property>
     </spacer>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_5" >
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
      <item>
-      <widget class="QPushButton" name="PauseButton" >
-       <property name="text" >
+      <widget class="QPushButton" name="PauseButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
         <string>Stop</string>
        </property>
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer_5" >
-       <property name="orientation" >
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" stdset="0" >
+       <property name="sizeHint" stdset="0">
         <size>
          <width>118</width>
          <height>17</height>
@@ -344,8 +529,14 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="ResetButton" >
-       <property name="text" >
+      <widget class="QPushButton" name="ResetButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
         <string>Reset</string>
        </property>
       </widget>
@@ -379,11 +570,11 @@
    <receiver>MitesSpinBox</receiver>
    <slot>setValue(int)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>96</x>
      <y>123</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>116</x>
      <y>88</y>
     </hint>
@@ -395,11 +586,11 @@
    <receiver>MitesSlider</receiver>
    <slot>setValue(int)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>116</x>
      <y>88</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>72</x>
      <y>123</y>
     </hint>
@@ -411,11 +602,11 @@
    <receiver>ChipsSlider</receiver>
    <slot>setValue(int)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>118</x>
      <y>163</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>84</x>
      <y>198</y>
     </hint>
@@ -427,11 +618,11 @@
    <receiver>ChipsSpinBox</receiver>
    <slot>setValue(int)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>117</x>
      <y>198</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>118</x>
      <y>163</y>
     </hint>
@@ -443,11 +634,11 @@
    <receiver>SpeedSlider</receiver>
    <slot>setValue(int)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>119</x>
      <y>238</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>73</x>
      <y>273</y>
     </hint>
@@ -459,11 +650,11 @@
    <receiver>SpeedSpinBox</receiver>
    <slot>setValue(int)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>143</x>
      <y>273</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>119</x>
      <y>238</y>
     </hint>
@@ -475,11 +666,11 @@
    <receiver>WaitSlider</receiver>
    <slot>setValue(int)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>117</x>
      <y>313</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>108</x>
      <y>348</y>
     </hint>
@@ -491,11 +682,11 @@
    <receiver>WaitSpinBox</receiver>
    <slot>setValue(int)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>169</x>
      <y>348</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>117</x>
      <y>313</y>
     </hint>
@@ -507,11 +698,11 @@
    <receiver>TurnSpinBox</receiver>
    <slot>setValue(int)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>75</x>
      <y>408</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>90</x>
      <y>372</y>
     </hint>
@@ -523,11 +714,11 @@
    <receiver>TurnDelaySpinBox</receiver>
    <slot>setValue(int)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>64</x>
      <y>483</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>119</x>
      <y>461</y>
     </hint>
@@ -539,11 +730,11 @@
    <receiver>TurnDelaySlider</receiver>
    <slot>setValue(int)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>140</x>
      <y>440</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>241</x>
      <y>481</y>
     </hint>
@@ -555,11 +746,11 @@
    <receiver>TurnSlider</receiver>
    <slot>setValue(int)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>139</x>
      <y>386</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>240</x>
      <y>404</y>
     </hint>
