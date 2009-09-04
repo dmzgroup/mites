@@ -32,6 +32,8 @@ dmz::MitesPluginControls::MitesPluginControls (const PluginInfo &Info, Config &l
    _ui.setupUi (this);
 
    _init (local);
+   
+   adjustSize ();
 }
 
 
