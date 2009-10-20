@@ -10,33 +10,8 @@ lmk.add_vars {
 }
 lmk.add_files ({"version.xml",}, {src="version"})
 lmk.add_files {"mites.app"}
-lmk.add_preqs {
-   "scripts",
-   "mites",
-   "dmzArchiveModuleBasic",
-   "dmzArchivePluginAutoLoad",
-   "dmzArchivePluginObject",
-   "dmzInputModuleBasic",
-   "dmzInputPluginMouseEventToMessage",
-   "dmzLuaExtObject",
-   "dmzLuaModuleBasic",
-   "dmzMitesPluginControls",
-   "dmzObjectModuleBasic",
-   "dmzObjectModuleGridBasic",
-   "dmzQtModuleCanvasBasic",
-   "dmzQtModuleMainWindowBasic",
-   "dmzQtPluginCanvasObject",
-   "dmzQtPluginCanvasObjectBasic",
-   "dmzQtPluginCanvasZoomPan",
-   "dmzQtPluginVersion",
-   "dmzQtPluginGraph",
-   "dmzQtPluginWidget",
-   "dmzInputPluginKeyEventToMessage",
-   "dmzInputPluginExit",
--- dev plugins
-   "dmzQtExtLuaConsole",
-   "dmzQtPluginLuaProfiler",
-}
+lmk.add_preqs {"scripts", "mites",}
+app.build_preqs {"config",}
 
 app.set_app ("mites")
 

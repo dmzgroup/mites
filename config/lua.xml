@@ -14,9 +14,9 @@
    <instance name="chips"/>
    <instance name="haul"/>
    <instance name="count"/>
-   <extensions>
+   <plugin-list>
       <plugin name="dmzLuaExtObject"/>
       <plugin name="dmzQtExtLuaConsole"/>
-   </extensions>
+   </plugin-list>
 </dmzLuaModuleBasic>
 </dmz>
