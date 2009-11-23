@@ -9,6 +9,8 @@
    <plugin name="dmzArchivePluginObject"/>
    <plugin name="dmzObjectModuleBasic"/>
    <plugin name="dmzObjectModuleGridBasic"/>
+   
+   <!-- <plugin name="dmzQtPluginObjectInspector" unique="object-inspector"/> -->
    <!-- <plugin name="dmzObjectPluginDump"/> -->
    <!-- <plugin name="dmzPluginTermExit"/> -->
 </plugin-list>
