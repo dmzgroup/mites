@@ -8,8 +8,8 @@
    <time value="0.5"/>
 </dmzLuaPluginTimedReset>
 <dmzLuaModuleBasic>
-   <path value="./scripts/?.lua"/>
-   <path value="../dmz/frameworks/lua/3rdparty/lua/jit/?.lua"/>
+   <path value="./scripts"/>
+   <path value="../dmz/frameworks/lua/3rdparty/lua/jit/"/>
    <instance name="mites"/>
    <instance name="chips"/>
    <instance name="haul"/>
