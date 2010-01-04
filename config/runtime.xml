@@ -9,11 +9,8 @@
       <dmzQtPluginCanvasObject/>
       <dmzQtPluginCanvasObjectBasic>
          <items>
-            <image name="mite" file="./assets/mite.png">
+            <image name="mite" resource="mite">
                <offset x="-64" y="-64"/>
-<!--
-               <scale x="0.5" y="0.5"/>
--->
             </image>
          </items>
          <switch>
@@ -27,11 +24,8 @@
       <dmzQtPluginCanvasObject/>
       <dmzQtPluginCanvasObjectBasic>
          <items>
-            <image name="chip" file="./assets/chip.png">
+            <image name="chip" resource="chip">
                <offset x="-32" y="-32"/>
-<!--
-               <scale x="0.5" y="0.5"/>
--->
             </image>
          </items>
          <switch>

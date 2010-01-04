@@ -4,6 +4,7 @@
    <search>
       <path prefix="images" value=":/Images"/>
    </search>
+   <config file="config/resource.xml"/>
    <config file="config/runtime.xml"/>
    <config file="config/canvas.xml"/>
    <config file="config/common.xml"/>

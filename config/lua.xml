@@ -9,7 +9,6 @@
 </dmzLuaPluginTimedReset>
 <dmzLuaModuleBasic>
    <path value="./scripts"/>
-   <path value="../dmz/frameworks/lua/3rdparty/lua/jit/"/>
    <instance name="mites"/>
    <instance name="chips"/>
    <instance name="haul"/>
