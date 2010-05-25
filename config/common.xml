@@ -9,7 +9,7 @@
    
    <!-- <plugin name="dmzQtPluginObjectInspector" unique="object-inspector"/> -->
    <!-- <plugin name="dmzObjectPluginDump"/> -->
-   <!-- <plugin name="dmzPluginTermExit"/> -->
+   <!-- <plugin name="dmzPluginConsole"/> -->
 </plugin-list>
 <dmzObjectModuleGridBase>
    <grid>
