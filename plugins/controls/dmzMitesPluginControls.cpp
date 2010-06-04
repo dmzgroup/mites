@@ -6,6 +6,7 @@
 #include <dmzQtModuleCanvas.h>
 #include <dmzRuntimePluginFactoryLinkSymbol.h>
 #include <dmzRuntimePluginInfo.h>
+#include <dmzTypesMath.h>
 
 #include <QtGui/QGraphicsView>
 
