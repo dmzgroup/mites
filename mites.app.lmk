@@ -10,7 +10,7 @@ lmk.add_vars {
 }
 lmk.add_files ({"version.xml",}, {src="version"})
 lmk.add_files {"mites.app"}
-lmk.add_preqs {"scripts", "mites",}
+lmk.add_preqs {"mites",}
 app.build_preqs {"config",}
 
 app.set_app ("mites")
