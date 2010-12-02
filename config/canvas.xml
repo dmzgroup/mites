@@ -50,7 +50,7 @@
          <minimum-size width="550" height="550"/>
       </widget>
    </frame>
-   <canvas opengl="false" antialiasing="true" textantialiasing="true"/>
+   <canvas opengl="true" antialiasing="true" textantialiasing="true"/>
    <scene>
       <min x="-2500" y="-2500"/>
       <max x="2500" y="2500"/>
